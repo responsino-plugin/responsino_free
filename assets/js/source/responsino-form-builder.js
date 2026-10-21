@@ -1,0 +1,2828 @@
+import { utils } from '../components/responsino-form-utils.js';
+import { __ } from '../components/responsino-i18n.js';
+import { config as globalConfig } from '../components/responsino-form-config.js';
+import { fields } from '../components/responsino-form-fields.js';
+import { FormBuilderTemplates } from '../components/responsino-form-builder-template.js';
+import { ResponsinoConditionBuilder } from '../components/responsino-form-builder-condition-builder.js';
+import { FormValidator } from '../components/responsino-form-builder-form-validator.js';
+import { initFormBuilderTemplateDisplay } from '../components/responsino-form-builder-template-display.js';
+import { PreviewEngine } from '../components/responsino-form-builder-preview-engine.js';
+
+const responsinoFormBuilder = window.responsinoFormBuilder;
+
+const ResponsinoFormBuilder = (function() {
+
+    // 1. DOM REFERENCES
+    let elSplitPreviewColumn,
+        elBtnToggleSplitPreview,
+        elFormTitle,
+        elActiveFormIdDisplay,
+        elLastUpdatedDisplay,
+        elLastPublishedDisplay,
+        elFormStatusBadge,
+        elFormStatusText,
+        elCanvasStep1,
+        elCanvasStep2,
+        elStep1Card,
+        elStep2Card,
+        elStep1Header,
+        elStep1NavToggle,
+        elStep2NavToggle,
+        elStep1Count,
+        elStep2Count,
+        elEmptyNotifierStep1,
+        elStep2DisabledNotifier,
+        elStep2EnabledEmptyNotifier,
+        elOptionsEmptyNotice,
+        elOptionsFormContainer,
+        elOptElementId,
+        elOptElementTypeBadge,
+        elOptElementIdBadge,
+        elOptLabel,
+        elOptDescText,
+        elOptPlaceholder,
+        elOptIcon,
+        elOptIconPosition,
+        elOptButtonType,
+        elOptRatingStars,
+        elOptAlignment,
+        elOptHType,
+        elOptBold,
+        elOptItalic,
+        elOptUnderline,
+        elOptFontSize,
+        elOptTextColorColor,
+        elOptTextColorHex,
+        elOptLineHeight,
+        elOptBorderRadius,
+        elOptRequired,
+        elOptHideLabel,
+        elOptFullWidth,
+        elOptWidth,
+        elOptClearBefore,
+        elOptStep2Enabled,
+        elOptBtnCustomColorsEnabled,
+        elOptBtnColorsSubpanel,
+        elOptBtnBgColor,
+        elOptBtnBgHex,
+        elOptBtnTextColor,
+        elOptBtnTextHex,
+        elOptBtnBorderColor,
+        elOptBtnBorderHex,
+        elOptBtnHoverBgColor,
+        elOptBtnHoverBgHex,
+        elOptBtnHoverTextColor,
+        elOptBtnHoverTextHex,
+        elOptBtnHoverBorderColor,
+        elOptBtnHoverBorderHex,
+        elOptBtnColorsReset,
+        elDraggableStoreGrid,
+        elSearchFieldsInput,
+        elSearchNoResults,
+        elPreviewModal,
+        elPreviewWidget,
+        elPreviewInnerForm,
+        elWidgetStepIndicator;
+
+    function refreshDomReferences() {
+        elSplitPreviewColumn = document.getElementById("responsino-split-preview-column");
+        elBtnToggleSplitPreview = document.getElementById("responsino-btn-toggle-split-preview");
+        elFormTitle = document.getElementById("responsino-form-title");
+        elActiveFormIdDisplay = document.getElementById("responsino-active-form-id-display");
+        elLastUpdatedDisplay = document.getElementById("responsino-last-updated-display");
+        elLastPublishedDisplay = document.getElementById("responsino-last-published-display");
+        elFormStatusBadge = document.getElementById("responsino-form-status-badge");
+        elFormStatusText = document.getElementById("responsino-form-status-text");
+        elCanvasStep1 = document.getElementById("responsino-canvas-step-1");
+        elCanvasStep2 = document.getElementById("responsino-canvas-step-2");
+        elStep1Card = document.getElementById("responsino-step-1-card");
+        elStep2Card = document.getElementById("responsino-step-2-card");
+        elStep1Header = document.getElementById("responsino-step-1-header");
+        elStep1NavToggle = document.getElementById("responsino-step-1-nav-toggle");
+        elStep2NavToggle = document.getElementById("responsino-step-2-nav-toggle");
+        elStep1Count = document.getElementById("responsino-step-1-count");
+        elStep2Count = document.getElementById("responsino-step-2-count");
+        elEmptyNotifierStep1 = elCanvasStep1 ? elCanvasStep1.querySelector(".responsino-canvas-empty-notifier") : null;
+        elStep2DisabledNotifier = document.getElementById("responsino-step-2-disabled-notifier");
+        elStep2EnabledEmptyNotifier = document.getElementById("responsino-step-2-enabled-empty-notifier");
+        elOptionsEmptyNotice = document.getElementById("responsino-options-empty-notice");
+        elOptionsFormContainer = document.getElementById("responsino-options-form-container");
+        elOptElementId = document.getElementById("responsino-opt-element-id");
+        elOptElementTypeBadge = document.getElementById("responsino-opt-element-type-badge");
+        elOptElementIdBadge = document.getElementById("responsino-opt-element-id-badge");
+        elOptLabel = document.getElementById("responsino-opt-label");
+        elOptDescText = document.getElementById("responsino-opt-desc-text");
+        elOptPlaceholder = document.getElementById("responsino-opt-placeholder");
+        elOptIcon = document.getElementById("responsino-opt-icon");
+        elOptIconPosition = document.getElementById("responsino-opt-icon-position");
+        elOptButtonType = document.getElementById("responsino-opt-button-type");
+        elOptRatingStars = document.getElementById("responsino-opt-rating-stars");
+        elOptAlignment = document.getElementById("responsino-opt-alignment");
+        elOptHType = document.getElementById("responsino-opt-h-type");
+        elOptBold = document.getElementById("responsino-opt-bold");
+        elOptItalic = document.getElementById("responsino-opt-italic");
+        elOptUnderline = document.getElementById("responsino-opt-underline");
+        elOptFontSize = document.getElementById("responsino-opt-font-size");
+        elOptTextColorColor = document.getElementById("responsino-opt-text-color");
+        elOptTextColorHex = document.getElementById("responsino-opt-text-color-hex");
+        elOptLineHeight = document.getElementById("responsino-opt-line-height");
+        elOptBorderRadius = document.getElementById("responsino-opt-border-radius");
+        elOptRequired = document.getElementById("responsino-opt-required");
+        elOptHideLabel = document.getElementById("responsino-opt-hide-label");
+        elOptFullWidth = document.getElementById("responsino-opt-full-width");
+        elOptWidth = document.getElementById("responsino-opt-width");
+        elOptClearBefore = document.getElementById("responsino-opt-clear-before");
+        elOptStep2Enabled = document.getElementById("responsino-opt-step2-enabled");
+        elOptBtnCustomColorsEnabled = document.getElementById("responsino-opt-btn-custom-colors-enabled");
+        elOptBtnColorsSubpanel = document.getElementById("responsino-opt-btn-colors-subpanel");
+        elOptBtnBgColor = document.getElementById("responsino-opt-btn-bg-color");
+        elOptBtnBgHex = document.getElementById("responsino-opt-btn-bg-hex");
+        elOptBtnTextColor = document.getElementById("responsino-opt-btn-text-color");
+        elOptBtnTextHex = document.getElementById("responsino-opt-btn-text-hex");
+        elOptBtnBorderColor = document.getElementById("responsino-opt-btn-border-color");
+        elOptBtnBorderHex = document.getElementById("responsino-opt-btn-border-hex");
+        elOptBtnHoverBgColor = document.getElementById("responsino-opt-btn-hover-bg-color");
+        elOptBtnHoverBgHex = document.getElementById("responsino-opt-btn-hover-bg-hex");
+        elOptBtnHoverTextColor = document.getElementById("responsino-opt-btn-hover-text-color");
+        elOptBtnHoverTextHex = document.getElementById("responsino-opt-btn-hover-text-hex");
+        elOptBtnHoverBorderColor = document.getElementById("responsino-opt-btn-hover-border-color");
+        elOptBtnHoverBorderHex = document.getElementById("responsino-opt-btn-hover-border-hex");
+        elOptBtnColorsReset = document.getElementById("responsino-opt-btn-colors-reset");
+        elDraggableStoreGrid = document.getElementById("responsino-draggable-store-grid");
+        elSearchFieldsInput = document.getElementById("responsino-search-fields-input");
+        elSearchNoResults = document.getElementById("responsino-search-no-results");
+        elPreviewModal = document.getElementById("responsino-modal-preview");
+        elPreviewWidget = document.getElementById("responsino-preview-floating-widget");
+        elPreviewInnerForm = document.getElementById("responsino-widget-live-inner-form");
+        elWidgetStepIndicator = document.getElementById("responsino-widget-step-indicator");
+    }
+
+    refreshDomReferences();
+
+    // 2. CONFIGURATION
+    const config = {
+        ...globalConfig,
+        DECLARATIVE_OPTION_BINDINGS: [
+            { element: elOptLabel, key: "label", type: "text", event: "input", condition: (el) => el.type !== "description", defaultValue: "" },
+            { element: elOptDescText, key: "label", type: "text", event: "input", condition: (el) => el.type === "description", defaultValue: "" },
+            { element: elOptPlaceholder, key: "settings.placeholder", type: "text", event: "input", defaultValue: "" },
+            {
+                element: elOptButtonType, key: "settings.buttonType", type: "text", event: "change", defaultValue: "submit",
+                onAfterChange: (el, val) => {
+                    if (val === 'submit') {
+                        el.label = __('fields.button.submit.default_text');
+                        el.settings.icon = 'fa-paper-plane';
+                        el.settings.iconPosition = 'right';
+                    } else if (val === 'back') {
+                        el.label = __('fields.button.back.default_text');
+                        el.settings.icon = 'fa-arrow-left';
+                        el.settings.iconPosition = 'left';
+                    } else if (val === 'next') {
+                        el.label = __('fields.button.next.default_text');
+                        el.settings.icon = 'fa-arrow-right';
+                        el.settings.iconPosition = 'right';
+                    }
+                    setTimeout(() => engine.updateOptionsPanel(), 0);
+                }
+            },
+            { element: elOptIcon, key: "settings.icon", type: "text", event: "change", defaultValue: "fa-arrow-right" },
+            { element: elOptIconPosition, key: "settings.iconPosition", type: "text", event: "change", defaultValue: "right" },
+            { element: elOptRatingStars, key: "settings.stars", type: "int", event: "change", defaultValue: 5 },
+            { element: elOptAlignment, key: "settings.alignment", type: "text", event: "change", defaultValue: "left" },
+            { element: elOptHType, key: "settings.hType", type: "text", event: "change", defaultValue: "h3" },
+            {
+                element: elOptBold, key: "settings.bold", type: "bool", event: "change", defaultValue: false,
+                onAfterChange: (el, checked) => { elOptBold.closest(".responsino-formatting-btn").classList.toggle("active", checked); }
+            },
+            {
+                element: elOptItalic, key: "settings.italic", type: "bool", event: "change", defaultValue: false,
+                onAfterChange: (el, checked) => { elOptItalic.closest(".responsino-formatting-btn").classList.toggle("active", checked); }
+            },
+            {
+                element: elOptUnderline, key: "settings.underline", type: "bool", event: "change", defaultValue: false,
+                onAfterChange: (el, checked) => { elOptUnderline.closest(".responsino-formatting-btn").classList.toggle("active", checked); }
+            },
+            { element: elOptFontSize, key: "settings.fontSize", type: "text", event: "change", defaultValue: "inherit" },
+            { element: elOptLineHeight, key: "settings.lineHeight", type: "text", event: "change", defaultValue: "inherit" },
+            { element: elOptBorderRadius, key: "settings.borderRadius", type: "text", event: "change", defaultValue: "inherit" },
+            { element: elOptRequired, key: "settings.required", type: "bool", event: "change", defaultValue: false },
+            { element: elOptHideLabel, key: "settings.hideLabel", type: "bool", event: "change", defaultValue: false },
+            { element: elOptFullWidth, key: "settings.fullWidth", type: "bool", event: "change", defaultValue: true },
+            { element: elOptWidth, key: "settings.width", type: "text", event: "change", defaultValue: "100%" },
+            { element: elOptClearBefore, key: "settings.clearBefore", type: "bool", event: "change", defaultValue: false },
+            {
+                element: elOptStep2Enabled, key: "settings.step2Enabled", type: "bool", event: "change", defaultValue: false,
+                onAfterChange: (el, checked) => {
+                    if (checked) {
+                        state.activeStep2TriggerId = el.id;
+                        engine.getStep2List(el.id);
+                        if (uiState.activeStepView === 1) {
+                            utils.showToast(__("admin.toast.step2_unlocked"), "success");
+                            controller.setStepFocus(2);
+                        }
+                    }
+                }
+            },
+            {
+                element: elOptBtnCustomColorsEnabled, key: "settings.customColorsEnabled", type: "bool", event: "change", defaultValue: false,
+                onAfterChange: (el, checked) => { elOptBtnColorsSubpanel.style.display = checked ? "flex" : "none"; }
+            }
+        ],
+        COLOR_PICKER_BINDINGS: [
+            { picker: elOptBtnBgColor, hexInput: elOptBtnBgHex, key: "bgColor" },
+            { picker: elOptBtnTextColor, hexInput: elOptBtnTextHex, key: "textColor" },
+            { picker: elOptBtnBorderColor, hexInput: elOptBtnBorderHex, key: "borderColor" },
+            { picker: elOptBtnHoverBgColor, hexInput: elOptBtnHoverBgHex, key: "hoverBgColor" },
+            { picker: elOptBtnHoverTextColor, hexInput: elOptBtnHoverTextHex, key: "hoverTextColor" },
+            { picker: elOptBtnHoverBorderColor, hexInput: elOptBtnHoverBorderHex, key: "hoverBorderColor" }
+        ],
+        currentView: 'fields'
+    };
+
+    // 3. RUNTIME APP STATE & UI STATE
+    const state = JSON.parse(responsinoFormBuilder.formData);
+
+    const uiState = {
+        selectedElementId: null,
+        activeStepView: 1,
+        localDragSourceStep: null,
+        isSplitPreviewVisible: localStorage.getItem("responsino_split_preview_visible") !== "false",
+        splitPreviewCurrentStep: 1,
+        splitPreviewStep2TriggerId: null,
+        activeTargetingType: "in-content",
+        activeDisplayTab: "in-content",
+        previewCurrentStep: 1,
+        previewStep2TriggerId: null
+    };
+
+    // 5. HISTORY ENGINE (UNDO/REDO)
+    let undoStack = [];
+    let redoStack = [];
+    let isApplyingHistory = false;
+    let lastKnownStateStr = "";
+
+    const history = {
+        isApplyingHistory: () => isApplyingHistory,
+        getLastKnownStateStr: () => lastKnownStateStr,
+        setLastKnownStateStr: (val) => { lastKnownStateStr = val; },
+        pushUndo: (item) => {
+            undoStack.push(item);
+            if (undoStack.length > 50) undoStack.shift();
+        },
+        clearRedo: () => { redoStack = []; },
+        updateUndoRedoButtons: () => {
+            const btnUndo = document.getElementById("responsino-btn-undo");
+            const btnRedo = document.getElementById("responsino-btn-redo");
+            if (btnUndo) btnUndo.disabled = undoStack.length === 0;
+            if (btnRedo) btnRedo.disabled = redoStack.length === 0;
+        },
+        handleUndo: function() {
+            if (undoStack.length === 0) return;
+            redoStack.push({
+                steps: JSON.parse(JSON.stringify(state.steps)),
+                activeStep2TriggerId: state.activeStep2TriggerId,
+                selectedElementId: uiState.selectedElementId,
+                activeStepView: uiState.activeStepView
+            });
+
+            const previous = undoStack.pop();
+            isApplyingHistory = true;
+
+            state.steps = previous.steps;
+            state.activeStep2TriggerId = previous.activeStep2TriggerId;
+            uiState.selectedElementId = previous.selectedElementId;
+
+            if (previous.activeStepView !== undefined && previous.activeStepView !== uiState.activeStepView) {
+                controller.setStepFocus(previous.activeStepView);
+            }
+
+            engine.renderStepCanvas(1);
+            engine.renderStepCanvas(2);
+            engine.updateOptionsPanel();
+
+            if (uiState.selectedElementId) {
+                const activeList = uiState.activeStepView === 1 ? state.steps.step1 : engine.getStep2List();
+                const stillExists = activeList.some(it => it.id === uiState.selectedElementId);
+                if (stillExists) {
+                    engine.selectElementForEditing(uiState.selectedElementId, uiState.activeStepView);
+                } else {
+                    uiState.selectedElementId = null;
+                    engine.updateOptionsPanel();
+                }
+            }
+
+            api.saveStateToLocalStorage();
+            lastKnownStateStr = JSON.stringify(state.steps);
+            isApplyingHistory = false;
+            history.updateUndoRedoButtons();
+            utils.showToast(__("admin.toast.undo"), "info");
+        },
+        handleRedo: function() {
+            if (redoStack.length === 0) return;
+            undoStack.push({
+                steps: JSON.parse(JSON.stringify(state.steps)),
+                activeStep2TriggerId: state.activeStep2TriggerId,
+                selectedElementId: uiState.selectedElementId,
+                activeStepView: uiState.activeStepView
+            });
+
+            const nextState = redoStack.pop();
+            isApplyingHistory = true;
+
+            state.steps = nextState.steps;
+            state.activeStep2TriggerId = nextState.activeStep2TriggerId;
+            uiState.selectedElementId = nextState.selectedElementId;
+
+            if (nextState.activeStepView !== undefined && nextState.activeStepView !== uiState.activeStepView) {
+                controller.setStepFocus(nextState.activeStepView);
+            }
+
+            engine.renderStepCanvas(1);
+            engine.renderStepCanvas(2);
+            engine.updateOptionsPanel();
+
+            if (uiState.selectedElementId) {
+                const activeList = uiState.activeStepView === 1 ? state.steps.step1 : engine.getStep2List();
+                const stillExists = activeList.some(it => it.id === uiState.selectedElementId);
+                if (stillExists) {
+                    engine.selectElementForEditing(uiState.selectedElementId, uiState.activeStepView);
+                } else {
+                    uiState.selectedElementId = null;
+                    engine.updateOptionsPanel();
+                }
+            }
+
+            api.saveStateToLocalStorage();
+            lastKnownStateStr = JSON.stringify(state.steps);
+            isApplyingHistory = false;
+            history.updateUndoRedoButtons();
+            utils.showToast(__("admin.toast.redo"), "info");
+        },
+        initHistoryKeyboardShortcuts: function() {
+            document.addEventListener("keydown", (e) => {
+                const active = document.activeElement;
+                if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA" || active.tagName === "SELECT")) {
+                    return;
+                }
+                const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+                const modifier = isMac ? e.metaKey : e.ctrlKey;
+
+                if (modifier && e.key.toLowerCase() === 'z') {
+                    if (e.shiftKey) {
+                        e.preventDefault();
+                        history.handleRedo();
+                    } else {
+                        e.preventDefault();
+                        history.handleUndo();
+                    }
+                } else if (modifier && e.key.toLowerCase() === 'y') {
+                    e.preventDefault();
+                    history.handleRedo();
+                }
+            });
+        }
+    };
+
+    // 6. DB & LOCAL STORAGE API
+    const api = {
+        recalculateMinHeight: function() {
+            if (!state.settings) {
+                state.settings = {};
+            }
+            if (!state.settings.display) {
+                state.settings.display = {};
+            }
+            if (!state.settings.display.subTypeData.shortcode.globalData) {
+                state.settings.display.subTypeData.shortcode.globalData = {};
+            }
+            if (!state.settings.display.subTypeData.shortcode.globalData.spacing) {
+                state.settings.display.subTypeData.shortcode.globalData.spacing = {};
+            }
+
+            // If user entered a custom min height, use that instead of recalculating
+            const customMinHeight = state.settings.display.subTypeData.shortcode.globalData.spacing.customMinHeight;
+            if (typeof customMinHeight === "number" && customMinHeight >= 0) {
+                state.settings.display.subTypeData.shortcode.globalData.spacing.minHeight = customMinHeight;
+                return customMinHeight;
+            }
+
+            let totalHeight = 0;
+            let step1List = [];
+            if (state.steps && Array.isArray(state.steps.step1)) {
+                step1List = state.steps.step1;
+            }
+            const numFields = step1List.length;
+
+            step1List.forEach(field => {
+                let fieldType = field.type;
+
+                const fieldConfig = config.FIELD_TYPES_CONFIG[fieldType];
+                if (fieldConfig) {
+                    const settings = field.settings || {};
+                    let elementHeight = fieldConfig.baseHeight || 0;
+                    if (fieldConfig.labelHeight && settings.hideLabel !== true) {
+                        elementHeight += fieldConfig.labelHeight;
+                    }
+
+                    totalHeight += elementHeight;
+                } else {
+                    totalHeight += 40; // Default fallback
+                }
+            });
+
+            if (numFields > 1) {
+                totalHeight += (numFields - 1) * 7;
+            }
+
+            state.settings.display.subTypeData.shortcode.globalData.spacing.minHeight = totalHeight;
+            return totalHeight;
+        },
+        isFormValid: function() {
+            return FormValidator.isFormValid(state);
+        },
+        checkSubmitButtonLogic: function() {
+            FormValidator.updateWarningBanners(state);
+        },
+        saveStateToLocalStorage: function() {
+            try {
+                api.recalculateMinHeight();
+                if (!history.isApplyingHistory()) {
+                    const currentStepsStr = JSON.stringify(state.steps);
+                    const lastStr = history.getLastKnownStateStr();
+                    if (lastStr && currentStepsStr !== lastStr) {
+                        const previousSteps = JSON.parse(lastStr);
+                        history.pushUndo({
+                            steps: previousSteps,
+                            activeStep2TriggerId: state.activeStep2TriggerId,
+                            selectedElementId: uiState.selectedElementId,
+                            activeStepView: uiState.activeStepView
+                        });
+                        history.clearRedo();
+                        history.updateUndoRedoButtons();
+                    }
+                    history.setLastKnownStateStr(currentStepsStr);
+                }
+                const rawKey = responsinoFormBuilder.formId !== 0 ? `${responsinoFormBuilder.formId}_${responsinoFormBuilder.formUpdated}_${responsinoFormBuilder.pluginVersion}` : `0_${responsinoFormBuilder.pluginVersion}`;
+                const storageKey = `responsino_builder_state_${utils.base64(rawKey)}`;
+
+                const ttl = 24 * 60 * 60 * 1000; // 1 Tag in Millisekunden
+                const item = {
+                    value: state,
+                    expiry: Date.now() + ttl
+                };
+                localStorage.setItem(storageKey, JSON.stringify(item));
+                window.dispatchEvent(new CustomEvent("responsino-form-updated", { detail: { formId: state.id } }));
+
+                // Check submit button logic to update warning banner and status
+                api.checkSubmitButtonLogic();
+
+                if (uiState.isSplitPreviewVisible) {
+                    engine.renderSplitPreview();
+                }
+            } catch(e) {
+                console.warn("Storage write failed:", e);
+            }
+        },
+        saveStateToDatabase: async function(type = 'preview') {
+            if (!FormValidator.checkAndShowToasts(state)) {
+                return false;
+            }
+
+            api.recalculateMinHeight();
+            const formData = new FormData();
+            formData.append('action', 'responsino_save_form_data');
+            formData.append('nonce', responsinoFormBuilder.nonce);
+            formData.append('form_id', responsinoFormBuilder.formId);
+            formData.append('form_data', JSON.stringify(state));
+            formData.append('type', type);
+
+            try {
+                const response = await fetch(responsinoFormBuilder.ajaxurl, {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    if (result.data && result.data.new_id) {
+                        state.id = result.data.new_id;
+                        responsinoFormBuilder.formId = result.data.new_id;
+                        if (elActiveFormIdDisplay) elActiveFormIdDisplay.textContent = responsinoFormBuilder.formId;
+
+                        const url = new URL(window.location.href);
+                        url.searchParams.set('id', result.data.new_id);
+                        window.history.replaceState({}, '', url);
+                    }
+
+                    // Update timestamps on successful save
+                    const now = new Date();
+                    responsinoFormBuilder.formSavedTimestamp = now;
+                    if (elLastUpdatedDisplay) elLastUpdatedDisplay.textContent = utils.formatDate(now, config.locale);
+
+                    if (type === 'live') {
+                        responsinoFormBuilder.formPublishedTimestamp = now;
+                        if (elLastPublishedDisplay) elLastPublishedDisplay.textContent = utils.formatDate(now, config.locale);
+                    }
+
+                    utils.showToast(type === 'live' ? __("admin.toast.form_published") : __("admin.toast.draft_saved"), "success");
+                    return true;
+                } else {
+                    utils.showToast(__("admin.toast.save_error", { error: result.data || __("admin.toast.unknown_error") }), "error");
+                    return false;
+                }
+            } catch (error) {
+                console.error("AJAX Error:", error);
+                utils.showToast(__("admin.toast.network_error"), "error");
+                return false;
+            }
+        },
+        saveStatusToDatabase: async function(statusInt) {
+            if (!responsinoFormBuilder.formId) return;
+            const formData = new FormData();
+            formData.append('action', 'responsino_update_form_status');
+            formData.append('nonce', responsinoFormBuilder.nonce);
+            formData.append('form_id', responsinoFormBuilder.formId);
+            formData.append('status', statusInt);
+
+            try {
+                const response = await fetch(responsinoFormBuilder.ajaxurl, { method: 'POST', body: formData });
+                const result = await response.json();
+                if (!result.success) console.error("Status update failed:", result.data);
+            } catch (error) {
+                console.error("AJAX Status Error:", error);
+            }
+        },
+        validateFormState: function(data) {
+            if (!data || typeof data !== 'object') throw new Error("Data must be a valid object.");
+            if (!data.steps || typeof data.steps !== 'object') throw new Error("Invalid data structure: The 'steps' object is missing.");
+            if (!Array.isArray(data.steps.step1)) throw new Error("Invalid structure: 'step1' must be an array.");
+
+            const knownTypes = Object.keys(config.FIELD_TYPES_CONFIG);
+
+            const validateItem = (item) => {
+                if (!item || typeof item !== 'object') throw new Error("Element is not a valid object.");
+                if (!item.id || typeof item.id !== 'string' || item.id.trim() === '') throw new Error("Element has no valid ID.");
+                if (!item.type || !knownTypes.includes(item.type)) throw new Error(`Known type is missing: '${item.type}'`);
+                if (!item.settings || typeof item.settings !== 'object') item.settings = {};
+                if (item.settings.fontSize === undefined) item.settings.fontSize = "inherit";
+                if (item.settings.hideLabel === undefined) item.settings.hideLabel = false;
+                if (item.label === undefined) item.label = __("fields.unnamed");
+            };
+
+            data.steps.step1.forEach(validateItem);
+
+            if (data.steps.step2) {
+                if (typeof data.steps.step2 !== 'object') {
+                    throw new Error("Invalid structure 'step2'");
+                }
+                for (const key in data.steps.step2) {
+                    if (Object.prototype.hasOwnProperty.call(data.steps.step2, key)) {
+                        const list = data.steps.step2[key];
+                        if (!Array.isArray(list)) throw new Error("step2 sub-path must be an array");
+                        list.forEach(validateItem);
+                    }
+                }
+            } else {
+                data.steps.step2 = {};
+            }
+
+            if (!data.settings) data.settings = {};
+            if (!data.settings.main) {
+                data.settings.main = {
+                    customClasses: '',
+                    honeypot: true
+                };
+            }
+            if (!data.settings.styles) {
+                data.settings.styles = {
+                    accentColor: '#104689'
+                };
+            }
+            if (!data.settings.display) data.settings.display = {};
+            if (!data.settings.display.subTypeData) data.settings.display.subTypeData = {};
+            if (data.settings.display.displayType === undefined) {
+                data.settings.display.displayType = "in-content";
+            }
+            ['shortcode', 'modal', 'slide-in', 'feedback-button'].forEach(type => {
+                if (!data.settings.display.subTypeData[type]) data.settings.display.subTypeData[type] = {};
+            });
+
+            const std = data.settings.display.subTypeData;
+
+            // Shortcode
+            const sc = std.shortcode;
+            if (sc.autoEnabled === undefined) sc.autoEnabled = false;
+            if (sc.autoPosition === undefined) sc.autoPosition = "bottom";
+            if (!sc.globalData) sc.globalData = {};
+            if (!sc.globalData.main) sc.globalData.main = { cookieSubmitDays: 30, cookieScope: "domain" };
+            if (!sc.globalData.spacing) sc.globalData.spacing = {
+                padding: { top: "16", right: "16", bottom: "16", left: "16", unit: "px" },
+                margin: { top: "0", right: "auto", bottom: "0", left: "auto", unit: "px" },
+                position: "center"
+            };
+            if (!sc.globalData.design) sc.globalData.design = { customStylesEnabled: false, bgColor: "#ffffff", borderColor: "#ffffff" };
+
+            // Modal & Slide-in
+            ['modal', 'slide-in'].forEach(type => {
+                const st = std[type];
+                if (st.trigger === undefined) st.trigger = "click";
+                if (!st.triggerData) st.triggerData = {};
+                if (!st.triggerData.exitIntent) st.triggerData.exitIntent = { delay: "immediate" };
+                if (!st.triggerData.scroll) st.triggerData.scroll = { type: "end", percent: 50 };
+                if (!st.triggerData.click) st.triggerData.click = { selector: "" };
+
+                if (!st.globalData) st.globalData = {};
+                if (!st.globalData.main) st.globalData.main = { cookieCloseDays: 1, cookieSubmitDays: 30, cookieScope: "domain", showBackdrop: false, closeOnBackdrop: true, closeOnEsc: true };
+                if (!st.globalData.spacing) st.globalData.spacing = { position: "center" };
+                if (!st.globalData.design) st.globalData.design = { headerIndicator: "progress", showFooterText: true, customFooterText: __('admin.frontend.default_footer_text') };
+            });
+
+            // Feedback Button
+            const fb = std['feedback-button'];
+            if (fb.text === undefined) fb.text = "Feedback";
+            if (fb.position === undefined) fb.position = "right-middle";
+            if (fb.customStylesEnabled === undefined) fb.customStylesEnabled = true;
+            if (fb.hideOptionEnabled === undefined) fb.hideOptionEnabled = true;
+            if (fb.bgColor === undefined) fb.bgColor = "#ffffff";
+            if (fb.textColor === undefined) fb.textColor = "#104689";
+            if (fb.borderColor === undefined) fb.borderColor = "#104689";
+            if (fb.hoverBgColor === undefined) fb.hoverBgColor = "#104689";
+            if (fb.hoverTextColor === undefined) fb.hoverTextColor = "#ffffff";
+            if (fb.hoverBorderColor === undefined) fb.hoverBorderColor = "#104689";
+            if (fb.fontSize === undefined) fb.fontSize = 16;
+            if (!fb.globalData) fb.globalData = {};
+            if (!fb.globalData.main) fb.globalData.main = { cookieCloseDays: 1, cookieSubmitDays: 30, cookieScope: "domain", showBackdrop: false, closeOnBackdrop: true, closeOnEsc: true };
+            if (!fb.globalData.spacing) fb.globalData.spacing = { position: "center" };
+            if (!fb.globalData.design) fb.globalData.design = { headerIndicator: "progress", showFooterText: true, customFooterText: __('admin.frontend.default_footer_text') };
+
+            if (!data.settings.tracking) data.settings.tracking = {};
+            const tr = data.settings.tracking;
+            if (tr.enabled === undefined) tr.enabled = true;
+            if (tr.url === undefined) tr.url = true;
+            if (tr.pageTitle === undefined) tr.pageTitle = true;
+            if (tr.referrer === undefined) tr.referrer = true;
+            if (tr.userAgent === undefined) tr.userAgent = true;
+
+            if (!data.targeting) data.targeting = {};
+            if (!data.targeting["in-content"]) {
+                data.targeting["in-content"] = { andRules: [], orRules: [] };
+            }
+            if (!data.targeting.shortcode) {
+                data.targeting.shortcode = { andRules: [], orRules: [] };
+            }
+            if (!data.targeting.overlay) {
+                data.targeting.overlay = { andRules: [], orRules: [] };
+            }
+
+            return data;
+        },
+        cleanupExpiredLocalStorage: function() {
+            try {
+                const now = Date.now();
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith("responsino_builder_")) {
+                        const val = localStorage.getItem(key);
+                        if (val) {
+                            try {
+                                const parsed = JSON.parse(val);
+                                if (parsed && parsed.expiry !== undefined && now > parsed.expiry) {
+                                    keysToRemove.push(key);
+                                }
+                            } catch (err) {
+                                // Ignore JSON parse errors for non-builder objects
+                            }
+                        }
+                    }
+                }
+                keysToRemove.forEach(key => localStorage.removeItem(key));
+                if (keysToRemove.length > 0) {
+                    console.log("Expired localStorage entries cleaned up:", keysToRemove);
+                }
+            } catch(e) {
+                console.warn("LocalStorage cleanup error:", e);
+            }
+        },
+        loadStateFromLocalStorage: function() {
+            try {
+                const rawKey = responsinoFormBuilder.formId !== 0 ? `${responsinoFormBuilder.formId}_${responsinoFormBuilder.formUpdated}_${responsinoFormBuilder.pluginVersion}` : `0_${responsinoFormBuilder.pluginVersion}`;
+                const storageKey = `responsino_builder_state_${utils.base64(rawKey)}`;
+
+                const stored = localStorage.getItem(storageKey);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (parsed) {
+                        let dataToUse = parsed;
+                        if (parsed.value !== undefined && parsed.expiry !== undefined) {
+                            if (Date.now() > parsed.expiry) {
+                                localStorage.removeItem(storageKey);
+                                return;
+                            }
+                            dataToUse = parsed.value;
+                        }
+
+                        if (dataToUse && dataToUse.steps && parseInt(dataToUse.id) === parseInt(state.id)) {
+                            const validated = api.validateFormState(dataToUse);
+                            Object.assign(state, validated);
+                        }
+                    }
+                }
+            } catch(e) {
+                console.warn("Storage load failed, reverting to defaults:", e);
+            } finally {
+                history.setLastKnownStateStr(JSON.stringify(state.steps));
+            }
+        }
+    };
+
+    // 7. RENDERING & CANVAS ENGINE
+    const engine = {
+        applyElementChange: function(callback) {
+            if (!uiState.selectedElementId) return;
+
+            let element = state.steps.step1.find(it => it.id === uiState.selectedElementId);
+            let stepNum = 1;
+            if (!element) {
+                if (state.steps.step2 && !Array.isArray(state.steps.step2)) {
+                    for (const triggerId in state.steps.step2) {
+                        const found = state.steps.step2[triggerId].find(it => it.id === uiState.selectedElementId);
+                        if (found) {
+                            element = found;
+                            stepNum = 2;
+                            break;
+                        }
+                    }
+                } else {
+                    element = engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                    stepNum = 2;
+                }
+            }
+
+            if (element) {
+                callback(element);
+                engine.renderStepCanvas(stepNum);
+                if (['rating', 'thumbs', 'smileys', 'nps', 'button', 'dropdown'].includes(element.type)) {
+                    engine.renderStepCanvas(stepNum);
+                }
+                api.saveStateToLocalStorage();
+                engine.renderSplitPreview();
+            }
+        },
+        openProUpgradeModal: function() {
+            const modal = document.getElementById("responsino-modal-pro-upgrade");
+            if (modal) {
+                modal.classList.add("responsino-modal-overlay-active");
+            }
+        },
+        initProUpgradeModal: function() {
+            const modal = document.getElementById("responsino-modal-pro-upgrade");
+            if (!modal) return;
+
+            const closeBtn = document.getElementById("responsino-btn-close-pro-modal");
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+            const cancelBtn = document.getElementById("responsino-btn-close-pro-cancel");
+            if (cancelBtn) {
+                cancelBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+
+            // Set upgrade link from config
+            const upgradeCtaBtn = document.getElementById("responsino-btn-pro-upgrade-cta");
+            if (upgradeCtaBtn && config.upgradeUrl) {
+                upgradeCtaBtn.setAttribute("href", config.upgradeUrl);
+            }
+
+            const lockedFeatures = document.querySelectorAll(".responsino-pro-feature-hint");
+            lockedFeatures.forEach(feat => {
+                feat.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    engine.openProUpgradeModal();
+                }, true);
+            });
+
+            const addUrlFilterBtn = document.getElementById("responsino-btn-add-url-filter");
+            if (addUrlFilterBtn) {
+                addUrlFilterBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    engine.openProUpgradeModal();
+                }, true);
+            }
+        },
+        getActiveStep2TriggerId: function() {
+            if (state.activeStep2TriggerId) {
+                const triggerExists = state.steps.step1.find(
+                    (it) => it.id === state.activeStep2TriggerId && (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled
+                );
+                if (triggerExists) return state.activeStep2TriggerId;
+            }
+            const firstTrigger = state.steps.step1.find(
+                (it) => (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled
+            );
+            if (firstTrigger) {
+                state.activeStep2TriggerId = firstTrigger.id;
+                return firstTrigger.id;
+            }
+            return null;
+        },
+        getStep2List: function(triggerId) {
+            if (!triggerId) triggerId = engine.getActiveStep2TriggerId();
+            if (!triggerId) return [];
+            return utils.getStep2List(state, triggerId);
+        },
+        isOptionStep2ActiveOnStep1: function() {
+            return utils.isOptionStep2ActiveOnStep1(state);
+        },
+        renderStepCanvas: function(stepNum) {
+            if (this._isRendering) return;
+            this._isRendering = true;
+            try {
+                const list = stepNum === 1 ? state.steps.step1 : engine.getStep2List();
+                const canvas = stepNum === 1 ? elCanvasStep1 : elCanvasStep2;
+
+                canvas.innerHTML = '';
+                const isStep2Enabled = engine.isOptionStep2ActiveOnStep1();
+
+                if (stepNum === 2) {
+                    if (!isStep2Enabled) {
+                        if (elStep2DisabledNotifier) {
+                            elStep2DisabledNotifier.style.display = "flex";
+                            canvas.appendChild(elStep2DisabledNotifier);
+                        }
+                        if (elStep2EnabledEmptyNotifier) elStep2EnabledEmptyNotifier.style.display = "none";
+                        elStep2Card.style.opacity = "0.55";
+                        if (elStep2Count) {
+                            elStep2Count.innerHTML = __("admin.builder.element_count_plural", { count: 0 });
+                        }
+                        return;
+                    } else {
+                        elStep2Card.style.opacity = "1";
+                        if (elStep2DisabledNotifier) elStep2DisabledNotifier.style.display = "none";
+                        if (elStep2EnabledEmptyNotifier) {
+                            elStep2EnabledEmptyNotifier.style.display = "flex";
+                            if (list.length === 0) canvas.appendChild(elStep2EnabledEmptyNotifier);
+                        }
+                    }
+                } else if (list.length === 0 && elEmptyNotifierStep1) {
+                    canvas.appendChild(elEmptyNotifierStep1);
+                }
+
+                if (stepNum === 1) {
+                    elStep1Count.textContent = list.length === 1
+                        ? __("admin.builder.element_count_singular", { count: 1 })
+                        : __("admin.builder.element_count_plural", { count: list.length });
+                } else {
+                    const activeTriggerId = engine.getActiveStep2TriggerId();
+                    const activeTrigger = state.steps.step1.find(it => it.id === activeTriggerId);
+                    const step2Triggers = state.steps.step1.filter(it => (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled);
+
+                    let html = list.length === 1
+                        ? __("admin.builder.element_count_singular", { count: 1 })
+                        : __("admin.builder.element_count_plural", { count: list.length });
+                    if (activeTrigger) html += ` - ${__("admin.builder.active_for", { label: `<strong>${utils.escapeHtml(activeTrigger.label)}</strong>` })}`;
+                    if (step2Triggers.length > 1) {
+                        html += ` <span style="margin: 0 6px; color: var(--responsino-border);">|</span> <button type="button" class="responsino-btn" style="font-size:10px; padding: 2px 8px; height:20px;" id="responsino-step2-trigger-switcher-btn"><i class="fas fa-exchange-alt"></i> ${__("admin.builder.switch_recipient")}</button>`;
+                    }
+                    elStep2Count.innerHTML = html;
+
+                    const switcherBtn = document.getElementById("responsino-step2-trigger-switcher-btn");
+                    if (switcherBtn) {
+                        switcherBtn.addEventListener("click", (e) => {
+                            e.stopPropagation();
+                            let selectHtml = `<select id="responsino-step2-trigger-dropdown" class="responsino-form-select" style="font-size:11px; padding:2px; width:auto; display:inline-block; height:24px;">`;
+                            step2Triggers.forEach(tr => {
+                                selectHtml += `<option value="${tr.id}" ${tr.id === activeTriggerId ? 'selected' : ''}>${utils.escapeHtml(tr.label)}</option>`;
+                            });
+                            selectHtml += `</select>`;
+                            switcherBtn.outerHTML = selectHtml;
+
+                            const dropdown = document.getElementById("responsino-step2-trigger-dropdown");
+                            dropdown.addEventListener("change", (ev) => {
+                                state.activeStep2TriggerId = ev.target.value;
+                                engine.renderStepCanvas(2);
+                                api.saveStateToLocalStorage();
+                            });
+                            dropdown.addEventListener("blur", () => engine.renderStepCanvas(2));
+                            dropdown.focus();
+                        });
+                    }
+                }
+
+                list.forEach((item) => {
+                    const el = document.createElement("div");
+                    el.className = "responsino-rendered-form-element";
+                    const w = (item.settings && item.settings.width) || "100%";
+                    el.classList.add(`responsino-rendered-width-${w.replace("%", "")}`);
+                    el.setAttribute("draggable", "true");
+                    el.id = `canvas-item-${item.id}`;
+                    el.dataset.id = item.id;
+                    el.dataset.step = stepNum;
+
+                    if (uiState.selectedElementId === item.id) el.className += " responsino-rendered-form-element-selected";
+
+                    const handle = document.createElement("div");
+                    handle.className = "responsino-element-drag-handle";
+                    handle.innerHTML = `<i class="fas fa-grip-vertical"></i>`;
+                    el.appendChild(handle);
+
+                    const contentWrap = document.createElement("div");
+                    contentWrap.className = "responsino-rendered-field-details-wrap";
+
+                    const htmlMarkup = fields.render(item, 'builder', state);
+                    contentWrap.innerHTML = htmlMarkup;
+                    el.appendChild(contentWrap);
+
+                    el.querySelectorAll(".responsino-step2-connection-badge").forEach(badge => {
+                        badge.addEventListener("click", (e) => {
+                            e.stopPropagation();
+                            state.activeStep2TriggerId = item.id;
+                            controller.setStepFocus(2);
+                            engine.renderStepCanvas(2);
+                        });
+                    });
+
+                    el.addEventListener("contextmenu", (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        controller.showContextMenu(e, item, stepNum);
+                    });
+
+                    const controls = document.createElement("div");
+                    controls.className = "responsino-element-controls";
+
+                    const btnMove = document.createElement("button");
+                    btnMove.className = "responsino-el-control-btn responsino-btn-el-move";
+                    btnMove.title = stepNum === 1 ? __("admin.builder.move_to_step2") : __("admin.builder.move_to_step1");
+                    btnMove.innerHTML = stepNum === 1 ? `<i class="fas fa-arrow-right"></i>` : `<i class="fas fa-arrow-left"></i>`;
+                    btnMove.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        controller.moveElementBetweenSteps(item.id, stepNum);
+                    });
+
+                    const btnDuplicate = document.createElement("button");
+                    btnDuplicate.className = "responsino-el-control-btn responsino-btn-el-duplicate";
+                    btnDuplicate.title = __("admin.builder.duplicate_element");
+                    btnDuplicate.innerHTML = `<i class="fas fa-copy"></i>`;
+                    btnDuplicate.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        controller.duplicateElementInState(item.id, stepNum);
+                    });
+
+                    const btnDelete = document.createElement("button");
+                    btnDelete.className = "responsino-el-control-btn responsino-btn-el-delete";
+                    btnDelete.title = __("admin.builder.delete_element");
+                    btnDelete.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+                    btnDelete.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        controller.deleteElementFromState(item.id, stepNum);
+                    });
+
+                    controls.appendChild(btnMove);
+                    controls.appendChild(btnDuplicate);
+                    controls.appendChild(btnDelete);
+                    el.appendChild(controls);
+
+                    el.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        engine.selectElementForEditing(item.id, stepNum);
+                    });
+
+                    el.addEventListener("dragstart", (e) => {
+                        e.dataTransfer.setData("text/plain", item.id);
+                        e.dataTransfer.setData("source-step", stepNum);
+                        uiState.localDragSourceStep = stepNum;
+                        el.style.opacity = "0.4";
+                    });
+
+                    el.addEventListener("dragend", () => {
+                        el.style.opacity = "1";
+                        uiState.localDragSourceStep = null;
+                        controller.removeDragPlaceholders();
+                        document.querySelectorAll(".responsino-step-canvas-droppable").forEach(dk => dk.classList.remove("responsino-step-canvas-dragover"));
+                    });
+
+                    if (item.settings && item.settings.clearBefore) {
+                        const breakEl = document.createElement("div");
+                        breakEl.className = "responsino-rendered-break";
+                        canvas.appendChild(breakEl);
+                    }
+
+                    canvas.appendChild(el);
+                });
+
+                if (uiState.isSplitPreviewVisible) {
+                    engine.renderSplitPreview();
+                }
+                api.checkSubmitButtonLogic();
+            } finally {
+                this._isRendering = false;
+            }
+        },
+        selectElementForEditing: function(id, stepNum) {
+            uiState.selectedElementId = id;
+            controller.switchSidebarTab("field-options");
+            document.querySelectorAll(".responsino-rendered-form-element").forEach(el => el.classList.remove("responsino-rendered-form-element-selected"));
+            const targetEl = document.getElementById(`canvas-item-${id}`);
+            if (targetEl) targetEl.classList.add("responsino-rendered-form-element-selected");
+
+            if (stepNum === 1) {
+                const item = state.steps.step1.find(it => it.id === id);
+                if (item && ['rating', 'button'].includes(item.type) && item.settings.step2Enabled) {
+                    if (state.activeStep2TriggerId !== id) {
+                        state.activeStep2TriggerId = id;
+                        engine.renderStepCanvas(2);
+                    }
+                }
+            }
+
+            engine.updateOptionsPanel();
+        },
+        updateOptionsPanel: function() {
+            if (!uiState.selectedElementId) {
+                elOptionsEmptyNotice.style.display = "block";
+                elOptionsFormContainer.style.display = "none";
+                return;
+            }
+
+            let element = state.steps.step1.find(it => it.id === uiState.selectedElementId);
+            let stepNum = 1;
+            if (!element) {
+                if (state.steps.step2 && !Array.isArray(state.steps.step2)) {
+                    for (const triggerId in state.steps.step2) {
+                        const found = state.steps.step2[triggerId].find(it => it.id === uiState.selectedElementId);
+                        if (found) {
+                            element = found;
+                            stepNum = 2;
+                            state.activeStep2TriggerId = triggerId;
+                            break;
+                        }
+                    }
+                } else {
+                    element = engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                    stepNum = 2;
+                }
+            }
+
+            if (!element) {
+                uiState.selectedElementId = null;
+                elOptionsEmptyNotice.style.display = "block";
+                elOptionsFormContainer.style.display = "none";
+                return;
+            }
+
+            elOptionsEmptyNotice.style.display = "none";
+            elOptionsFormContainer.style.display = "flex";
+
+            elOptElementId.value = element.id;
+            elOptElementIdBadge.textContent = `ID: #${element.id}`;
+
+            const fieldConfig = config.FIELD_TYPES_CONFIG[element.type];
+            elOptElementTypeBadge.textContent = fieldConfig ? fieldConfig.name.toUpperCase() : "ELEMENT";
+
+            const supported = fieldConfig ? fieldConfig.supportedSettings : [];
+            const toggleFieldGroup = (groupEl, fieldName) => {
+                if (groupEl) groupEl.style.display = supported.includes(fieldName) ? "flex" : "none";
+            };
+
+            toggleFieldGroup(document.getElementById("responsino-opt-group-label"), "label");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-desc-text"), "label");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-placeholder"), "placeholder");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-button-type"), "buttonType");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-icon"), "icon");
+            if (element.type === "chips") {
+                const groupIcon = document.getElementById("responsino-opt-group-icon");
+                if (groupIcon) groupIcon.style.display = "none";
+            }
+            toggleFieldGroup(document.getElementById("responsino-opt-group-icon-position"), "iconPosition");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-rating-stars"), "stars");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-font-size"), "fontSize");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-alignment"), "alignment");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-h-type"), "hType");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-textFormatting"), "textFormatting");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-required"), "required");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-hide-label"), "hideLabel");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-full-width"), "fullWidth");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-width"), "width");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-clear-before"), "clearBefore");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-textColor"), "textColor");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-button-colors"), "buttonColors");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-border-radius"), "borderRadius");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-choicesList"), "choicesList");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-name-type"), "nameType");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-name-placeholders"), "nameType");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-email-confirmation"), "emailConfirmation");
+            toggleFieldGroup(document.getElementById("responsino-opt-group-email-placeholders"), "emailConfirmation");
+
+            if (element.type === "name") {
+                const phMiddle = document.getElementById("responsino-opt-group-name-placeholders").querySelector("#responsino-opt-name-ph-middle");
+                if (phMiddle) {
+                    phMiddle.style.display = element.settings.nameType === 'first_middle_last' ? "block" : "none";
+                    phMiddle.parentElement.parentElement.style.display = "block"; // Ensure parent group is visible
+                }
+                const phLast = document.getElementById("responsino-opt-group-name-placeholders").querySelector("#responsino-opt-name-ph-last");
+                if (phLast) phLast.style.display = element.settings.nameType === 'full' ? "none" : "block";
+
+                // Sync values
+                const phs = element.settings.placeholders || {};
+
+                let phsFirst = phs.first || '';
+                if (element.settings.nameType === 'full' && phsFirst === '') {
+                    phsFirst = __("fields.name.name");
+                }
+
+                document.getElementById("responsino-opt-name-ph-first").value = phsFirst;
+                document.getElementById("responsino-opt-name-ph-middle").value = phs.middle || '';
+                document.getElementById("responsino-opt-name-ph-last").value = phs.last || '';
+            }
+            // Ensure placeholder group visibility is correct if it is a name type field
+            const phGroupName = document.getElementById("responsino-opt-group-name-placeholders");
+            if (phGroupName) {
+                phGroupName.style.display = element.type === "name" ? "block" : "none";
+            }
+
+            if (element.type === "email") {
+                // Sync values
+                const phs = element.settings.placeholders || {};
+                document.getElementById("responsino-opt-email-ph-main").value = phs.main || '';
+                document.getElementById("responsino-opt-email-ph-confirm").value = phs.confirm || '';
+                document.getElementById("responsino-opt-email-confirmation").checked = element.settings.emailConfirmation || false;
+            }
+            // Ensure placeholder group visibility is correct if it is an email type field
+            const phGroupEmail = document.getElementById("responsino-opt-group-email-placeholders");
+            if (phGroupEmail) {
+                phGroupEmail.style.display = element.type === "email" ? "block" : "none";
+            }
+            if (supported.includes("choicesList")) {
+                const choicesContainer = document.getElementById("responsino-opt-choices-list-container");
+                if (choicesContainer) {
+                    fields.setupChoicesListControl(choicesContainer, element, (cb) => engine.applyElementChange(cb), Sortable);
+                }
+            }
+
+            const elGroupStep2 = document.getElementById("responsino-opt-group-step2");
+            if (elGroupStep2) {
+                elGroupStep2.style.display = (stepNum === 1 && supported.includes("step2Enabled")) ? "flex" : "none";
+            }
+
+            config.DECLARATIVE_OPTION_BINDINGS.forEach(binding => {
+                if (!binding.element) return;
+                if (binding.condition && !binding.condition(element)) return;
+
+                let value = utils.getDeepState(element, binding.key);
+                if (value === undefined) value = binding.defaultValue;
+
+                if (binding.type === "bool") {
+                    binding.element.checked = value || false;
+                    const formattingLabel = binding.element.closest(".responsino-formatting-btn");
+                    if (formattingLabel) {
+                        formattingLabel.classList.toggle("active", value || false);
+                    }
+                } else {
+                    binding.element.value = value !== undefined ? value : "";
+                }
+            });
+
+            const syncSliderNode = (value, slider, input, reset, min, max, step, defVal) => {
+                if (!slider || !input || !reset) return;
+                if (value === "inherit" || value === undefined || value === "") {
+                    slider.value = defVal;
+                    input.value = "";
+                    input.placeholder = defVal;
+                    reset.style.opacity = "0.5";
+                    reset.style.pointerEvents = "none";
+                } else {
+                    const num = parseFloat(value) || defVal;
+                    const clamped = Math.max(min, Math.min(max, num));
+                    slider.value = clamped;
+                    input.value = step >= 1 ? Math.round(clamped) : parseFloat(clamped.toFixed(1));
+                    input.placeholder = "";
+                    reset.style.opacity = "1";
+                    reset.style.pointerEvents = "auto";
+                }
+            };
+
+            // Sync custom font-size slider & input
+            if (supported.includes("fontSize")) {
+                let fsValue = element.settings.fontSize;
+                if (fsValue === undefined || fsValue === "") fsValue = "inherit";
+
+                let defSize = 16;
+                if (element.type === 'headline') defSize = 20;
+                else if (element.type === 'description') defSize = 14;
+
+                syncSliderNode(
+                    fsValue,
+                    document.getElementById("responsino-opt-font-size-slider"),
+                    document.getElementById("responsino-opt-font-size-input"),
+                    document.getElementById("responsino-opt-font-size-reset"),
+                    6, 48, 1, defSize
+                );
+            }
+
+            // Sync custom line-height slider & input
+            if (supported.includes("lineHeight")) {
+                let lhValue = element.settings.lineHeight;
+                if (lhValue === undefined || lhValue === "") lhValue = "inherit";
+
+                let defLH = 1.4;
+                if (element.type === 'headline') defLH = 1.2;
+                else if (element.type === 'description') defLH = 1.5;
+
+                syncSliderNode(
+                    lhValue,
+                    document.getElementById("responsino-opt-line-height-slider"),
+                    document.getElementById("responsino-opt-line-height-input"),
+                    document.getElementById("responsino-opt-line-height-reset"),
+                    0.8, 3.0, 0.1, defLH
+                );
+            }
+
+            // Sync custom border-radius slider & input
+            if (supported.includes("borderRadius")) {
+                let brValue = element.settings.borderRadius;
+                if (brValue === undefined || brValue === "") brValue = "inherit";
+
+                let defBR = 6;
+
+                syncSliderNode(
+                    brValue,
+                    document.getElementById("responsino-opt-border-radius-slider"),
+                    document.getElementById("responsino-opt-border-radius-input"),
+                    document.getElementById("responsino-opt-border-radius-reset"),
+                    0, 100, 1, defBR
+                );
+            }
+
+            if (element.type === 'description') {
+                document.getElementById("responsino-opt-group-label").style.display = "none";
+            } else {
+                document.getElementById("responsino-opt-group-desc-text").style.display = "none";
+            }
+
+            // Sync customColors settings
+            const hasCustomColors = supported.includes("customColors");
+            const elColorsGroup = document.getElementById("responsino-opt-group-button-colors");
+            if (elColorsGroup) {
+                elColorsGroup.style.display = hasCustomColors ? "flex" : "none";
+            }
+
+            if (hasCustomColors) {
+                const customColorsTitleEl = document.getElementById("responsino-opt-custom-colors-title");
+                if (customColorsTitleEl && fieldConfig) {
+                    customColorsTitleEl.innerHTML = `<i class="fas fa-palette" style="color: var(--responsino-primary);"></i> ${__("admin.builder.customize_colors", { name: fieldConfig.name })}`;
+                }
+
+                const colorsEnabled = element.settings.customColorsEnabled || false;
+                elOptBtnColorsSubpanel.style.display = colorsEnabled ? "flex" : "none";
+
+                // Sync the active flag checkbox
+                elOptBtnCustomColorsEnabled.checked = colorsEnabled;
+
+                // Hide/show specific color rows based on config.FIELD_TYPES_CONFIG[element.type].customColorTypes
+                const supportedTypes = fieldConfig.customColorTypes || [];
+
+                const rowBg = document.getElementById("responsino-opt-colors-group-bg");
+                const rowText = document.getElementById("responsino-opt-colors-group-text");
+                const rowBorder = document.getElementById("responsino-opt-colors-group-border");
+                const rowHoverBg = document.getElementById("responsino-opt-colors-group-hover-bg");
+                const rowHoverText = document.getElementById("responsino-opt-colors-group-hover-text");
+                const rowHoverBorder = document.getElementById("responsino-opt-colors-group-hover-border");
+
+                const headerStandard = document.getElementById("responsino-opt-colors-standard-header");
+                const headerHover = document.getElementById("responsino-opt-colors-hover-header");
+
+                if (rowBg) {
+                    rowBg.style.display = supportedTypes.includes("bgColor") ? "block" : "none";
+                    const lblBg = rowBg.querySelector("label");
+                    if (lblBg) lblBg.textContent = element.type === 'radio' ? __( 'admin.builder.accent_color' ) : __( 'admin.builder.background_color' );
+                }
+                if (rowText) rowText.style.display = supportedTypes.includes("textColor") ? "block" : "none";
+                if (rowBorder) rowBorder.style.display = supportedTypes.includes("borderColor") ? "block" : "none";
+                if (rowHoverBg) rowHoverBg.style.display = supportedTypes.includes("hoverBgColor") ? "block" : "none";
+                if (rowHoverText) rowHoverText.style.display = supportedTypes.includes("hoverTextColor") ? "block" : "none";
+                if (rowHoverBorder) rowHoverBorder.style.display = supportedTypes.includes("hoverBorderColor") ? "block" : "none";
+
+                const hasStandard = supportedTypes.includes("bgColor") || supportedTypes.includes("textColor") || supportedTypes.includes("borderColor");
+                const hasHover = supportedTypes.includes("hoverBgColor") || supportedTypes.includes("hoverTextColor") || supportedTypes.includes("hoverBorderColor");
+
+                if (headerStandard) {
+                    headerStandard.style.display = hasStandard ? "block" : "none";
+                    headerStandard.textContent = element.type === 'radio' ? __( 'admin.builder.colors' ) : __( 'admin.builder.standard_state' );
+                }
+                if (headerHover) headerHover.style.display = hasHover ? "block" : "none";
+
+                // Determine default values based on element type
+                let defaultBg = "#104689";
+                let defaultText = "#222222";
+                let defaultBorder = "#104689";
+                let defaultHoverBg = "#0b3363";
+                let defaultHoverText = "#222222";
+                let defaultHoverBorder = "#0b3363";
+
+                if (element.type === 'button') {
+                    defaultBg = (element.settings.buttonType === 'back' ? '#e2e8f0' : (state.settings.styles.accentColor || '#104689'));
+                    defaultText = element.settings.buttonType === 'back' ? '#334155' : '#ffffff';
+                    defaultBorder = element.settings.buttonType === 'back' ? '#cbd5e1' : (state.settings.styles.accentColor || '#104689');
+                    
+                    defaultHoverBg = (element.settings.buttonType === 'back' ? '#cbd5e1' : (state.settings.styles.secondaryColor || '#0b3363'));
+                    defaultHoverText = element.settings.buttonType === 'back' ? '#334155' : '#ffffff';
+                    defaultHoverBorder = (element.settings.buttonType === 'back' ? '#94a3b8' : (state.settings.styles.secondaryColor || '#0b3363'));
+                } else if (element.type === 'chips') {
+                    defaultBg = "#f1f5f9";
+                    defaultText = "#334155";
+                    defaultBorder = "#e2e8f0";
+
+                    defaultHoverBg = state.settings.styles.secondaryColor || '#0b3363';
+                    defaultHoverText = '#ffffff';
+                    defaultHoverBorder = state.settings.styles.secondaryColor || '#0b3363';
+                } else if (element.type === 'radio') {
+                    defaultBg = state.settings.styles.accentColor || '#104689';
+                    defaultText = "#222222";
+                    defaultBorder = state.settings.styles.accentColor || '#104689';
+                } else if (element.type === 'rating') {
+                    defaultBg = "#ffffff";
+                    defaultText = '#cbd5e1';
+                    defaultBorder = "#e2e8f0";
+                    
+                    defaultHoverBg = "#f8fafc";
+                    defaultHoverText = state.settings.styles.secondaryColor || '#0b3363';
+                    defaultHoverBorder = "#cbd5e1";
+                } else {
+                    // For headline or description, standard defaults
+                    defaultBg = "#ffffff";
+                    defaultText = element.type === 'headline' ? '#222222' : '#6c757d';
+                    defaultBorder = "#e2e8f0";
+                    
+                    defaultHoverBg = "#ffffff";
+                    defaultHoverText = element.type === 'headline' ? '#222222' : '#6c757d';
+                    defaultHoverBorder = "#e2e8f0";
+                }
+
+                config.COLOR_PICKER_BINDINGS.forEach(binding => {
+                    const isHover = binding.key.toLowerCase().includes("hover");
+                    let defVal = isHover ? defaultHoverBg : defaultBg;
+                    if (binding.key.toLowerCase().includes("textcolor")) defVal = isHover ? defaultHoverText : defaultText;
+                    if (binding.key.toLowerCase().includes("bordercolor")) defVal = isHover ? defaultHoverBorder : defaultBorder;
+
+                    const val = element.settings[binding.key] || defVal;
+                    utils.syncColorValue(binding.picker, binding.hexInput, val);
+                });
+            }
+        },
+        openWidgetPreview: function() {
+            const modalContainer = document.getElementById("responsino-preview-simulator-container-modal-box");
+            if (!modalContainer) return;
+
+            const modalOverlay = document.getElementById("responsino-modal-preview");
+
+            utils.renderFormSimulator(modalContainer, state, PreviewEngine, {
+                id: 'modal-preview',
+                header: {
+                    left: ['title'],
+                    right: ['viewports', 'refresh', 'close'],
+                    title: __('admin.preview.widget_title')
+                },
+                onClose: () => {
+                    if (modalOverlay) modalOverlay.classList.remove("responsino-modal-overlay-active");
+                }
+            });
+
+            if (modalOverlay) modalOverlay.classList.add("responsino-modal-overlay-active");
+        },
+        updateDisplayTypeUI: function() {
+            if (window.responsinoTemplateDisplayController && typeof window.responsinoTemplateDisplayController.syncUI === "function") {
+                window.responsinoTemplateDisplayController.syncUI();
+            }
+        },
+        renderSplitPreview: function(force = false) {
+            const containerEl = document.getElementById("responsino-preview-simulator-container-fields");
+            if (!containerEl) return;
+
+            // Verhindere mehrfaches Rendern, außer force ist true
+            if (!force && containerEl.dataset.isRendering === "true") {
+                return;
+            }
+
+            containerEl.dataset.isRendering = "true";
+            containerEl.innerHTML = ""; // Container leeren vor dem Rendern
+
+            utils.renderFormSimulator(containerEl, state, PreviewEngine, {
+                mode: 'in-content',
+                subType: 'form-only',
+                showMockArticle: false,
+                header: {
+                    left: ['title'],
+                    right: ['refresh', 'close'],
+                    title: __('admin.preview.form_preview_title')
+                },
+                onClose: () => {
+                    engine.toggleSplitPreview(false);
+                }
+            }).finally(() => {
+                delete containerEl.dataset.isRendering;
+            });
+        },
+        toggleSplitPreview: function(forceState) {
+            if (typeof forceState === 'boolean') {
+                uiState.isSplitPreviewVisible = forceState;
+            } else {
+                uiState.isSplitPreviewVisible = !uiState.isSplitPreviewVisible;
+            }
+
+            localStorage.setItem("responsino_split_preview_visible", uiState.isSplitPreviewVisible ? "true" : "false");
+
+            if (uiState.isSplitPreviewVisible) {
+                if (elSplitPreviewColumn) elSplitPreviewColumn.style.display = "flex";
+                if (elBtnToggleSplitPreview) elBtnToggleSplitPreview.classList.add("responsino-btn-primary");
+                engine.renderSplitPreview();
+            } else {
+                if (elSplitPreviewColumn) elSplitPreviewColumn.style.display = "none";
+                if (elBtnToggleSplitPreview) elBtnToggleSplitPreview.classList.remove("responsino-btn-primary");
+            }
+        }
+    };
+
+    // 8. CONTROLLER & INTERRUPT LOGIC
+    let activeContextMenu = null;
+
+    const controller = {
+        closeContextMenu: function() {
+            if (activeContextMenu) {
+                activeContextMenu.remove();
+                activeContextMenu = null;
+            }
+        },
+        showContextMenu: function(e, item, stepNum) {
+            controller.closeContextMenu();
+
+            const menu = document.createElement("div");
+            menu.className = "responsino-custom-context-menu";
+            menu.style.position = "fixed";
+            menu.style.left = `${e.clientX}px`;
+            menu.style.top = `${e.clientY}px`;
+            menu.style.zIndex = "999999";
+
+            const editOption = document.createElement("div");
+            editOption.className = "responsino-context-menu-item";
+            editOption.innerHTML = `<i class="fas fa-edit"></i> <span>${__("admin.builder.edit_element")}</span>`;
+            editOption.addEventListener("click", () => {
+                controller.closeContextMenu();
+                engine.selectElementForEditing(item.id, stepNum);
+            });
+            menu.appendChild(editOption);
+
+            const duplicateOption = document.createElement("div");
+            duplicateOption.className = "responsino-context-menu-item";
+            duplicateOption.innerHTML = `<i class="fas fa-copy"></i> <span>${__("admin.builder.duplicate_element")}</span>`;
+            duplicateOption.addEventListener("click", () => {
+                controller.closeContextMenu();
+                controller.duplicateElementInState(item.id, stepNum);
+            });
+            menu.appendChild(duplicateOption);
+
+            const moveOption = document.createElement("div");
+            moveOption.className = "responsino-context-menu-item";
+            moveOption.innerHTML = stepNum === 1 ? `<i class="fas fa-arrow-right"></i> <span>${__("admin.builder.move_to_step2")}</span>` : `<i class="fas fa-arrow-left"></i> <span>${__("admin.builder.move_to_step1")}</span>`;
+            moveOption.addEventListener("click", () => {
+                controller.closeContextMenu();
+                controller.moveElementBetweenSteps(item.id, stepNum);
+            });
+            menu.appendChild(moveOption);
+
+            const divider = document.createElement("div");
+            divider.className = "responsino-context-menu-divider";
+            menu.appendChild(divider);
+
+            const deleteOption = document.createElement("div");
+            deleteOption.className = "responsino-context-menu-item responsino-context-menu-item-danger";
+            deleteOption.innerHTML = `<i class="fas fa-trash-alt"></i> <span>${__("admin.builder.delete_element")}</span>`;
+            deleteOption.addEventListener("click", () => {
+                controller.closeContextMenu();
+                controller.deleteElementFromState(item.id, stepNum);
+            });
+            menu.appendChild(deleteOption);
+
+            document.body.appendChild(menu);
+            activeContextMenu = menu;
+
+            menu.addEventListener("click", (evt) => evt.stopPropagation());
+
+            const rect = menu.getBoundingClientRect();
+            if (rect.right > window.innerWidth) menu.style.left = `${e.clientX - rect.width}px`;
+            if (rect.bottom > window.innerHeight) menu.style.top = `${e.clientY - rect.height}px`;
+        },
+        moveElementBetweenSteps: function(id, sourceStepNum) {
+            controller.closeContextMenu();
+
+            if (sourceStepNum === 1) {
+                const index = state.steps.step1.findIndex(it => it.id === id);
+                if (index === -1) return;
+
+                const elToMove = state.steps.step1[index];
+                let targetTriggerId = engine.getActiveStep2TriggerId();
+
+                if (!targetTriggerId) {
+                    const candidate = state.steps.step1.find(it => (['rating', 'button'].includes(it.type)));
+                    if (candidate) {
+                        candidate.settings.step2Enabled = true;
+                        state.activeStep2TriggerId = candidate.id;
+                        targetTriggerId = candidate.id;
+                        utils.showToast(__("admin.toast.step2_auto_activated", { label: candidate.label }), "info");
+                    }
+                }
+
+                if (!targetTriggerId) {
+                    utils.showToast(__("admin.toast.step2_requirement_error"), "error");
+                    return;
+                }
+
+                state.steps.step1.splice(index, 1);
+                const list2 = engine.getStep2List(targetTriggerId);
+                list2.push(elToMove);
+
+                controller.setStepFocus(2);
+                if (uiState.selectedElementId === id) {
+                    engine.selectElementForEditing(id, 2);
+                } else {
+                    engine.updateOptionsPanel();
+                }
+
+                engine.renderStepCanvas(1);
+                engine.renderStepCanvas(2);
+                api.saveStateToLocalStorage();
+                utils.showToast(__("admin.toast.moved_to_step2", { label: elToMove.label }), "success");
+
+            } else {
+                let elToMove = null;
+                let foundTriggerId = null;
+                let foundIndex = -1;
+
+                if (state.steps.step2 && !Array.isArray(state.steps.step2)) {
+                    for (const triggerId in state.steps.step2) {
+                        const idx = state.steps.step2[triggerId].findIndex(it => it.id === id);
+                        if (idx !== -1) {
+                            elToMove = state.steps.step2[triggerId][idx];
+                            foundTriggerId = triggerId;
+                            foundIndex = idx;
+                            break;
+                        }
+                    }
+                } else {
+                    const list2 = engine.getStep2List();
+                    const idx = list2.findIndex(it => it.id === id);
+                    if (idx !== -1) {
+                        elToMove = list2[idx];
+                        foundIndex = idx;
+                    }
+                }
+
+                if (!elToMove) return;
+
+                if (foundTriggerId) {
+                    state.steps.step2[foundTriggerId].splice(foundIndex, 1);
+                } else {
+                    engine.getStep2List().splice(foundIndex, 1);
+                }
+
+                state.steps.step1.push(elToMove);
+
+                controller.setStepFocus(1);
+                if (uiState.selectedElementId === id) {
+                    engine.selectElementForEditing(id, 1);
+                } else {
+                    engine.updateOptionsPanel();
+                }
+
+                engine.renderStepCanvas(1);
+                engine.renderStepCanvas(2);
+                api.saveStateToLocalStorage();
+                utils.showToast(__("admin.toast.moved_to_step1", { label: elToMove.label }), "success");
+            }
+        },
+        setStepFocus: function(focusedStepNum) {
+            uiState.activeStepView = focusedStepNum;
+
+            if (focusedStepNum === 1) {
+                elStep1Card.classList.remove("responsino-step-card-shrunken");
+                elStep2Card.classList.add("responsino-step-card-shrunken");
+                elStep1NavToggle.style.display = "none";
+                elStep2NavToggle.style.display = "flex";
+            } else {
+                elStep1Card.classList.add("responsino-step-card-shrunken");
+                elStep2Card.classList.remove("responsino-step-card-shrunken");
+                elStep1NavToggle.style.display = "flex";
+                elStep2NavToggle.innerHTML = `<i class="fas fa-compress-alt"></i> ${__("admin.builder.back_to_overview")}`;
+            }
+        },
+        deleteElementFromState: function(id, stepNum) {
+            const list = stepNum === 1 ? state.steps.step1 : engine.getStep2List();
+            const index = list.findIndex(item => item.id === id);
+            if (index !== -1) {
+                list.splice(index, 1);
+                if (uiState.selectedElementId === id) {
+                    uiState.selectedElementId = null;
+                    engine.updateOptionsPanel();
+                }
+                if (stepNum === 1) {
+                    if (state.steps.step2 && typeof state.steps.step2 === "object" && !Array.isArray(state.steps.step2)) {
+                        if (state.steps.step2[id]) {
+                            delete state.steps.step2[id];
+                        }
+                    }
+                    if (state.activeStep2TriggerId === id) {
+                        state.activeStep2TriggerId = '';
+                        engine.getActiveStep2TriggerId();
+                    }
+                }
+                engine.renderStepCanvas(stepNum);
+                if (stepNum === 1) engine.renderStepCanvas(2);
+                utils.showToast(__("admin.toast.deleted"), "info");
+                api.saveStateToLocalStorage();
+            }
+        },
+        duplicateElementInState: function(id, stepNum) {
+            const list = stepNum === 1 ? state.steps.step1 : engine.getStep2List();
+            const index = list.findIndex(item => item.id === id);
+            if (index !== -1) {
+                const original = list[index];
+                const copy = JSON.parse(JSON.stringify(original));
+                copy.id = `responsino-el-${Date.now()}`;
+
+                list.splice(index + 1, 0, copy);
+                engine.renderStepCanvas(stepNum);
+                if (stepNum === 1) engine.renderStepCanvas(2);
+                engine.selectElementForEditing(copy.id, stepNum);
+                utils.showToast(__("admin.toast.duplicated"), "success");
+                api.saveStateToLocalStorage();
+            }
+        },
+        handleSidebarFieldClick: function(type) {
+            const fieldConfig = config.FIELD_TYPES_CONFIG[type];
+            if (!fieldConfig) return;
+
+            const newField = fields.createDefaultElement(type, fieldConfig.defaultLabel);
+            const newId = newField.id;
+
+            if (uiState.activeStepView === 2 && engine.isOptionStep2ActiveOnStep1()) {
+                engine.getStep2List().push(newField);
+                engine.renderStepCanvas(2);
+                engine.selectElementForEditing(newId, 2);
+            } else {
+                state.steps.step1.push(newField);
+                engine.renderStepCanvas(1);
+                engine.selectElementForEditing(newId, 1);
+            }
+
+            utils.showToast(__("admin.toast.added", { name: fieldConfig.name }), "success");
+            api.saveStateToLocalStorage();
+        },
+        getOrCreatePlaceholder: function() {
+            let existing = document.querySelector(".responsino-drag-placeholder");
+            if (!existing) {
+                existing = document.createElement("div");
+                existing.className = "responsino-drag-placeholder responsino-rendered-form-element";
+            }
+            return existing;
+        },
+        getDragAfterElement: function(container, y) {
+            const draggableElements = [...container.querySelectorAll('.responsino-rendered-form-element:not(.responsino-drag-placeholder)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        },
+        removeDragPlaceholders: function() {
+            document.querySelectorAll(".responsino-drag-placeholder").forEach(item => item.remove());
+        },
+        initDragAndDropEngine: function() {
+            const draggableItems = elDraggableStoreGrid.querySelectorAll(".responsino-draggable-field-item");
+            draggableItems.forEach(item => {
+                item.addEventListener("dragstart", (e) => {
+                    const type = item.dataset.type;
+                    const fieldConfig = config.FIELD_TYPES_CONFIG[type];
+
+                    e.dataTransfer.setData("new-field-type", item.dataset.type);
+                    e.dataTransfer.effectAllowed = "copy";
+                });
+            });
+
+            const droppables = [elCanvasStep1, elCanvasStep2];
+
+            droppables.forEach(droppable => {
+                const stepNum = parseInt(droppable.dataset.step);
+
+                droppable.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+                    if (stepNum === 2 && !engine.isOptionStep2ActiveOnStep1()) return;
+
+                    droppable.classList.add("responsino-step-canvas-dragover");
+
+                    const placeholder = controller.getOrCreatePlaceholder();
+                    const afterElement = controller.getDragAfterElement(droppable, e.clientY);
+
+                    if (afterElement === null) {
+                        if (placeholder.parentNode !== droppable) droppable.appendChild(placeholder);
+                    } else {
+                        if (placeholder.nextSibling !== afterElement) droppable.insertBefore(placeholder, afterElement);
+                    }
+                });
+
+                droppable.addEventListener("dragleave", (e) => {
+                    if (e.relatedTarget && droppable.contains(e.relatedTarget)) return;
+                    droppable.classList.remove("responsino-step-canvas-dragover");
+                    controller.removeDragPlaceholders();
+                });
+
+                droppable.addEventListener("drop", (e) => {
+                    e.preventDefault();
+                    droppable.classList.remove("responsino-step-canvas-dragover");
+
+                    const newFieldType = e.dataTransfer.getData("new-field-type");
+                    const existingFieldId = e.dataTransfer.getData("text/plain");
+                    const sourceStep = e.dataTransfer.getData("source-step");
+
+                    const targetList = stepNum === 1 ? state.steps.step1 : engine.getStep2List();
+                    const placeholders = Array.from(droppable.querySelectorAll(".responsino-drag-placeholder"));
+                    let insertIndex = targetList.length;
+
+                    if (placeholders.length > 0) {
+                        const children = Array.from(droppable.children);
+                        const pIndex = children.indexOf(placeholders[0]);
+                        let count = 0;
+                        for (let i = 0; i < pIndex; i++) {
+                            if (children[i].classList.contains("responsino-rendered-form-element")) count++;
+                        }
+                        insertIndex = count;
+                    }
+
+                    controller.removeDragPlaceholders();
+
+                    if (newFieldType) {
+                        const fieldConfig = config.FIELD_TYPES_CONFIG[newFieldType];
+                        if (fieldConfig) {
+                            const newField = fields.createDefaultElement(newFieldType, fieldConfig.defaultLabel);
+                            const newId = newField.id;
+
+                            targetList.splice(insertIndex, 0, newField);
+                            engine.renderStepCanvas(stepNum);
+                            engine.selectElementForEditing(newId, stepNum);
+                            utils.showToast(__("admin.toast.dropped", { name: fieldConfig.name }), "success");
+                            api.saveStateToLocalStorage();
+                        }
+                    } else if (existingFieldId) {
+                        const srcStepNum = parseInt(sourceStep);
+                        const sourceList = srcStepNum === 1 ? state.steps.step1 : engine.getStep2List();
+                        const index = sourceList.findIndex(it => it.id === existingFieldId);
+                        if (index !== -1) {
+                            const elementToMove = sourceList[index];
+                            if (srcStepNum !== stepNum) {
+                                utils.showToast(__("admin.toast.move_step_not_allowed"), "error");
+                                return;
+                            }
+                            sourceList.splice(index, 1);
+                            let adjustedIndex = insertIndex;
+                            if (index < insertIndex) adjustedIndex = Math.max(0, insertIndex - 1);
+
+                            targetList.splice(adjustedIndex, 0, elementToMove);
+                            engine.renderStepCanvas(stepNum);
+                            engine.selectElementForEditing(existingFieldId, stepNum);
+                            api.saveStateToLocalStorage();
+                        }
+                    }
+                });
+            });
+
+            draggableItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    const type = item.dataset.type;
+                    controller.handleSidebarFieldClick(type);
+                });
+            });
+        },
+        switchSidebarTab: function(panelName) {
+            const triggers = document.querySelectorAll(".responsino-sidebar-tab-trigger");
+            const panels = document.querySelectorAll(".responsino-sidebar-tab-panel");
+
+            triggers.forEach(trigger => {
+                if (trigger.dataset.panel === panelName) {
+                    trigger.classList.add("responsino-sidebar-tab-active");
+                } else {
+                    trigger.classList.remove("responsino-sidebar-tab-active");
+                }
+            });
+
+            panels.forEach(panel => {
+                if (panel.id === `responsino-panel-${panelName}`) {
+                    panel.classList.add("responsino-sidebar-tab-panel-active");
+                } else {
+                    panel.classList.remove("responsino-sidebar-tab-panel-active");
+                }
+            });
+        },
+        handleMainViewSwitch: function(viewName, showToastFlag = false) {
+            const tabs = document.querySelectorAll(".responsino-nav-tab");
+            const views = document.querySelectorAll(".responsino-builder-view");
+
+            tabs.forEach(tab => {
+                if (tab.dataset.view === viewName) {
+                    tab.classList.add("responsino-nav-tab-active");
+                } else {
+                    tab.classList.remove("responsino-nav-tab-active");
+                }
+            });
+
+            views.forEach(view => {
+                if (view.id === `responsino-view-${viewName}`) {
+                    view.classList.add("responsino-builder-view-active");
+                } else {
+                    view.classList.remove("responsino-builder-view-active");
+                }
+            });
+
+            if (viewName === "general") {
+                const formNameInp = document.getElementById("responsino-setting-form-name");
+                if (formNameInp) formNameInp.value = state.settings.main.title;
+            } else if (viewName === "display") {
+                if (window.responsinoTemplateDisplayController && typeof window.responsinoTemplateDisplayController.syncUI === 'function') {
+                    window.responsinoTemplateDisplayController.syncUI();
+                }
+            }
+
+            // Update URL parameter
+            try {
+                const url = new URL(window.location.href);
+                if (url.searchParams.get('view') !== viewName) {
+                    url.searchParams.set('view', viewName);
+                    window.history.pushState({}, '', url.toString());
+                }
+            } catch (e) {
+                console.error("Failed to update URL parameters", e);
+            }
+
+            if (showToastFlag) {
+                utils.showToast(__("admin.toast.view_loaded", { view: viewName.toUpperCase() }), "info");
+            }
+
+            config.currentView = viewName;
+        },
+        initFieldsSearch: function() {
+            if (!elSearchFieldsInput) return;
+            elSearchFieldsInput.addEventListener("input", (e) => {
+                const q = e.target.value.toLowerCase().trim();
+                const items = elDraggableStoreGrid.querySelectorAll(".responsino-draggable-field-item");
+                let matches = 0;
+
+                items.forEach(item => {
+                    const text = item.querySelector("span").textContent.toLowerCase();
+                    if (text.includes(q)) {
+                        item.style.display = "flex";
+                        matches++;
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                const standardGroup = elDraggableStoreGrid.querySelector(".responsino-fields-grid:first-of-type");
+                const reviewsGroup = elDraggableStoreGrid.querySelector(".responsino-fields-grid:last-of-type");
+                const titleStandard = document.getElementById("responsino-sec-title-standard");
+                const titleReviews = document.getElementById("responsino-sec-title-reviews");
+
+                if (titleStandard && standardGroup) {
+                    titleStandard.style.display = Array.from(standardGroup.children).some(child => child.style.display !== "none") ? "flex" : "none";
+                }
+                if (titleReviews && reviewsGroup) {
+                    titleReviews.style.display = Array.from(reviewsGroup.children).some(child => child.style.display !== "none") ? "flex" : "none";
+                }
+
+                if (elSearchNoResults) elSearchNoResults.style.display = matches === 0 ? "block" : "none";
+            });
+        },
+        bindConfigurationInputs: function() {
+            if (elFormTitle) {
+                elFormTitle.addEventListener("input", (e) => {
+                    state.settings.main.title = e.target.value;
+                    api.saveStateToLocalStorage();
+                });
+            }
+
+            document.getElementById("responsino-setting-form-name").addEventListener("input", (e) => {
+                state.settings.main.title = e.target.value;
+                if (elFormTitle) elFormTitle.value = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-setting-custom-classes").addEventListener("input", (e) => {
+                state.settings.main.customClasses = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-setting-honeypot").addEventListener("change", (e) => {
+                state.settings.main.honeypot = e.target.checked;
+                api.saveStateToLocalStorage();
+            });
+
+            // Name Field Placeholder Handlers
+            const phFields = ['first', 'middle', 'last'];
+            phFields.forEach(part => {
+                const el = document.getElementById(`responsino-opt-name-ph-${part}`);
+                if (el) {
+                    el.addEventListener('input', (e) => {
+                        const element = state.steps.step1.find(it => it.id === uiState.selectedElementId) ||
+                            engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                        if (element && element.type === 'name') {
+                            if (!element.settings.placeholders) element.settings.placeholders = {};
+                            element.settings.placeholders[part] = e.target.value;
+                            api.saveStateToLocalStorage();
+                        }
+                    });
+                }
+            });
+
+            // Bind Name Type Selector
+            const elNameType = document.getElementById("responsino-opt-name-type");
+            if (elNameType) {
+                elNameType.addEventListener('change', (e) => {
+                    const element = state.steps.step1.find(it => it.id === uiState.selectedElementId) ||
+                        engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                    if (element && element.type === 'name') {
+                        element.settings.nameType = e.target.value;
+                        api.saveStateToLocalStorage();
+                        engine.updateOptionsPanel();
+                    }
+                });
+            }
+
+            utils.registerColorPickerPair("responsino-style-accent-color", "responsino-style-accent-hex", (val) => {
+                state.settings.styles.accentColor = val;
+                api.saveStateToLocalStorage();
+            });
+
+            utils.registerColorPickerPair("responsino-style-secondary-color", "responsino-style-secondary-hex", (val) => {
+                state.settings.styles.secondaryColor = val;
+                api.saveStateToLocalStorage();
+            });
+
+            const valMinHeight = document.getElementById("responsino-style-min-height");
+            if (valMinHeight) {
+                valMinHeight.addEventListener("input", (e) => {
+                    const parsedVal = parseInt(e.target.value);
+                    state.settings.display.subTypeData.shortcode.globalData.spacing.customMinHeight = !isNaN(parsedVal) && parsedVal >= 0 ? parsedVal : null;
+                    api.saveStateToLocalStorage();
+                    engine.renderSplitPreview();
+                });
+            }
+
+            utils.registerColorPickerPair("responsino-style-confirm-color", "responsino-style-confirm-hex", (val) => {
+                state.confirmation.textColor = val;
+                api.saveStateToLocalStorage();
+                engine.renderSplitPreview();
+            });
+
+            const confirmType = document.getElementById("responsino-style-confirm-type");
+            confirmType.addEventListener("change", (e) => {
+                const val = e.target.value;
+                state.confirmation.type = val;
+                document.getElementById("responsino-config-group-confirm-msg").style.display = "flex";
+                document.getElementById("responsino-config-group-confirm-ext-url").style.display = val === 'url' ? "flex" : "none";
+                api.saveStateToLocalStorage();
+            });
+
+            const msgTextarea = document.getElementById("responsino_confirm_message_text");
+
+            msgTextarea.addEventListener("input", (e) => {
+                state.confirmation.message = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            // Support für WordPress wp_editor / TinyMCE
+            utils.setupTinyMCEListener("responsino_confirm_message_text", (val) => state.confirmation.message = val, api.saveStateToLocalStorage);
+
+            document.getElementById("responsino-config-confirm-url").addEventListener("input", (e) => {
+                state.confirmation.extUrl = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-notification-enabled").addEventListener("change", (e) => {
+                state.notification.enabled = e.target.checked;
+                document.getElementById("responsino-notification-settings-fields-group").style.opacity = e.target.checked ? "1" : "0.5";
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-notify-recipient").addEventListener("input", (e) => {
+                state.notification.recipient = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-notify-subject").addEventListener("input", (e) => {
+                state.notification.subject = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-notify-sender-name").addEventListener("input", (e) => {
+                state.notification.senderName = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            document.getElementById("responsino-notify-sender-email").addEventListener("input", (e) => {
+                state.notification.senderEmail = e.target.value;
+                api.saveStateToLocalStorage();
+            });
+
+            // Bind tracking configuration changes
+            const trEnableEl = document.getElementById("responsino-setting-tracking-enabled");
+            if (trEnableEl) {
+                trEnableEl.addEventListener("change", (e) => {
+                    if (!state.settings.tracking) state.settings.tracking = {};
+                    state.settings.tracking.enabled = e.target.checked;
+
+                    const groupEl = document.getElementById("responsino-tracking-settings-fields-group");
+                    if (groupEl) groupEl.style.opacity = e.target.checked ? "1" : "0.5";
+
+                    const trackingFields = [
+                        "url", "pageTitle", "referrer", "userAgent"
+                    ];
+                    trackingFields.forEach(field => {
+                        const el = document.getElementById(`responsino-setting-tracking-${field}`);
+                        if (el) el.disabled = !e.target.checked;
+                    });
+
+                    api.saveStateToLocalStorage();
+                    engine.renderSplitPreview();
+                });
+            }
+
+            const trackingFieldsElementsList = [
+                "url", "pageTitle", "referrer", "userAgent"
+            ];
+            trackingFieldsElementsList.forEach(field => {
+                const el = document.getElementById(`responsino-setting-tracking-${field}`);
+                if (el) {
+                    el.addEventListener("change", (e) => {
+                        if (!state.settings.tracking) state.settings.tracking = {};
+                        state.settings.tracking[field] = e.target.checked;
+                        api.saveStateToLocalStorage();
+                        engine.renderSplitPreview();
+                    });
+                }
+            });
+        },
+        bindOptionsLiveEditing: function() {
+            const applyChange = (callback) => engine.applyElementChange(callback);
+
+            config.DECLARATIVE_OPTION_BINDINGS.forEach(binding => {
+                if (!binding.element) return;
+                binding.element.addEventListener(binding.event, (e) => {
+                    applyChange(el => {
+                        if (binding.condition && !binding.condition(el)) return;
+                        let val;
+                        if (binding.type === "bool") {
+                            val = e.target.checked;
+                        } else if (binding.type === "int") {
+                            val = parseInt(e.target.value) || 0;
+                        } else {
+                            val = e.target.value;
+                        }
+                        utils.setDeepState(el, binding.key, val);
+                        if (binding.onAfterChange) binding.onAfterChange(el, val);
+                    });
+                });
+            });
+
+            config.COLOR_PICKER_BINDINGS.forEach(binding => {
+                utils.registerColorPickerPair(binding.picker, binding.hexInput, (val) => {
+                    applyChange(el => { el.settings[binding.key] = val; });
+                });
+            });
+
+            if (elOptBtnColorsReset) {
+                elOptBtnColorsReset.addEventListener("click", () => {
+                    applyChange(el => {
+                        delete el.settings.bgColor;
+                        delete el.settings.textColor;
+                        delete el.settings.borderColor;
+                        delete el.settings.hoverBgColor;
+                        delete el.settings.hoverTextColor;
+                        delete el.settings.hoverBorderColor;
+                    });
+                    engine.updateOptionsPanel();
+                });
+            }
+
+            // Name Field Placeholders & Type binding
+            const elOptNameType = document.getElementById("responsino-opt-name-type");
+            const elOptNamePhFull = document.getElementById("responsino-opt-name-ph-first");
+            const elOptNamePhMiddle = document.getElementById("responsino-opt-name-ph-middle");
+            const elOptNamePhLast = document.getElementById("responsino-opt-name-ph-last");
+
+            if (elOptNameType) {
+                elOptNameType.addEventListener("change", (e) => {
+                    applyChange(el => {
+                        el.settings.nameType = e.target.value;
+                    });
+                    engine.updateOptionsPanel();
+                });
+            }
+
+            const updateNamePlaceholders = () => {
+                applyChange(el => {
+                    if (!el.settings.placeholders) el.settings.placeholders = {};
+                    el.settings.placeholders.full = elOptNamePhFull.value;
+                    el.settings.placeholders.middle = elOptNamePhMiddle.value;
+                    el.settings.placeholders.last = elOptNamePhLast.value;
+                });
+            };
+
+            [elOptNamePhFull, elOptNamePhMiddle, elOptNamePhLast].forEach(el => {
+                if (el) el.addEventListener("input", updateNamePlaceholders);
+            });
+
+            // Email Field Placeholders & Confirmation binding
+            const elOptEmailConfirmation = document.getElementById("responsino-opt-email-confirmation");
+            const elOptEmailPhMain = document.getElementById("responsino-opt-email-ph-main");
+            const elOptEmailPhConfirm = document.getElementById("responsino-opt-email-ph-confirm");
+
+            if (elOptEmailConfirmation) {
+                elOptEmailConfirmation.addEventListener("change", (e) => {
+                    applyChange(el => {
+                        el.settings.emailConfirmation = e.target.checked;
+                    });
+                    engine.updateOptionsPanel();
+                });
+            }
+
+            const updateEmailPlaceholders = () => {
+                applyChange(el => {
+                    if (!el.settings.placeholders) el.settings.placeholders = {};
+                    el.settings.placeholders.main = elOptEmailPhMain.value;
+                    el.settings.placeholders.confirm = elOptEmailPhConfirm.value;
+                });
+            };
+
+            [elOptEmailPhMain, elOptEmailPhConfirm].forEach(el => {
+                if (el) el.addEventListener("input", updateEmailPlaceholders);
+            });
+
+            // Custom Sliders & Numeric Input Syncing Helper
+            const setupCustomSlider = (configObj) => {
+                if (!configObj.hiddenInput || !configObj.sliderInput || !configObj.numericInput || !configObj.resetBtn) return;
+
+                configObj.sliderInput.addEventListener("input", (e) => {
+                    const val = parseFloat(e.target.value);
+                    const clamped = Math.max(configObj.min, Math.min(configObj.max, val));
+
+                    const displayVal = configObj.step >= 1 ? Math.round(clamped) : parseFloat(clamped.toFixed(1));
+                    configObj.numericInput.value = displayVal;
+                    configObj.numericInput.placeholder = "";
+
+                    configObj.hiddenInput.value = displayVal + configObj.unit;
+                    configObj.resetBtn.style.opacity = "1";
+                    configObj.resetBtn.style.pointerEvents = "auto";
+
+                    configObj.hiddenInput.dispatchEvent(new Event("change"));
+                });
+
+                configObj.numericInput.addEventListener("input", (e) => {
+                    let val = parseFloat(e.target.value);
+                    if (isNaN(val)) return;
+                    const clamped = Math.max(configObj.min, Math.min(configObj.max, val));
+                    configObj.sliderInput.value = clamped;
+
+                    const displayVal = configObj.step >= 1 ? Math.round(clamped) : parseFloat(clamped.toFixed(1));
+                    configObj.hiddenInput.value = displayVal + configObj.unit;
+                    configObj.resetBtn.style.opacity = "1";
+                    configObj.resetBtn.style.pointerEvents = "auto";
+
+                    configObj.hiddenInput.dispatchEvent(new Event("change"));
+                });
+
+                configObj.numericInput.addEventListener("blur", (e) => {
+                    let val = parseFloat(e.target.value);
+                    if (isNaN(val)) {
+                        val = parseFloat(configObj.sliderInput.value);
+                    }
+                    const clamped = Math.max(configObj.min, Math.min(configObj.max, val));
+                    configObj.sliderInput.value = clamped;
+
+                    const displayVal = configObj.step >= 1 ? Math.round(clamped) : parseFloat(clamped.toFixed(1));
+                    configObj.numericInput.value = displayVal;
+
+                    configObj.hiddenInput.value = displayVal + configObj.unit;
+                    configObj.resetBtn.style.opacity = "1";
+                    configObj.resetBtn.style.pointerEvents = "auto";
+
+                    configObj.hiddenInput.dispatchEvent(new Event("change"));
+                });
+
+                configObj.resetBtn.addEventListener("click", () => {
+                    configObj.hiddenInput.value = "inherit";
+
+                    let element = null;
+                    if (uiState.selectedElementId) {
+                        element = state.steps.step1.find(it => it.id === uiState.selectedElementId);
+                        if (!element && state.steps.step2 && !Array.isArray(state.steps.step2)) {
+                            for (const tId in state.steps.step2) {
+                                const f = state.steps.step2[tId].find(it => it.id === uiState.selectedElementId);
+                                if (f) { element = f; break; }
+                            }
+                        }
+                    }
+                    const defVal = configObj.getDefaultValue(element);
+                    configObj.sliderInput.value = defVal;
+                    configObj.numericInput.value = "";
+                    configObj.numericInput.placeholder = defVal;
+                    configObj.resetBtn.style.opacity = "0.5";
+                    configObj.resetBtn.style.pointerEvents = "none";
+
+                    configObj.hiddenInput.dispatchEvent(new Event("change"));
+                });
+            };
+
+            // Initialize Font Size Slider
+            setupCustomSlider({
+                hiddenInput: elOptFontSize,
+                sliderInput: document.getElementById("responsino-opt-font-size-slider"),
+                numericInput: document.getElementById("responsino-opt-font-size-input"),
+                resetBtn: document.getElementById("responsino-opt-font-size-reset"),
+                min: 6,
+                max: 48,
+                step: 1,
+                unit: "px",
+                getDefaultValue: (el) => {
+                    if (!el) return 16;
+                    if (el.type === 'headline') return 20;
+                    if (el.type === 'description') return 14;
+                    return 16;
+                }
+            });
+
+            // Initialize Line Height Slider (Zeilenhöhe)
+            setupCustomSlider({
+                hiddenInput: elOptLineHeight,
+                sliderInput: document.getElementById("responsino-opt-line-height-slider"),
+                numericInput: document.getElementById("responsino-opt-line-height-input"),
+                resetBtn: document.getElementById("responsino-opt-line-height-reset"),
+                min: 0.8,
+                max: 3.0,
+                step: 0.1,
+                unit: "",
+                getDefaultValue: (el) => {
+                    if (!el) return 1.4;
+                    if (el.type === 'headline') return 1.2;
+                    if (el.type === 'description') return 1.5;
+                    return 1.4;
+                }
+            });
+
+            // Initialize Border Radius Slider
+            setupCustomSlider({
+                hiddenInput: elOptBorderRadius,
+                sliderInput: document.getElementById("responsino-opt-border-radius-slider"),
+                numericInput: document.getElementById("responsino-opt-border-radius-input"),
+                resetBtn: document.getElementById("responsino-opt-border-radius-reset"),
+                min: 0,
+                max: 100,
+                step: 1,
+                unit: "px",
+                getDefaultValue: (el) => {
+                    return 6;
+                }
+            });
+        },
+        initExportImportSystem: function() {
+            const modal = document.getElementById("responsino-modal-export");
+            const trigger = document.getElementById("responsino-btn-export-json");
+            const selectArea = document.getElementById("responsino-json-textarea");
+
+            if (trigger) {
+                trigger.addEventListener("click", () => {
+                    selectArea.value = JSON.stringify(state, null, 2);
+                    modal.classList.add("responsino-modal-overlay-active");
+                });
+            }
+
+            const closeBtn = document.getElementById("responsino-btn-close-export-modal");
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+            const cancelBtn = document.getElementById("responsino-btn-close-export-cancel");
+            if (cancelBtn) {
+                cancelBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+
+            const copyBtn = document.getElementById("responsino-btn-copy-json");
+            if (copyBtn) {
+                copyBtn.addEventListener("click", () => {
+                    selectArea.select();
+                    document.execCommand("copy");
+                    utils.showToast(__("admin.toast.config_copied"), "success");
+                });
+            }
+
+            const importActionBtn = document.getElementById("responsino-btn-modal-import-action");
+            if (importActionBtn) {
+                importActionBtn.addEventListener("click", () => {
+                    const raw = selectArea.value.trim();
+                    if (!raw) {
+                        utils.showToast(__("admin.toast.invalid_json"), "error");
+                        return;
+                    }
+                    try {
+                        const parsed = JSON.parse(raw);
+                        const validated = api.validateFormState(parsed);
+                        if (validated) {
+                            Object.assign(state, validated);
+                            controller.loadFormStateToInputs();
+                            engine.renderStepCanvas(1);
+                            engine.renderStepCanvas(2);
+                            controller.setStepFocus(1);
+                            modal.classList.remove("responsino-modal-overlay-active");
+                            utils.showToast(__("admin.toast.config_loaded"), "success");
+                            api.saveStateToLocalStorage();
+                        }
+                    } catch (e) {
+                        utils.showToast(__("admin.toast.import_error", { error: e.message }), "error");
+                    }
+                });
+            }
+        },
+        initTemplatesModal: function() {
+            const modal = document.getElementById("responsino-modal-templates");
+            const trigger = document.getElementById("responsino-btn-load-templates");
+
+            if (trigger) {
+                trigger.addEventListener("click", () => {
+                    modal.classList.add("responsino-modal-overlay-active");
+                    FormBuilderTemplates.init();
+                });
+            }
+
+            const closeTmplBtn = document.getElementById("responsino-btn-close-tmpl-modal");
+            if (closeTmplBtn) {
+                closeTmplBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+            const cancelTmplBtn = document.getElementById("responsino-btn-close-tmpl-cancel");
+            if (cancelTmplBtn) {
+                cancelTmplBtn.addEventListener("click", () => modal.classList.remove("responsino-modal-overlay-active"));
+            }
+        },
+        syncTargetingStateToUI: function() {
+            const sectionTitle = document.getElementById("responsino-targeting-section-title");
+            if (sectionTitle) {
+                const label = state.settings.display.displayType === "in-content" ? "In-Content" : "Overlay";
+                sectionTitle.innerHTML = `<i class="fas fa-bullseye"></i> ${__('admin.builder.display_type_label', { label: label })}`;
+            }
+
+            // Sicherstellen, dass der aktive Targeting-Typ zum aktuellen Hauptanzeigetyp passt
+            if (state.settings.display.displayType === "in-content") {
+                if (uiState.activeTargetingType !== "in-content" && uiState.activeTargetingType !== "shortcode") {
+                    uiState.activeTargetingType = "in-content";
+                }
+            } else if (state.settings.display.displayType === "overlay") {
+                if (uiState.activeTargetingType !== "overlay") {
+                    uiState.activeTargetingType = "overlay";
+                }
+            }
+
+            // Sub-Tabs dynamisch rendern
+            const tabsContainer = document.getElementById("responsino-targeting-tabs-container");
+            if (tabsContainer) {
+                tabsContainer.innerHTML = "";
+                let tabsToRender = [];
+                if (state.settings.display.displayType === "in-content") {
+                    tabsToRender = [
+                        { type: "in-content", label: __('admin.builder.targeting_tabs.in_content'), icon: "fa-file-invoice" },
+                        { type: "shortcode", label: __('admin.builder.targeting_tabs.shortcode'), icon: "fa-code" }
+                    ];
+                } else {
+                    tabsToRender = [
+                        { type: "overlay", label: __('admin.builder.targeting_tabs.overlay'), icon: "fa-window-restore" }
+                    ];
+                }
+
+                tabsToRender.forEach(tab => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "responsino-targeting-tab-btn";
+                    if (tab.type === uiState.activeTargetingType) {
+                        btn.classList.add("responsino-targeting-tab-btn-active");
+                    }
+                    btn.dataset.targetingType = tab.type;
+
+                    const icon = document.createElement("i");
+                    icon.className = `fas ${tab.icon}`;
+                    btn.appendChild(icon);
+                    btn.appendChild(document.createTextNode(" " + tab.label));
+
+                    btn.addEventListener("click", () => {
+                        uiState.activeTargetingType = tab.type;
+                        controller.syncTargetingStateToUI();
+
+                        try {
+                            const url = new URL(window.location.href);
+                            if (url.searchParams.get('targeting_tab') !== tab.type) {
+                                url.searchParams.set('targeting_tab', tab.type);
+                                window.history.pushState({}, '', url.toString());
+                            }
+                        } catch (e) {
+                            console.error("Failed to update URL parameters", e);
+                        }
+                    });
+
+                    tabsContainer.appendChild(btn);
+                });
+            }
+
+            // Interactive Condition Builder instantiieren
+            const conditionContainer = document.getElementById("responsino-targeting-condition-builder-container");
+            if (conditionContainer) {
+                const typeCfg = state.targeting[uiState.activeTargetingType];
+                if (typeCfg) {
+                    new ResponsinoConditionBuilder(
+                        conditionContainer,
+                        typeCfg,
+                        (updatedConfig) => {
+                            state.targeting[uiState.activeTargetingType] = updatedConfig;
+                            api.saveStateToLocalStorage();
+                        },
+                        {
+                            openProUpgradeModal: () => engine.openProUpgradeModal()
+                        }
+                    );
+                }
+            }
+        },
+        loadFormStateToInputs: function() {
+            if (elFormTitle) elFormTitle.value = state.settings.main.title;
+            if (elActiveFormIdDisplay) elActiveFormIdDisplay.textContent = responsinoFormBuilder.formId;
+            if (elLastUpdatedDisplay) elLastUpdatedDisplay.textContent = utils.formatDate(responsinoFormBuilder.formSavedTimestamp, config.locale);
+            if (elLastPublishedDisplay) {
+                elLastPublishedDisplay.textContent = responsinoFormBuilder.formPublishedTimestamp ? utils.formatDate(responsinoFormBuilder.formPublishedTimestamp, config.locale) : '-';
+            }
+            const setIDEl = document.getElementById("responsino-setting-form-id");
+            if (setIDEl) setIDEl.value = responsinoFormBuilder.formId;
+
+            controller.updateStatusBadge(state.status);
+
+            const accentColorEl = document.getElementById("responsino-style-accent-color");
+            if (accentColorEl) accentColorEl.value = state.settings.styles.accentColor || "#000000";
+            const accentHexEl = document.getElementById("responsino-style-accent-hex");
+            if (accentHexEl) accentHexEl.value = (state.settings.styles.accentColor || "#000000").toUpperCase();
+
+            const secondaryColorEl = document.getElementById("responsino-style-secondary-color");
+            if (secondaryColorEl) secondaryColorEl.value = state.settings.styles.secondaryColor || "#555555";
+            const secondaryHexEl = document.getElementById("responsino-style-secondary-hex");
+            if (secondaryHexEl) secondaryHexEl.value = (state.settings.styles.secondaryColor || "#555555").toUpperCase();
+
+            // const customMinHeightVal = state.settings.display.globalData.spacing.customMinHeight;
+            // const minHeightEl = document.getElementById("responsino-style-min-height");
+            // if (minHeightEl) minHeightEl.value = (customMinHeightVal !== undefined && customMinHeightVal !== null) ? customMinHeightVal : '';
+
+            engine.updateDisplayTypeUI();
+
+            let confType = state.confirmation.type || 'message';
+            document.getElementById("responsino-style-confirm-type").value = confType;
+            document.getElementById("responsino-config-group-confirm-msg").style.display = "flex";
+            document.getElementById("responsino-config-group-confirm-ext-url").style.display = confType === 'url' ? "flex" : "none";
+
+            document.getElementById("responsino-style-confirm-color").value = (state.confirmation.textColor || state?.settings?.style?.accentColor || "#000000").toUpperCase();
+            document.getElementById("responsino-style-confirm-hex").value = (state.confirmation.textColor || state?.settings?.style?.accentColor || "#000000").toUpperCase();
+
+            const loadedMsg = state.confirmation.message || '';
+            document.getElementById("responsino_confirm_message_text").value = loadedMsg;
+            if (window.tinymce) {
+                const editor = window.tinymce.get("responsino_confirm_message_text");
+                if (editor) {
+                    editor.setContent(loadedMsg);
+                }
+            }
+
+            document.getElementById("responsino-config-confirm-url").value = state.confirmation.extUrl || '';
+
+            const notifyEnabled = state.notification.enabled ?? true;
+            document.getElementById("responsino-notification-enabled").checked = notifyEnabled;
+            document.getElementById("responsino-notification-settings-fields-group").style.opacity = notifyEnabled ? "1" : "0.5";
+
+            document.getElementById("responsino-notify-recipient").value = state.notification.recipient || '';
+            document.getElementById("responsino-notify-subject").value = state.notification.subject || '';
+            document.getElementById("responsino-notify-sender-name").value = state.notification.senderName || '';
+            document.getElementById("responsino-notify-sender-email").value = state.notification.senderEmail || '';
+
+            document.getElementById("responsino-setting-custom-classes").value = state.settings.main.customClasses || '';
+            document.getElementById("responsino-setting-honeypot").checked = state.settings.main.honeypot ?? true;
+
+            // Ensure tracking settings exist on load
+            if (!state.settings.tracking) {
+                state.settings.tracking = {
+                    enabled: true,
+                    url: true,
+                    pageTitle: true,
+                    referrer: true,
+                    userAgent: true
+                };
+            }
+
+            const tracking = state.settings.tracking;
+            const trackingEnabled = tracking.enabled ?? true;
+
+            const trackingMainToggle = document.getElementById("responsino-setting-tracking-enabled");
+            if (trackingMainToggle) {
+                trackingMainToggle.checked = trackingEnabled;
+            }
+            const trackingGroup = document.getElementById("responsino-tracking-settings-fields-group");
+            if (trackingGroup) {
+                trackingGroup.style.opacity = trackingEnabled ? "1" : "0.5";
+            }
+
+            const trackingFields = [
+                "url", "pageTitle", "referrer", "userAgent"
+            ];
+
+            trackingFields.forEach(field => {
+                const el = document.getElementById(`responsino-setting-tracking-${field}`);
+                if (el) {
+                    el.checked = tracking[field] ?? true;
+                    el.disabled = !trackingEnabled;
+                }
+            });
+
+            controller.syncTargetingStateToUI();
+        },
+        updateStatusBadge: function(newStatus) {
+            newStatus = parseInt(newStatus) || 1;
+            state.status = newStatus;
+
+            let statusText = __("admin.toast.status_paused");
+            let badgeClass = "responsino-status-paused";
+            if (newStatus === 2) {
+                statusText = __("admin.toast.status_live");
+                badgeClass = "responsino-status-live";
+            } else if (newStatus === 3) {
+                statusText = __("admin.toast.status_admin_only");
+                badgeClass = "responsino-status-admin-only";
+            }
+
+            if (elFormStatusText) elFormStatusText.textContent = statusText;
+            if (elFormStatusBadge) {
+                elFormStatusBadge.className = "responsino-status-indicator " + badgeClass;
+            }
+
+            const dropdownItems = document.querySelectorAll("#responsino-status-dropdown-menu .responsino-status-dropdown-item");
+            dropdownItems.forEach(item => {
+                const itemStatus = parseInt(item.getAttribute("data-status"));
+                if (itemStatus === newStatus) {
+                    item.classList.add("is-active");
+                } else {
+                    item.classList.remove("is-active");
+                }
+            });
+        }
+    };
+
+    const init = async function() {
+        api.cleanupExpiredLocalStorage();
+        api.loadStateFromLocalStorage();
+
+        controller.loadFormStateToInputs();
+
+        engine.renderStepCanvas(1);
+        engine.renderStepCanvas(2);
+        controller.setStepFocus(1);
+
+        // Initial check for submit button logic to show/hide warning banner and auto-pause if live
+        api.checkSubmitButtonLogic();
+
+        const viewsTriggers = document.querySelectorAll(".responsino-nav-tab");
+        viewsTriggers.forEach(tab => {
+            tab.addEventListener("click", () => controller.handleMainViewSwitch(tab.dataset.view));
+        });
+
+        const sidebarTriggers = document.querySelectorAll(".responsino-sidebar-tab-trigger");
+        sidebarTriggers.forEach(trigger => {
+            trigger.addEventListener("click", () => controller.switchSidebarTab(trigger.dataset.panel));
+        });
+
+        controller.bindOptionsLiveEditing();
+        controller.initDragAndDropEngine();
+        controller.initFieldsSearch();
+        controller.bindConfigurationInputs();
+        controller.initExportImportSystem();
+        controller.initTemplatesModal();
+        engine.initProUpgradeModal();
+        window.responsinoTemplateDisplayController = initFormBuilderTemplateDisplay({ state, engine, utils, api, controller });
+
+        const undoBtn = document.getElementById("responsino-btn-undo");
+        if (undoBtn) undoBtn.addEventListener("click", history.handleUndo);
+
+        const redoBtn = document.getElementById("responsino-btn-redo");
+        if (redoBtn) redoBtn.addEventListener("click", history.handleRedo);
+        history.initHistoryKeyboardShortcuts();
+        history.updateUndoRedoButtons();
+
+        // Support closing context menu and status dropdown on external events
+        document.addEventListener("click", (e) => {
+            controller.closeContextMenu();
+            const dropdown = document.getElementById("responsino-status-dropdown-menu");
+            const trigger = document.getElementById("responsino-btn-change-status");
+            if (dropdown && !dropdown.contains(e.target) && trigger && !trigger.contains(e.target)) {
+                dropdown.classList.remove("responsino-status-dropdown-active");
+            }
+        });
+        document.addEventListener("scroll", () => {
+            controller.closeContextMenu();
+            const dropdown = document.getElementById("responsino-status-dropdown-menu");
+            if (dropdown) dropdown.classList.remove("responsino-status-dropdown-active");
+        }, true);
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                controller.closeContextMenu();
+                const dropdown = document.getElementById("responsino-status-dropdown-menu");
+                if (dropdown) dropdown.classList.remove("responsino-status-dropdown-active");
+            }
+        });
+
+        const btnChangeStatus = document.getElementById("responsino-btn-change-status");
+        const dropdownStatusMenu = document.getElementById("responsino-status-dropdown-menu");
+
+        if (btnChangeStatus && dropdownStatusMenu) {
+            btnChangeStatus.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdownStatusMenu.classList.toggle("responsino-status-dropdown-active");
+            });
+
+            const dropdownItems = dropdownStatusMenu.querySelectorAll(".responsino-status-dropdown-item");
+            dropdownItems.forEach(item => {
+                item.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const next = parseInt(item.getAttribute("data-status"));
+                    dropdownStatusMenu.classList.remove("responsino-status-dropdown-active");
+
+                    if (next === state.status) return;
+
+                    if (next !== 1) {
+                        if (!FormValidator.checkAndShowToasts(state)) {
+                            return;
+                        }
+                    }
+                    controller.updateStatusBadge(next);
+                    api.saveStateToLocalStorage();
+                    api.saveStatusToDatabase(next);
+
+                    let statusName = __("admin.toast.status_paused");
+                    if (next === 2) statusName = __("admin.toast.status_live");
+                    else if (next === 3) statusName = __("admin.toast.status_admin_only");
+
+                    utils.showToast(__("admin.toast.status_changed", { status: statusName }), "success");
+                });
+            });
+        }
+
+        const saveDraftBtn = document.getElementById("responsino-btn-save-draft");
+        if (saveDraftBtn) {
+            saveDraftBtn.addEventListener("click", () => {
+                if (!FormValidator.checkAndShowToasts(state)) {
+                    return;
+                }
+
+                api.saveStateToLocalStorage();
+                api.saveStateToDatabase('preview');
+            });
+        }
+
+        const publishBtn = document.getElementById("responsino-btn-publish");
+        if (publishBtn) {
+            publishBtn.addEventListener("click", () => {
+                if (!FormValidator.checkAndShowToasts(state)) {
+                    return;
+                }
+
+                api.saveStateToLocalStorage();
+                api.saveStateToDatabase('live');
+            });
+        }
+
+        const closeAppBtn = document.getElementById("responsino-btn-close-app");
+        if (closeAppBtn) {
+            closeAppBtn.addEventListener("click", () => {
+                if (confirm(__('admin.builder.leave_editor_confirm'))) {
+                    window.location.href = "/wp-admin/admin.php?page=responsino-forms";
+                }
+            });
+        }
+
+        const openModalBtn = document.getElementById("responsino-btn-preview-modal");
+        if (openModalBtn) openModalBtn.addEventListener("click", engine.openWidgetPreview);
+
+        if (elBtnToggleSplitPreview) elBtnToggleSplitPreview.addEventListener("click", () => engine.toggleSplitPreview());
+
+        const splitCloseBtn = document.getElementById("responsino-btn-split-preview-close");
+        if (splitCloseBtn) splitCloseBtn.addEventListener("click", () => engine.toggleSplitPreview(false));
+
+        const splitRestartBtn = document.getElementById("responsino-btn-split-preview-restart");
+        if (splitRestartBtn) {
+            splitRestartBtn.addEventListener("click", () => {
+                engine.renderSplitPreview(true);
+                utils.showToast(__("admin.toast.split_preview_reset"), "info");
+            });
+        }
+
+        engine.toggleSplitPreview(uiState.isSplitPreviewVisible);
+
+        if (elStep1Header) {
+            elStep1Header.addEventListener("click", () => {
+                if (uiState.activeStepView === 2) controller.setStepFocus(1);
+            });
+        }
+
+        if (elStep2Card) {
+            elStep2Card.addEventListener("click", () => {
+                if (elStep2Card.classList.contains("responsino-step-card-shrunken")) {
+                    if (engine.isOptionStep2ActiveOnStep1()) controller.setStepFocus(2);
+                    else utils.showToast(__("admin.toast.activate_step2_first"), "error");
+                }
+            });
+        }
+
+        if (elStep2NavToggle) {
+            elStep2NavToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (uiState.activeStepView === 1) {
+                    if (engine.isOptionStep2ActiveOnStep1()) controller.setStepFocus(2);
+                    else utils.showToast(__("admin.toast.activate_step2_first"), "error");
+                } else {
+                    controller.setStepFocus(1);
+                }
+            });
+        }
+
+        // Restore active tabs and views from URL parameters if present
+        const restoreTabsFromUrl = function(showToastFlag) {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+
+                // 1. Restore Main View (fields, general, styles, etc.)
+                const savedView = urlParams.get('view');
+                if (savedView && ["fields", "general", "styles", "display", "targeting", "confirmation", "notification", "tracking"].includes(savedView)) {
+                    controller.handleMainViewSwitch(savedView, showToastFlag);
+                } else if (!savedView) {
+                    // Default view if none specified in URL (e.g. initial view)
+                    controller.handleMainViewSwitch("fields", false);
+                }
+
+                // 2. Restore Display Sub-Tab (in-content, overlay)
+                const savedDisplayTab = urlParams.get('display_tab');
+                if (savedDisplayTab && ["in-content", "overlay"].includes(savedDisplayTab)) {
+                    state.settings.display.displayType = savedDisplayTab;
+                    uiState.activeDisplayTab = savedDisplayTab;
+                    engine.updateDisplayTypeUI();
+                }
+
+                // 3. Restore Targeting Sub-Tab (in-content, overlay, shortcode)
+                const savedTargetingTab = urlParams.get('targeting_tab');
+                if (savedTargetingTab && ["in-content", "shortcode", "overlay"].includes(savedTargetingTab)) {
+                    uiState.activeTargetingType = savedTargetingTab;
+                    controller.syncTargetingStateToUI();
+                }
+            } catch (e) {
+                console.error("Failed to restore tabs from URL parameters", e);
+            }
+        };
+
+        // Call immediately on page initialization
+        restoreTabsFromUrl(false);
+
+        // Listen to browser back/forward buttons to automatically switch views/tabs accordingly
+        window.addEventListener("popstate", () => {
+            restoreTabsFromUrl(false);
+        });
+
+        // utils.showToast(__("admin.toast.initialized"), "success");
+    };
+
+    return {
+        config,
+        state,
+        uiState,
+        utils,
+        history,
+        api,
+        engine,
+        controller,
+        init
+    };
+})();
+
+window.ResponsinoFormBuilder = ResponsinoFormBuilder;
+
+if (document.readyState === 'complete') {
+    ResponsinoFormBuilder.init();
+} else {
+    window.addEventListener('load', ResponsinoFormBuilder.init);
+}

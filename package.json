@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "node build.mjs --watch",
+    "translate": "sh scripts/generate_translation_files.sh"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

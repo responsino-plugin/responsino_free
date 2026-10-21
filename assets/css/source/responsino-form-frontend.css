@@ -1,0 +1,1345 @@
+:root {
+    --responsino-primary: #036aab; /* Strong Blue */
+    --responsino-primary-hover: #02568a; /* Darker Blue */
+    --responsino-border: #ddd; /* Slate-200 */
+    --responsino-border-active: #036aab; /* Strong Blue */
+    --responsino-success: #104689; /* Emerald-500 */
+    --responsino-warning: #f59e0b;
+    --responsino-error: #ef4444;
+    --responsino-fb-btn-bg: #FFFFFF;
+    --responsino-fb-btn-color: #104689;
+    --responsino-fb-btn-border: #104689;
+    --responsino-fb-btn-hover-bg-color: #104689;
+    --responsino-fb-btn-hover-color: #FFFFFF;
+    --responsino-fb-btn-hover-border-color: #104689;
+}
+
+.responsino-feedback-plugin:not(.responsino-split-preview-column) {
+    &, & :where(*) {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Responsive width classes for .responsino-fd-group slots */
+.responsino-feedback-plugin .responsino-fd-group {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; /* managed by step gap */
+}
+
+.responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-100 {
+    width: 100%;
+}
+
+/* Alignment and flexbox layout rules */
+.responsino-feedback-plugin .responsino-fd-align-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.responsino-feedback-plugin .responsino-fd-align-center {
+    align-items: center;
+    text-align: center;
+}
+
+.responsino-feedback-plugin .responsino-fd-align-right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.responsino-feedback-plugin .responsino-fd-text-left {
+    text-align: left;
+}
+
+.responsino-feedback-plugin .responsino-fd-text-center {
+    text-align: center;
+}
+
+.responsino-feedback-plugin .responsino-fd-text-right {
+    text-align: right;
+}
+
+.responsino-feedback-plugin .responsino-fd-justify-left {
+    justify-content: flex-start;
+}
+
+.responsino-feedback-plugin .responsino-fd-justify-center {
+    justify-content: center;
+}
+
+.responsino-feedback-plugin .responsino-fd-justify-right {
+    justify-content: flex-end;
+}
+
+/* Label & Empty items styling */
+.responsino-feedback-plugin .responsino-fd-label {
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+.responsino-feedback-plugin .responsino-fd-empty-message {
+    text-align: center;
+    padding: 24px 10.5px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Headline & Description */
+.responsino-feedback-plugin .responsino-fd-headline {
+    font-size: 20px;
+    font-weight: 600;
+    word-break: break-word;
+    width: 100%;
+    margin: 0;
+}
+
+.responsino-feedback-plugin .responsino-fd-description {
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: break-word;
+    width: 100%;
+    margin: 0;
+}
+
+.responsino-feedback-plugin .responsino-fd-input, .responsino-feedback-plugin .responsino-fd-select, .responsino-feedback-plugin textarea.responsino-fd-textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid var(--responsino-border);
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+}
+
+.responsino-feedback-plugin .responsino-fd-input:focus, .responsino-feedback-plugin .responsino-fd-select:focus, .responsino-feedback-plugin textarea.responsino-fd-textarea:focus {
+    border-color: var(--responsino-primary);
+    box-shadow: 0 0 0 2px rgba(3, 106, 171, 0.15);
+}
+
+.responsino-feedback-plugin textarea.responsino-fd-textarea {
+    resize: vertical;
+    min-height: 70px;
+    margin-top: 6px;
+}
+
+/* Buttons utility rules */
+.responsino-feedback-plugin button.responsino-btn {
+    font-size: 14px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-weight: normal;
+    gap: 12px;
+    line-height: inherit;
+}
+
+.responsino-feedback-plugin button.responsino-btn:hover {
+    background-color: #f8fafc;
+}
+
+.responsino-feedback-plugin button.responsino-btn-primary {
+    background-color: var(--responsino-primary);
+    border-color: var(--responsino-primary);
+    color: white;
+    min-width: fit-content;
+}
+
+.responsino-feedback-plugin button.responsino-btn-primary:hover {
+    background-color: var(--responsino-primary-hover);
+    border-color: var(--responsino-primary-hover);
+}
+
+.responsino-feedback-plugin button.responsino-fd-btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+.responsino-feedback-plugin button.responsino-fd-btn-border {
+    border-style: solid;
+    border-width: 1px;
+    background-color: var(--el-normal-bg, var(--responsino-primary)) !important;
+    color: var(--el-normal-color, #ffffff) !important;
+    border-color: var(--el-normal-border, var(--responsino-primary)) !important;
+}
+
+.responsino-feedback-plugin button.responsino-fd-btn-border:hover {
+    background-color: var(--el-hover-bg, var(--responsino-primary-hover)) !important;
+    color: var(--el-hover-color, #ffffff) !important;
+    border-color: var(--el-hover-border, var(--responsino-primary-hover)) !important;
+}
+
+/* Interactive Frontend Dropdown */
+.responsino-feedback-plugin .responsino-fd-group-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.responsino-feedback-plugin .responsino-fd-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.responsino-feedback-plugin select.responsino-fd-select {
+    width: 100%;
+    min-height: 37px;
+    padding: 3px 32px 3px 10px;
+    border: 1px solid var(--responsino-border, #cbd5e1);
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: var(--responsino-text-main, #222222);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.responsino-feedback-plugin select.responsino-fd-select:focus {
+    border-color: var(--responsino-primary, #104689);
+    box-shadow: 0 0 0 2px rgba(16, 70, 137, 0.15);
+}
+
+/* Builder & Frontend Chips */
+.responsino-visual-mock-chips,
+.responsino-feedback-plugin .responsino-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.responsino-feedback-plugin .responsino-fd-group-chips {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.responsino-visual-mock-chips .responsino-chip,
+.responsino-feedback-plugin button.responsino-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #e2e8f0;
+    background-color: #f1f5f9;
+    color: #334155;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.4;
+    outline: none;
+    text-transform: none;
+}
+
+.responsino-feedback-plugin button.responsino-chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.responsino-feedback-plugin button.responsino-chip.is-active {
+    background-color: var(--responsino-primary, #104689);
+    color: #ffffff;
+    border-color: var(--responsino-primary, #104689);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.responsino-visual-mock-chips .responsino-chip-icon,
+.responsino-feedback-plugin .responsino-chip-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.responsino-visual-mock-chips .responsino-chip-text,
+.responsino-feedback-plugin .responsino-chip-text {
+    font-weight: 500;
+}
+
+/* Radio-Buttons Styling */
+.responsino-feedback-plugin .responsino-fd-group-radio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.responsino-feedback-plugin .responsino-radio-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.responsino-feedback-plugin .responsino-radio-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+    position: relative;
+    margin: 0 !important;
+    padding: 2px 0 !important;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input {
+    --responsino-radio-accent: #000000;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    background: none;
+    height: 16px;
+    width: 16px;
+    margin: 0 0 0 2px;
+    border: none;
+    box-shadow: none;
+    vertical-align: middle;
+    opacity: 1;
+    appearance: none;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input:before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    background-clip: padding-box;
+    background-image: none;
+    border-radius: 50%;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input:after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input:checked:before {
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--responsino-radio-accent);
+    box-shadow: 0 0 0 1px var(--responsino-radio-accent), 0px 1px 2px rgba(0, 0, 0, .15);
+    outline: none;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input:checked:after {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    background-color: var(--responsino-radio-accent);
+    transform: scale(0.5);
+    -moz-transform: scale(0.47);
+    left: -2px;
+    top: -2px;
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin input[type=radio].responsino-radio-input:focus {
+    outline: none;
+}
+
+.responsino-feedback-plugin .responsino-radio-label {
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--responsino-text-main, #222222);
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block;
+    transition: color 0.15s ease;
+}
+
+/* Name Field Styling */
+.responsino-feedback-plugin .responsino-fd-group-name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.responsino-feedback-plugin .responsino-fd-group-name .responsino-form-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--responsino-border, #cbd5e1);
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: var(--responsino-text-main, #222222);
+    box-sizing: border-box;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.responsino-feedback-plugin .responsino-fd-group-name .responsino-form-input:focus {
+    border-color: var(--responsino-primary, #104689);
+    box-shadow: 0 0 0 2px rgba(16, 70, 137, 0.15);
+    outline: none;
+}
+
+/* Email Field Styling */
+.responsino-feedback-plugin .responsino-fd-group-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.responsino-feedback-plugin .responsino-fd-group-email .responsino-form-input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid var(--responsino-border);
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+}
+
+.responsino-feedback-plugin .responsino-fd-group-email .responsino-form-input:focus {
+    border-color: var(--responsino-primary);
+    box-shadow: 0 0 0 2px rgba(3, 106, 171, 0.15);
+}
+
+/* Rating / Stars */
+.responsino-feedback-plugin .responsino-fd-stars-row {
+    display: flex;
+    font-size: 26px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin .responsino-fd-star {
+    transition: color 0.15s;
+}
+
+.responsino-feedback-plugin .responsino-fd-align-self-left {
+    justify-content: space-between;
+}
+
+.responsino-feedback-plugin .responsino-fd-align-self-center {
+    justify-content: space-around;
+    max-width: 320px;
+    margin: 4px auto 0 auto;
+}
+
+.responsino-feedback-plugin .responsino-fd-align-self-right {
+    justify-content: flex-end;
+    max-width: 320px;
+    margin-left: auto;
+}
+
+/* Confirmation Layout screens */
+.responsino-feedback-plugin .responsino-fd-confirm-msg {
+    text-align: center;
+    padding: 12px 0;
+}
+
+.responsino-feedback-plugin .responsino-fd-confirm-icon {
+    font-size: 34px;
+    color: var(--responsino-success);
+    margin-bottom: 12px;
+}
+
+.responsino-feedback-plugin .responsino-fd-confirm-text {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.responsino-feedback-plugin .responsino-fd-confirm-box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    background: #f8fafc;
+    font-size: 12px;
+}
+
+.responsino-feedback-plugin .responsino-fd-confirm-box-title {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.responsino-feedback-plugin .responsino-fd-confirm-badge {
+    background-color: gainsboro;
+    padding: 4px 8px;
+    border-radius: 3px;
+    margin-top: 6px;
+    word-break: break-all;
+    display: inline-block;
+}
+
+/* Multi-step form step toggling classes */
+.responsino-feedback-plugin .responsino-fd-step,
+.responsino-feedback-plugin .responsino-fd-success {
+    display: none !important;
+}
+
+.responsino-feedback-plugin .responsino-fd-step.is-active,
+.responsino-feedback-plugin .responsino-fd-success.is-active {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.responsino-feedback-plugin .responsino-fd-success.is-active {
+    justify-content: center;
+}
+
+/* Validation styles and modern feedback visual animations */
+.responsino-fd-group.responsino-fd-invalid textarea {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.responsino-fd-group.responsino-fd-invalid .responsino-fd-stars-row {
+    outline: 1px dashed #ef4444;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.responsino-fd-error-msg {
+    color: #ef4444;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    animation: responsino-shake 0.3s ease-in-out;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    padding: 10px 22px; /* Adjusted for border */
+    background-color: var(--responsino-fb-btn-bg, #fff);
+    color: var(--responsino-fb-btn-color, #104689);
+    border: 2px solid var(--responsino-fb-btn-border, #104689);
+    border-radius:  0 0 0.5rem 0.5rem;
+    border-top: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    z-index: 999;
+    transition: background-color 0.2s, color 0.2s, transform 0.3s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--right-middle {
+    right: 0;
+    top: 50%;
+    transform: translate3d(50%, -50%, 0) rotate(-270deg) translateY(50%);
+    transform-origin: center;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--left-middle {
+    left: 0;
+    top: 50%;
+    transform: translate3d(-50%, 43%, 0) rotate(270deg) translateY(50%);
+    transform-origin: center;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--bottom-right {
+    bottom: 0;
+    right: 40px;
+    top: auto;
+    left: auto;
+    transform: none;
+    transform-origin: bottom right;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--responsino-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--bottom-middle {
+    bottom: 0;
+    left: 50%;
+    top: auto;
+    right: auto;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--responsino-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--bottom-left {
+    bottom: 0;
+    left: 40px;
+    top: auto;
+    right: auto;
+    transform: none;
+    transform-origin: bottom left;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--responsino-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+
+
+/* Container position */
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--right-middle {
+    right: 20px;
+    left: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--right-middle.responsino-feedback-button-widget-container--hidden {
+    transform: translate(20px, -50%) scale(0.95);
+    opacity: 0;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--left-middle {
+    left: 20px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--left-middle.responsino-feedback-button-widget-container--hidden {
+    transform: translate(-20px, -50%) scale(0.95);
+    opacity: 0;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--bottom-right {
+    right: 20px;
+    left: auto;
+    bottom: 20px;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--bottom-middle {
+    left: 50%;
+    right: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--bottom-middle.responsino-feedback-button-widget-container--hidden {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container.responsino-feedback-button-widget-container--bottom-left {
+    left: 20px;
+    right: auto;
+    bottom: 20px;
+}
+
+/* This class is added via JS when scrolling past the threshold on desktop */
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button.responsino-feedback-button-widget-button--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button .responsino-feedback-button-widget-button-text {
+    display: inline-block;
+    text-transform: none;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button .responsino-feedback-button-widget-button-icon {
+    display: none;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button:hover {
+    background-color: var(--responsino-fb-btn-hover-bg-color, #104689);
+    color: var(--responsino-fb-btn-hover-color, #ffffff);
+    border-color: var(--responsino-fb-btn-hover-border-color, #104689);
+}
+
+.responsino-feedback-button-widget-is-open .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button,
+body.responsino-feedback-button-widget-is-open .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container {
+    position: fixed;
+    bottom: 20px;
+    width: calc(100vw - 40px); /* Responsive width for narrow desktop */
+    max-width: 340px; /* Max width for standard desktop */
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-container--hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #f9fafb;
+    flex-shrink: 0;
+}
+
+.responsino-feedback-plugin button.responsino-feedback-button-widget-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1.25rem;
+}
+
+.responsino-feedback-plugin button.responsino-feedback-button-widget-icon-button:hover {
+    background-color: #dddddd;
+    color: #1f2937;
+}
+
+.responsino-feedback-plugin button.responsino-feedback-button-widget-icon-button[hidden] {
+    visibility: hidden;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-progress-bar-container {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #dddddd;
+    border-radius: 4px;
+    margin: 0 12px;
+    overflow: hidden;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #104689;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-content {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    transition: height 0.3s ease-in-out;
+    padding: 20px;
+}
+
+@keyframes slide-in-right {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-out-left {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes slide-in-left {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-out-right {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+.responsino-feedback-plugin .slide-in-right { animation: slide-in-right 0.3s forwards cubic-bezier(0.25, 1, 0.5, 1); }
+.responsino-feedback-plugin .slide-out-left { animation: slide-out-left 0.3s forwards cubic-bezier(0.5, 0, 0.75, 0); }
+.responsino-feedback-plugin .slide-in-left { animation: slide-in-left 0.3s forwards cubic-bezier(0.25, 1, 0.5, 1); }
+.responsino-feedback-plugin .slide-out-right { animation: slide-out-right 0.3s forwards cubic-bezier(0.5, 0, 0.75, 0); }
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-no-backdrop {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-no-backdrop:not(.responsino-close-on-backdrop) {
+    pointer-events: none !important;
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-preview-mode {
+    position: absolute !important;
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-no-backdrop .responsino-general-overlay-modal,
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-no-backdrop .responsino-feedback-plugin-container {
+    pointer-events: auto !important;
+}
+
+/* In-Content Feedback Styles */
+.responsino-feedback-plugin.responsino-in-content-feedback-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+@keyframes responsino-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* Break class in Live Form */
+.responsino-fd-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-hide-container {
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-hide-link {
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.responsino-feedback-plugin .responsino-feedback-button-widget-hide-link:hover {
+    text-decoration: underline;
+    color: #104689;
+}
+
+@media (max-width: 480px) {
+    .responsino-feedback-plugin.responsino-in-content-feedback-container {
+        padding: 0;
+        margin: 2rem 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-50 {
+        width: calc(50% - 8px);
+    }
+
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-33 {
+        width: calc(33.333% - 10.667px);
+    }
+
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-25 {
+        width: calc(25% - 12px);
+    }
+}
+
+@media (max-width: 599px) {
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-50,
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-33,
+    .responsino-feedback-plugin .responsino-fd-group.responsino-fd-width-25 {
+        width: 100% !important;
+    }
+
+    .responsino-feedback-plugin button.responsino-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* --- MOBILE & RESPONSIVE STYLES (MUST BE AT THE END) --- */
+@media (max-width: 767px) {
+    .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button {
+        /* Mobile overrides to make it a fixed FAB */
+        position: fixed;
+        top: auto;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        transform: none;
+        transform-origin: center;
+        min-width: 49px;
+        padding: 11px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        gap: 0;
+        /* Revert to solid button style for mobile */
+        background-color: var(--responsino-fb-btn-bg, #fff);
+        color: var(--responsino-fb-btn-color, #104689);
+        border: 2px solid var(--responsino-fb-btn-border, #104689);
+        /* Ensure it's always visible on mobile, overriding desktop styles */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button:hover {
+        background-color: #0b386f;
+    }
+
+    .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button .responsino-feedback-button-widget-button-text {
+        display: none;
+    }
+
+    .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button .responsino-feedback-button-widget-button-icon {
+        display: inline-block;
+    }
+
+    .responsino-feedback-plugin .responsino-feedback-button-widget-container {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        max-width: none; /* Override desktop max-width */
+        border-radius: 0;
+        box-shadow: none;
+        transform: translateY(0);
+    }
+
+    .responsino-feedback-plugin .responsino-feedback-button-widget-container--hidden {
+        transform: translateY(100%);
+        opacity: 1; /* Keep opacity for transition */
+    }
+
+    .responsino-feedback-plugin .responsino-feedback-button-widget-content {
+        overflow-y: auto;
+    }
+
+    .responsino-feedback-button-widget-is-open .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button,
+    body.responsino-feedback-button-widget-is-open .responsino-feedback-plugin button[id^="responsino-standard-feedback-btn-"].responsino-feedback-button-widget-button {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+
+/* General Overlay System styles (Abstracted from Exit-Intent and Feedback-Button) */
+.responsino-feedback-plugin.responsino-general-overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Custom Position Classes for General Overlay */
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-right-middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-left-middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-bottom-middle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-top-middle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-bottom-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-bottom-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-top-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-pos-top-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+/* Modal layout container card */
+.responsino-feedback-plugin .responsino-general-overlay-modal {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 480px;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    position: relative;
+    transform: scale(0.92);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+/* Position-dependent default widths */
+.responsino-feedback-plugin .responsino-general-overlay-modal.responsino-overlay-card-pos-bottom-right,
+.responsino-feedback-plugin .responsino-general-overlay-modal.responsino-overlay-card-pos-bottom-left,
+.responsino-feedback-plugin .responsino-general-overlay-modal.responsino-overlay-card-pos-top-right,
+.responsino-feedback-plugin .responsino-general-overlay-modal.responsino-overlay-card-pos-top-left {
+    max-width: 380px;
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-general-overlay-modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Deactivate default transitions for slide-in overlays to avoid conflicts */
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-in-left,
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-in-right,
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-out-left,
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-out-right {
+    transition: opacity 0.3s ease;
+    transform: none;
+    opacity: 1;
+}
+
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-out-left,
+.responsino-feedback-plugin .responsino-general-overlay-modal.slide-out-right {
+    opacity: 0;
+}
+
+/* Position and entry transitions */
+.responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-right,
+.responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-left {
+    transform: translateY(60px);
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-right,
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-left {
+    transform: translateY(0);
+}
+
+.responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-right,
+.responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-left {
+    transform: translateY(-60px);
+}
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-right,
+.responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-left {
+    transform: translateY(0);
+}
+
+/* Buttons inside the overlay header */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] button.responsino-general-overlay-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #64748b;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] button.responsino-general-overlay-icon-btn:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Abstracted Progress Bar for General Overlay */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-general-overlay-progress-bar-container {
+    display: none;
+    width: 100%;
+    max-width: 200px;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-general-overlay-progress-bar {
+    width: 35%;
+    height: 100%;
+    background-color: #104689;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Header of General Overlay */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 6px 20px;
+    position: relative;
+}
+
+/* Header indicator wrapper */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-header-indicator-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Title */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-header-title {
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    text-align: center;
+}
+
+/* Header Step Indicator */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-header-step-indicator {
+    display: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6c757d;
+    text-align: center;
+}
+
+/* Overlay Body */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+/* Overlay Footer */
+.responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-footer {
+    font-size: 11px;
+    text-align: center;
+    color: #6c757d;
+    border-top: 1px solid #e2e8f0;
+    padding: 10px 20px;
+}
+
+/* Mobile Optimization: Bottom Sheet transformation for General Overlay (< 640px) AND Preview Mobile Viewport */
+@media (max-width: 640px) {
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop {
+        align-items: flex-end !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .responsino-feedback-plugin .responsino-general-overlay-modal,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-general-overlay-modal,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-right,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-left,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-right,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-left,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-right-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-left-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-center {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 85vh !important;
+        border-radius: 20px 20px 0 0 !important;
+        margin: 0 !important;
+        border-bottom: none !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+        transform: translateY(100%) !important;
+        opacity: 0 !important;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+    }
+
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-general-overlay-modal,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-right,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-left,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-right,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-left,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-right-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-left-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-middle,
+    .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-center {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    .responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-header {
+        border-radius: 20px 20px 0 0 !important;
+    }
+
+    .responsino-feedback-plugin[id^="responsino-overlay-container-"] .responsino-overlay-body {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(85vh - 110px) !important;
+    }
+}
+
+/* Also trigger Mobile Bottom Sheet when previewing in .viewport-mobile container */
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop {
+    align-items: flex-end !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.viewport-mobile .responsino-feedback-plugin .responsino-general-overlay-modal,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-general-overlay-modal,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-right,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-left,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-right,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-left,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-right-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-left-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-bottom-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-top-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop .responsino-overlay-card-pos-center {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 85vh !important;
+    border-radius: 20px 20px 0 0 !important;
+    margin: 0 !important;
+    border-bottom: none !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(100%) !important;
+    opacity: 0 !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+}
+
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-general-overlay-modal,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-right,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-left,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-right,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-left,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-right-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-left-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-bottom-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-top-middle,
+.viewport-mobile .responsino-feedback-plugin.responsino-general-overlay-backdrop.responsino-overlay-is-visible .responsino-overlay-card-pos-center {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.viewport-mobile .responsino-feedback-plugin .responsino-overlay-header {
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.viewport-mobile .responsino-feedback-plugin .responsino-overlay-body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(85vh - 110px) !important;
+}

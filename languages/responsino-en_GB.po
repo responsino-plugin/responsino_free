@@ -1,0 +1,3490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsino 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/responsino\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-18T09:20:05+02:00\n"
+"PO-Revision-Date: 2026-10-19T10:06:27+00:00\n"
+"Language: en_GB\n"
+"X-Generator: Poedit 3.9\n"
+
+#. Plugin Name of the plugin
+#: responsino.php:5
+msgid "Responsino – User Feedback & Surveys"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: responsino.php:7
+msgid "https://responsino.de"
+msgstr "https://responsino.de"
+
+#. Description of the plugin
+#: responsino.php:9
+msgid "Collect and analyze user feedback directly in WordPress with a visual form builder, flexible display options, smart triggers, and targeting."
+msgstr ""
+
+#. Author of the plugin
+#: responsino.php:17
+msgid "Kai Steudten"
+msgstr ""
+
+#: includes/Admin.php:55
+#: includes/Admin.php:56
+msgid "admin.menu.dashboard"
+msgstr "Dashboard"
+
+#: includes/Admin.php:64
+#: includes/Admin.php:65
+msgid "admin.menu.all_forms"
+msgstr "All Forms"
+
+#: includes/Admin.php:73
+#: includes/Admin.php:74
+msgid "admin.menu.add_form"
+msgstr "Add Form"
+
+#: includes/Admin.php:82
+#: includes/Admin.php:83
+msgid "admin.menu.feedback_list"
+msgstr "Feedback List"
+
+#: includes/Admin.php:91
+#: includes/Admin.php:92
+msgid "admin.menu.export"
+msgstr "Export"
+
+#: includes/Admin.php:100
+#: includes/Admin.php:101
+msgid "admin.menu.about"
+msgstr "About FLWP"
+
+#: includes/Admin.php:218
+#: includes/Admin.php:284
+#: includes/Admin.php:312
+#: includes/Admin.php:336
+#: includes/Admin.php:352
+#: includes/Admin.php:391
+#: includes/Admin.php:414
+msgid "Permission denied"
+msgstr ""
+
+#: includes/Admin.php:231
+#: includes/Admin.php:291
+#: includes/Admin.php:319
+msgid "Missing data"
+msgstr ""
+
+#: includes/Admin.php:240
+msgid "Invalid data"
+msgstr ""
+
+#: includes/Admin.php:253
+msgid "Invalid form configuration. Please check your form settings."
+msgstr ""
+
+#: includes/Admin.php:260
+#: includes/Database/Form.php:144
+msgid "admin.db.default_new_form_name"
+msgstr "New Form"
+
+#: includes/Admin.php:270
+msgid "Form data saved successfully"
+msgstr ""
+
+#: includes/Admin.php:276
+msgid "Failed to save form data"
+msgstr ""
+
+#: includes/Admin.php:302
+msgid "Status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:304
+msgid "Failed to update status"
+msgstr ""
+
+#: includes/Admin.php:326
+msgid "Feedback status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:328
+msgid "Failed to update feedback status"
+msgstr ""
+
+#: includes/Admin.php:419
+msgid "ID missing"
+msgstr ""
+
+#: includes/Admin.php:425
+msgid "Feedback not found"
+msgstr ""
+
+#: includes/Admin.php:470
+msgid "admin.notice.thank_you"
+msgstr "Thank you for using %s."
+
+#: includes/Database/Form.php:18
+#: includes/FormFrontend.php:178
+#: includes/Helper/ConfigHelper.php:172
+msgid "admin.db.default_form_name"
+msgstr "Feedback form"
+
+#: includes/Database/Form.php:276
+#: includes/Database/Form.php:282
+msgid "admin.form.duplicate_suffix"
+msgstr "Copy"
+
+#: includes/EnvironmentChecks.php:97
+#: includes/EnvironmentChecks.php:132
+msgid "admin.env_check.error.title"
+msgstr "Attention: Unfortunately, there is a problem!"
+
+#: includes/EnvironmentChecks.php:100
+msgid "admin.env_check.wp.too_old"
+msgstr "The installed WordPress version is too old for the Responsino plugin! Responsino requires a current version!"
+
+#: includes/EnvironmentChecks.php:107
+msgid "admin.env_check.wp.update_core"
+msgstr "Please <a href=\"%1$s\">update your WordPress installation</a> to at least version %2$s!"
+
+#: includes/EnvironmentChecks.php:108
+msgid "admin.env_check.wp.update_core.txt"
+msgstr "update your WordPress installation"
+
+#: includes/EnvironmentChecks.php:115
+msgid "admin.env_check.wp.ask_admin"
+msgstr "Please ask your website administrator to update WordPress to at least version %1$s!"
+
+#: includes/EnvironmentChecks.php:135
+msgid "admin.env_check.php.too_old"
+msgstr "Your server is using a PHP version that is too old for the Responsino plugin to work. Responsino requires PHP %s or newer, with newer versions recommended."
+
+#: includes/EnvironmentChecks.php:141
+msgid "admin.env_check.php.update_link"
+msgstr "<a href=\"%s\">Learn more about updating PHP</a> or contact your server administrator."
+
+#: includes/EnvironmentChecks.php:142
+msgid "admin.env_check.php.update_link.txt"
+msgstr "Learn more about updating PHP"
+
+#: includes/FormFrontend.php:211
+#: includes/Helper/ConfigHelper.php:236
+#: includes/Helper/ConfigHelper.php:272
+#: includes/Helper/ConfigHelper.php:306
+#: templates/frontend/responsino-form-footer.php:39
+#: assets/js/dist/responsino-form-builder.js:4356
+#: assets/js/dist/responsino-form-builder.js:4373
+#: assets/js/dist/responsino-form-frontend.js:2375
+#: assets/js/dist/responsino-form-frontend.js:2448
+msgid "admin.frontend.default_footer_text"
+msgstr "We appreciate your honest feedback!"
+
+#: includes/FormFrontend.php:530
+msgid "admin.notification.feedback_saved"
+msgstr "Feedback saved"
+
+#: includes/FormFrontend.php:532
+msgid "admin.notification.database_error"
+msgstr "Database error"
+
+#: includes/FormFrontend.php:551
+msgid "admin.notification.subject"
+msgstr "New form entry"
+
+#: includes/FormFrontend.php:565
+msgid "admin.notification.email_body"
+msgstr "<p>Here are the submitted form data:</p><p>{feedback_values}</p><p>Sent on: {date} at {time}</p><p>Via page: {page_url}</p>"
+
+#: includes/FormFrontend.php:584
+msgid "admin.notification.default_form_name"
+msgstr "Feedback form"
+
+#: includes/FormFrontend.php:588
+msgid "admin.notification.time_suffix"
+msgstr "&nbsp;"
+
+#: includes/Helper/ConfigHelper.php:44
+msgid "fields.headline.name"
+msgstr "Headline"
+
+#: includes/Helper/ConfigHelper.php:46
+msgid "fields.headline.default_label"
+msgstr "Your opinion counts!"
+
+#: includes/Helper/ConfigHelper.php:53
+msgid "fields.description.name"
+msgstr "Description"
+
+#: includes/Helper/ConfigHelper.php:55
+msgid "fields.description.default_label"
+msgstr "Please take a minute to fill out this short feedback."
+
+#: includes/Helper/ConfigHelper.php:62
+msgid "fields.button.name"
+msgstr "Button"
+
+#: includes/Helper/ConfigHelper.php:64
+msgid "fields.button.default_label"
+msgstr "Send feedback"
+
+#: includes/Helper/ConfigHelper.php:71
+msgid "fields.textarea.name"
+msgstr "Textarea (Multi-line)"
+
+#: includes/Helper/ConfigHelper.php:73
+msgid "fields.textarea.default_label"
+msgstr "Your message"
+
+#: includes/Helper/ConfigHelper.php:80
+#: templates/admin/form-builder/fields.php:69
+msgid "fields.dropdown.name"
+msgstr "Dropdown"
+
+#: includes/Helper/ConfigHelper.php:82
+#: includes/Helper/ConfigHelper.php:91
+#: includes/Helper/ConfigHelper.php:101
+msgid "fields.choices_list.default_label"
+msgstr "What can we help you with?"
+
+#: includes/Helper/ConfigHelper.php:89
+#: templates/admin/form-builder/fields.php:74
+msgid "fields.chips.name"
+msgstr "Chips"
+
+#: includes/Helper/ConfigHelper.php:99
+#: templates/admin/form-builder/fields.php:79
+msgid "fields.radio.name"
+msgstr "Radio Button"
+
+#: includes/Helper/ConfigHelper.php:109
+#: templates/admin/form-builder/fields.php:84
+#: assets/js/dist/responsino-form-builder.js:1512
+#: assets/js/dist/responsino-form-builder.js:1551
+#: assets/js/dist/responsino-form-builder.js:4794
+#: assets/js/dist/responsino-form-frontend.js:1595
+#: assets/js/dist/responsino-form-frontend.js:1634
+msgid "fields.name.name"
+msgstr "Name"
+
+#: includes/Helper/ConfigHelper.php:111
+msgid "fields.name.default_label"
+msgstr "Name"
+
+#: includes/Helper/ConfigHelper.php:118
+#: templates/admin/form-builder/fields.php:89
+msgid "fields.email.name"
+msgstr "E-Mail"
+
+#: includes/Helper/ConfigHelper.php:120
+msgid "fields.email.default_label"
+msgstr "E-Mail"
+
+#: includes/Helper/ConfigHelper.php:127
+msgid "fields.rating.name"
+msgstr "Star rating"
+
+#: includes/Helper/ConfigHelper.php:129
+msgid "fields.rating.default_label"
+msgstr "How do you rate our site?"
+
+#: includes/Helper/ConfigHelper.php:163
+msgid "admin.config.default_email"
+msgstr "Email address"
+
+#: includes/Helper/ConfigHelper.php:322
+#: assets/js/dist/responsino-form-frontend.js:2867
+#: assets/js/dist/responsino-form-frontend.js:3002
+#: assets/js/dist/responsino-form-frontend.js:3018
+msgid "confirmation.message.default"
+msgstr "<p>Thank you for your feedback! It helps us to improve continuously.</p>"
+
+#: includes/Helper/ConfigHelper.php:328
+msgid "notification.subject.default"
+msgstr "New feedback received"
+
+#: includes/Helper/ConfigHelper.php:422
+msgid "admin.form_template.bug.title"
+msgstr "Report bug"
+
+#: includes/Helper/ConfigHelper.php:426
+msgid "admin.form_template.website.title"
+msgstr "Article satisfaction (with step 2)"
+
+#: includes/Helper/ConfigHelper.php:430
+msgid "admin.form_template.template-4.title"
+msgstr "Article satisfaction (without step 2)"
+
+#: includes/Helper/ConfigHelper.php:434
+#: includes/Helper/FormHelper.php:122
+msgid "admin.initial_form.in_content.title"
+msgstr "Content feedback"
+
+#: includes/Helper/ConfigHelper.php:438
+#: includes/Helper/FormHelper.php:134
+msgid "admin.initial_form.feedback_button.title"
+msgstr "Feedback button form"
+
+#: includes/Helper/ConfigHelper.php:442
+#: includes/Helper/FormHelper.php:155
+msgid "admin.initial_form.exit_intent.title"
+msgstr "Exit-intent form"
+
+#: includes/Helper/ConfigHelper.php:446
+msgid "admin.form_template.blank.title"
+msgstr "Empty form"
+
+#: includes/Helper/ConfigHelper.php:464
+#: includes/Helper/ConfigHelper.php:588
+msgid "admin.default.rating.label"
+msgstr "How satisfied are you with our service?"
+
+#: includes/Helper/ConfigHelper.php:471
+msgid "admin.default.step1.headline.label"
+msgstr "How satisfied are you with the content?"
+
+#: includes/Helper/ConfigHelper.php:472
+msgid "admin.default.step1.description.label"
+msgstr "Help us to become better."
+
+#: includes/Helper/ConfigHelper.php:477
+msgid "admin.default.step2.headline.label"
+msgstr "Tell us more?"
+
+#: includes/Helper/ConfigHelper.php:478
+msgid "admin.default.step2.description.label"
+msgstr "What did you particularly like, or what can we optimize?"
+
+#: includes/Helper/ConfigHelper.php:479
+msgid "admin.default.step2.textarea.label"
+msgstr "What can we do better?"
+
+#: includes/Helper/ConfigHelper.php:479
+msgid "admin.default.step2.textarea.placeholder"
+msgstr "Write your feedback here..."
+
+#: includes/Helper/ConfigHelper.php:480
+msgid "admin.default.step2.button.back.label"
+msgstr "Back"
+
+#: includes/Helper/ConfigHelper.php:481
+msgid "admin.default.step2.button.submit.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:491
+msgid "admin.feedback_button.btn_improve.label"
+msgstr "Rate your experience"
+
+#: includes/Helper/ConfigHelper.php:508
+msgid "admin.feedback_button.btn_missing.label"
+msgstr "What are you missing on the page?"
+
+#: includes/Helper/ConfigHelper.php:525
+msgid "admin.feedback_button.btn_idea.label"
+msgstr "Do you have an idea?"
+
+#: includes/Helper/ConfigHelper.php:542
+msgid "admin.feedback_button.btn_problem.label"
+msgstr "Report a problem"
+
+#: includes/Helper/ConfigHelper.php:559
+msgid "admin.feedback_button.btn_other.label"
+msgstr "Other feedback"
+
+#: includes/Helper/ConfigHelper.php:578
+msgid "admin.feedback_button.step1.headline.label"
+msgstr "How can we improve?"
+
+#: includes/Helper/ConfigHelper.php:587
+msgid "admin.feedback_button.step2.improve.headline.label"
+msgstr "How satisfied are you with us?"
+
+#: includes/Helper/ConfigHelper.php:591
+msgid "admin.feedback_button.step2.missing.headline.label"
+msgstr "Which feature are you missing?"
+
+#: includes/Helper/ConfigHelper.php:592
+msgid "admin.feedback_button.step2.missing.description.label"
+msgstr "Tell us which feature or functionality you are missing on our page."
+
+#: includes/Helper/ConfigHelper.php:593
+msgid "admin.feedback_button.step2.missing.textarea.label"
+msgstr "What can we do better?"
+
+#: includes/Helper/ConfigHelper.php:593
+msgid "admin.feedback_button.step2.missing.textarea.placeholder"
+msgstr "e.g. a special table or notifications..."
+
+#: includes/Helper/ConfigHelper.php:594
+msgid "admin.feedback_button.step2.missing.button.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:597
+msgid "admin.feedback_button.step2.idea.headline.label"
+msgstr "Which feature would you wish for?"
+
+#: includes/Helper/ConfigHelper.php:598
+msgid "admin.feedback_button.step2.idea.description.label"
+msgstr "Describe your idea to us as precisely as possible."
+
+#: includes/Helper/ConfigHelper.php:599
+msgid "admin.feedback_button.step2.idea.textarea.label"
+msgstr "What can we do better?"
+
+#: includes/Helper/ConfigHelper.php:599
+msgid "admin.feedback_button.step2.idea.textarea.placeholder"
+msgstr "I would wish that..."
+
+#: includes/Helper/ConfigHelper.php:600
+msgid "admin.feedback_button.step2.idea.button.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:603
+msgid "admin.feedback_button.step2.problem.headline.label"
+msgstr "What is the problem?"
+
+#: includes/Helper/ConfigHelper.php:604
+msgid "admin.feedback_button.step2.problem.description.label"
+msgstr "Please give us as many details about the problem as possible."
+
+#: includes/Helper/ConfigHelper.php:605
+msgid "admin.feedback_button.step2.problem.textarea.label"
+msgstr "What can we do better?"
+
+#: includes/Helper/ConfigHelper.php:605
+msgid "admin.feedback_button.step2.problem.textarea.placeholder"
+msgstr "I tried... and then this happened..."
+
+#: includes/Helper/ConfigHelper.php:606
+msgid "admin.feedback_button.step2.problem.button.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:609
+msgid "admin.feedback_button.step2.other.headline.label"
+msgstr "What would you like to share with us?"
+
+#: includes/Helper/ConfigHelper.php:610
+msgid "admin.feedback_button.step2.other.description.label"
+msgstr "We appreciate any feedback you give us."
+
+#: includes/Helper/ConfigHelper.php:611
+msgid "admin.feedback_button.step2.other.textarea.label"
+msgstr "What can we do better?"
+
+#: includes/Helper/ConfigHelper.php:611
+msgid "admin.feedback_button.step2.other.textarea.placeholder"
+msgstr "Share your thoughts with us here..."
+
+#: includes/Helper/ConfigHelper.php:612
+msgid "admin.feedback_button.step2.other.button.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:621
+msgid "admin.exit_intent.rating.label"
+msgstr "How satisfied are you with our service?"
+
+#: includes/Helper/ConfigHelper.php:636
+msgid "admin.exit_intent.headline.label"
+msgstr "Wait! Before you go..."
+
+#: includes/Helper/ConfigHelper.php:643
+msgid "admin.exit_intent.description.label"
+msgstr "How satisfied were you with the content of our page?"
+
+#: includes/Helper/ConfigHelper.php:654
+msgid "admin.exit_intent.step2.headline.label"
+msgstr "Tell us more"
+
+#: includes/Helper/ConfigHelper.php:660
+msgid "admin.exit_intent.step2.textarea.label"
+msgstr "What can we do better? (Optional)"
+
+#: includes/Helper/ConfigHelper.php:662
+msgid "admin.exit_intent.step2.textarea.placeholder"
+msgstr "Your feedback helps us a lot..."
+
+#: includes/Helper/ConfigHelper.php:668
+msgid "admin.exit_intent.step2.button.label"
+msgstr "Submit feedback"
+
+#: includes/Helper/ConfigHelper.php:687
+msgid "admin.template2.headline.label"
+msgstr "Report bug"
+
+#: includes/Helper/ConfigHelper.php:688
+msgid "admin.template2.description.label"
+msgstr "Please describe the problem in as much detail as possible."
+
+#: includes/Helper/ConfigHelper.php:689
+msgid "admin.template2.textarea.label"
+msgstr "Error description:"
+
+#: includes/Helper/ConfigHelper.php:689
+msgid "admin.template2.textarea.placeholder"
+msgstr "What error occurred and on which page?"
+
+#: includes/Helper/ConfigHelper.php:690
+msgid "admin.template2.button.label"
+msgstr "Send error report"
+
+#: includes/Helper/ConfigHelper.php:699
+msgid "admin.template3.rating.label"
+msgstr "How do you rate the article?"
+
+#: includes/Helper/ConfigHelper.php:714
+msgid "admin.template3.step1.headline.label"
+msgstr "Article rating"
+
+#: includes/Helper/ConfigHelper.php:719
+msgid "admin.template3.step2.headline.label"
+msgstr "What information was missing?"
+
+#: includes/Helper/ConfigHelper.php:720
+msgid "admin.template3.step2.textarea.label"
+msgstr "What information are you looking for?"
+
+#: includes/Helper/ConfigHelper.php:720
+msgid "admin.template3.step2.textarea.placeholder"
+msgstr "What information are you looking for?"
+
+#: includes/Helper/ConfigHelper.php:721
+msgid "admin.template3.step2.button.label"
+msgstr "Submit"
+
+#: includes/Helper/ConfigHelper.php:731
+msgid "admin.template4.rating.label"
+msgstr "How do you rate the article?"
+
+#: includes/Helper/ConfigHelper.php:746
+msgid "admin.template4.step1.headline.label"
+msgstr "Article rating"
+
+#: includes/Helper/FormDataSanitizer.php:743
+msgid "Invalid form configuration."
+msgstr ""
+
+#: includes/Helper/FormHelper.php:247
+msgid "admin.form_type.modal.name"
+msgstr "Overlay"
+
+#: includes/Helper/FormHelper.php:248
+msgid "admin.form_type.slide-in.name"
+msgstr "Slide-In"
+
+#: includes/Helper/FormHelper.php:249
+msgid "admin.form_type.feedback-button.name"
+msgstr "Feedback-Button"
+
+#: includes/Helper/FormHelper.php:250
+msgid "admin.form_type.shortcode.name"
+msgstr "Shortcode"
+
+#: includes/Helper/FormHelper.php:251
+msgid "admin.form_type.pre-content.name"
+msgstr "Pre-Content"
+
+#: includes/Helper/FormHelper.php:252
+msgid "admin.form_type.post-content.name"
+msgstr "Post-Content"
+
+#: includes/Lists/FormFeedbackListTable.php:33
+#: includes/Lists/FormListTable.php:37
+msgid "admin.form_list.id"
+msgstr "ID"
+
+#: includes/Lists/FormFeedbackListTable.php:34
+msgid "admin.form_list.form_id"
+msgstr "Form ID"
+
+#: includes/Lists/FormFeedbackListTable.php:35
+#: includes/Lists/FormFeedbackListTable.php:156
+msgid "admin.form_list.display_type"
+msgstr "Display type"
+
+#: includes/Lists/FormFeedbackListTable.php:36
+msgid "admin.form_list.form_name"
+msgstr "Form name"
+
+#: includes/Lists/FormFeedbackListTable.php:37
+msgid "admin.form_list.page_url"
+msgstr "Page URL"
+
+#: includes/Lists/FormFeedbackListTable.php:38
+#: includes/Lists/FormListTable.php:39
+msgid "admin.form_list.status"
+msgstr "Status"
+
+#: includes/Lists/FormFeedbackListTable.php:39
+msgid "admin.form_list.created"
+msgstr "Created"
+
+#: includes/Lists/FormFeedbackListTable.php:40
+#: includes/Lists/FormListTable.php:41
+msgid "admin.form_list.updated"
+msgstr "Updated"
+
+#: includes/Lists/FormFeedbackListTable.php:79
+#: includes/Lists/FormFeedbackListTable.php:165
+#: assets/js/dist/responsino-admin.js:387
+#: assets/js/dist/responsino-admin.js:391
+msgid "admin.form_list.filter.status.read"
+msgstr "Read"
+
+#: includes/Lists/FormFeedbackListTable.php:82
+#: includes/Lists/FormFeedbackListTable.php:166
+#: assets/js/dist/responsino-admin.js:394
+msgid "admin.form_list.filter.status.archived"
+msgstr "Archived"
+
+#: includes/Lists/FormFeedbackListTable.php:86
+#: includes/Lists/FormFeedbackListTable.php:164
+#: assets/js/dist/responsino-admin.js:398
+msgid "admin.form_list.filter.status.unread"
+msgstr "Unread"
+
+#: includes/Lists/FormFeedbackListTable.php:105
+msgid "admin.form_list.action.view"
+msgstr "View"
+
+#: includes/Lists/FormFeedbackListTable.php:110
+msgid "admin.form_list.action.delete"
+msgstr "Delete"
+
+#: includes/Lists/FormFeedbackListTable.php:122
+msgid "admin.form_list.no_items"
+msgstr "No form feedbacks found."
+
+#: includes/Lists/FormFeedbackListTable.php:139
+msgid "admin.form_list.filter.form"
+msgstr "Form"
+
+#: includes/Lists/FormFeedbackListTable.php:163
+msgid "admin.form_list.filter.status.placeholder"
+msgstr "Status"
+
+#: includes/Lists/FormFeedbackListTable.php:170
+msgid "admin.form_list.filter.range.placeholder"
+msgstr "Time period"
+
+#: includes/Lists/FormFeedbackListTable.php:171
+msgid "admin.form_list.filter.range.today"
+msgstr "Today"
+
+#: includes/Lists/FormFeedbackListTable.php:172
+msgid "admin.form_list.filter.range.yesterday"
+msgstr "Yesterday"
+
+#: includes/Lists/FormFeedbackListTable.php:173
+msgid "admin.form_list.filter.range.last_7_days"
+msgstr "Last 7 days"
+
+#: includes/Lists/FormFeedbackListTable.php:174
+msgid "admin.form_list.filter.range.last_30_days"
+msgstr "Last 30 days"
+
+#: includes/Lists/FormFeedbackListTable.php:175
+msgid "admin.form_list.filter.range.this_month"
+msgstr "This month"
+
+#: includes/Lists/FormFeedbackListTable.php:176
+msgid "admin.form_list.filter.range.last_month"
+msgstr "Last month"
+
+#: includes/Lists/FormFeedbackListTable.php:177
+msgid "admin.form_list.filter.range.this_year"
+msgstr "This year"
+
+#: includes/Lists/FormFeedbackListTable.php:178
+msgid "admin.form_list.filter.range.last_year"
+msgstr "Last year"
+
+#: includes/Lists/FormFeedbackListTable.php:179
+msgid "admin.form_list.filter.range.custom"
+msgstr "Custom"
+
+#: includes/Lists/FormFeedbackListTable.php:183
+msgid "admin.form_list.filter.date.start"
+msgstr "Start date"
+
+#: includes/Lists/FormFeedbackListTable.php:184
+msgid "admin.form_list.filter.date.end"
+msgstr "End date"
+
+#: includes/Lists/FormFeedbackListTable.php:187
+msgid "admin.form_list.filter.button"
+msgstr "Filter"
+
+#: includes/Lists/FormFeedbackListTable.php:196
+#: includes/Lists/FormListTable.php:148
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/Lists/FormListTable.php:38
+msgid "admin.form_list.name"
+msgstr "Name"
+
+#: includes/Lists/FormListTable.php:40
+msgid "admin.form_list.shortcode"
+msgstr "Shortcode"
+
+#: includes/Lists/FormListTable.php:62
+msgid "admin.form_list.status.paused"
+msgstr "Paused"
+
+#: includes/Lists/FormListTable.php:67
+msgid "admin.form_list.status.live"
+msgstr "Live"
+
+#: includes/Lists/FormListTable.php:71
+msgid "admin.form_list.status.admin_only"
+msgstr "Admin-only"
+
+#: includes/Lists/FormListTable.php:101
+msgid "admin.form_list.actions.edit"
+msgstr "Edit"
+
+#: includes/Lists/FormListTable.php:109
+msgid "admin.form_list.actions.duplicate"
+msgstr "Duplicate"
+
+#: includes/Lists/FormListTable.php:117
+msgid "admin.form_list.actions.delete"
+msgstr "Delete"
+
+#: includes/Lists/FormListTable.php:141
+msgid "admin.form_list.no_forms"
+msgstr "No forms found."
+
+#: includes/Page/About.php:21
+msgid "admin.page.about.box.about"
+msgstr "About FLWP"
+
+#: includes/Page/About.php:22
+msgid "admin.page.about.box.usage"
+msgstr "Usage"
+
+#: includes/Page/About.php:23
+msgid "admin.page.about.box.more_info"
+msgstr "More information and documentation"
+
+#: includes/Page/About.php:24
+msgid "admin.page.about.box.support"
+msgstr "Help and support"
+
+#: includes/Page/About.php:25
+msgid "admin.page.about.box.affiliate"
+msgstr "Affiliate program"
+
+#: includes/Page/About.php:26
+msgid "admin.page.about.box.author"
+msgstr "Author"
+
+#: includes/Page/About.php:27
+msgid "admin.page.about.box.debug"
+msgstr "Debug and version information"
+
+#: includes/Page/About.php:36
+msgid "admin.page.about.about_text"
+msgstr "Responsino is a powerful feedback plugin for WordPress."
+
+#: includes/Page/About.php:39
+msgid "admin.page.about.usage_text"
+msgstr "It allows you to collect feedback from your users in a simple and efficient way."
+
+#: includes/Page/About.php:50
+msgid "admin.page.about.usage.step1"
+msgstr "To get started, you can create a new feedback form using the form builder."
+
+#: includes/Page/About.php:51
+msgid "admin.page.about.usage.step2"
+msgstr "Once your form is created, you can configure the targeting settings to decide where and when the form should appear on your website."
+
+#: includes/Page/About.php:54
+msgid "admin.page.about.usage.step3"
+msgstr "After the form is active, you can view the collected feedback in the feedback list or export it for further analysis."
+
+#: includes/Page/About.php:66
+msgid "admin.page.about.more_info.link"
+msgstr "For further information and detailed documentation, please visit our %s."
+
+#: includes/Page/About.php:67
+msgid "admin.page.about.more_info.official_website"
+msgstr "official website"
+
+#: includes/Page/About.php:80
+msgid "admin.page.about.support.link"
+msgstr "If you need help or have questions, please check our %s or open a support ticket in the %s."
+
+#: includes/Page/About.php:81
+msgid "admin.page.about.documentation.title"
+msgstr "Documentation"
+
+#: includes/Page/About.php:95
+msgid "admin.page.about.affiliate.link"
+msgstr "Do you like Responsino and want to earn money through recommendations? Join our %s!"
+
+#: includes/Page/About.php:96
+msgid "admin.page.about.affiliate"
+msgstr "Affiliate Program"
+
+#: includes/Page/About.php:100
+msgid "admin.page.about.affiliate.text"
+msgstr "Earn up to 15% commission for every sale you refer to us."
+
+#: includes/Page/About.php:112
+msgid "admin.page.about.author.text"
+msgstr "Responsino was developed by %s."
+
+#: includes/Page/About.php:126
+msgid "admin.page.about.debug.hint"
+msgstr "Please provide this information when reporting errors or requesting support."
+
+#: includes/Page/Page.php:26
+msgid "FLWP"
+msgstr "FLWP"
+
+#: templates/admin/responsino-admin-page.php:21
+msgid "admin.horizontal_navigation.brand"
+msgstr "FLWP"
+
+#: templates/admin/responsino-admin-page.php:26
+msgid "admin.horizontal_navigation.dashboard"
+msgstr "Dashboard"
+
+#: templates/admin/responsino-admin-page.php:31
+msgid "admin.horizontal_navigation.all_forms"
+msgstr "All Forms"
+
+#: templates/admin/responsino-admin-page.php:36
+msgid "admin.horizontal_navigation.add_form"
+msgstr "Add Form"
+
+#: templates/admin/responsino-admin-page.php:41
+msgid "admin.horizontal_navigation.feedback_list"
+msgstr "Feedback List"
+
+#: templates/admin/responsino-admin-page.php:46
+msgid "admin.horizontal_navigation.export"
+msgstr "Export"
+
+#: templates/admin/responsino-admin-page.php:51
+msgid "admin.horizontal_navigation.about"
+msgstr "About FLWP"
+
+#: templates/admin/responsino-dashboard.php:13
+msgid "admin.page.dashboard.welcome"
+msgstr "Welcome back!"
+
+#: templates/admin/responsino-dashboard.php:14
+msgid "admin.page.dashboard.overview"
+msgstr "Here is an overview of your feedback widget."
+
+#: templates/admin/responsino-dashboard.php:19
+msgid "admin.page.dashboard.summary"
+msgstr "Summary"
+
+#: templates/admin/responsino-dashboard.php:22
+msgid "admin.page.dashboard.total"
+msgstr "Total"
+
+#: templates/admin/responsino-dashboard.php:26
+msgid "admin.page.dashboard.today"
+msgstr "Today"
+
+#: templates/admin/responsino-dashboard.php:34
+msgid "admin.page.dashboard.distribution_by_type"
+msgstr "Distribution by type"
+
+#: templates/admin/responsino-dashboard.php:38
+msgid "admin.page.dashboard.type.shortcode"
+msgstr "Shortcode:"
+
+#: templates/admin/responsino-dashboard.php:42
+msgid "admin.page.dashboard.type.pre_content"
+msgstr "Pre-Content:"
+
+#: templates/admin/responsino-dashboard.php:46
+msgid "admin.page.dashboard.type.post_content"
+msgstr "Post-Content:"
+
+#: templates/admin/responsino-dashboard.php:50
+msgid "admin.page.dashboard.type.overlay"
+msgstr "Overlay:"
+
+#: templates/admin/responsino-dashboard.php:54
+msgid "admin.page.dashboard.type.slide_in"
+msgstr "Slide-In:"
+
+#: templates/admin/responsino-dashboard.php:58
+msgid "admin.page.dashboard.type.feedback_button"
+msgstr "Feedback-Button:"
+
+#: templates/admin/responsino-dashboard.php:66
+msgid "admin.page.dashboard.recent_activities"
+msgstr "Recent activities"
+
+#: templates/admin/responsino-dashboard.php:73
+msgid "admin.page.dashboard.no_activities"
+msgstr "No activities available."
+
+#: templates/admin/responsino-dashboard.php:98
+msgid "admin.page.dashboard.feedback_trend"
+msgstr "Feedback trend (last 30 days)"
+
+#: templates/admin/responsino-export.php:8
+msgid "admin.page.export.pro_notice.headline"
+msgstr "Export or import your feedback and forms in WordPress"
+
+#: templates/admin/responsino-export.php:10
+msgid "admin.page.export.pro_notice.intro"
+msgstr "After upgrading to <strong>Responsino Pro</strong>, you have the option here to easily export or import all feedback entries and forms in your WordPress dashboard as CSV or JSON"
+
+#: templates/admin/responsino-export.php:12
+msgid "admin.page.export.pro_notice.advantage.1"
+msgstr "Easily export all feedback entries as CSV or JSON"
+
+#: templates/admin/responsino-export.php:13
+msgid "admin.page.export.pro_notice.advantage.2"
+msgstr "Import and export your form configurations for easy backups"
+
+#: templates/admin/responsino-export.php:14
+msgid "admin.page.export.pro_notice.advantage.3"
+msgstr "Use advanced filter options for targeted data exports"
+
+#: templates/admin/responsino-export.php:15
+msgid "admin.page.export.pro_notice.advantage.4"
+msgstr "Export detailed tracking data for each feedback entry"
+
+#: templates/admin/responsino-form-builder.php:10
+#: templates/admin/responsino-form-builder.php:76
+msgid "admin.page.builder.status.paused"
+msgstr "Paused"
+
+#: templates/admin/responsino-form-builder.php:15
+#: templates/admin/responsino-form-builder.php:81
+msgid "admin.page.builder.status.live"
+msgstr "Live"
+
+#: templates/admin/responsino-form-builder.php:19
+#: templates/admin/responsino-form-builder.php:86
+msgid "admin.page.builder.status.admin_only"
+msgstr "Admin-Only"
+
+#: templates/admin/responsino-form-builder.php:42
+msgid "admin.page.builder.form_title.default"
+msgstr "Feedback form"
+
+#: templates/admin/responsino-form-builder.php:42
+msgid "admin.page.builder.form_title.edit_title"
+msgstr "Edit form title"
+
+#: templates/admin/responsino-form-builder.php:45
+msgid "admin.page.builder.form_id"
+msgstr "Form ID"
+
+#: templates/admin/responsino-form-builder.php:46
+msgid "admin.page.builder.last_saved"
+msgstr "Last saved"
+
+#: templates/admin/responsino-form-builder.php:47
+msgid "admin.page.builder.last_published"
+msgstr "Last published"
+
+#: templates/admin/responsino-form-builder.php:56
+msgid "admin.page.builder.undo"
+msgstr "Undo last action (Ctrl + Z)"
+
+#: templates/admin/responsino-form-builder.php:59
+msgid "admin.page.builder.redo"
+msgstr "Redo last action (Ctrl + Y)"
+
+#: templates/admin/responsino-form-builder.php:66
+msgid "admin.page.builder.change_status"
+msgstr "Change form status"
+
+#: templates/admin/responsino-form-builder.php:94
+msgid "admin.page.builder.load_templates"
+msgstr "Load template"
+
+#: templates/admin/responsino-form-builder.php:95
+msgid "admin.page.builder.templates"
+msgstr "Templates"
+
+#: templates/admin/responsino-form-builder.php:97
+msgid "admin.page.builder.json_export_import"
+msgstr "Export/Import JSON definition"
+
+#: templates/admin/responsino-form-builder.php:98
+msgid "admin.page.builder.json_label"
+msgstr "JSON"
+
+#: templates/admin/responsino-form-builder.php:104
+msgid "admin.page.builder.save_draft"
+msgstr "Save draft"
+
+#: templates/admin/responsino-form-builder.php:105
+msgid "admin.page.builder.save"
+msgstr "Save"
+
+#: templates/admin/responsino-form-builder.php:107
+msgid "admin.page.builder.publish"
+msgstr "Publish form"
+
+#: templates/admin/responsino-form-builder.php:108
+msgid "admin.page.builder.publish_btn"
+msgstr "Publish"
+
+#: templates/admin/responsino-form-builder.php:114
+msgid "admin.page.builder.split_view_title"
+msgstr "Split view (side-by-side)"
+
+#: templates/admin/responsino-form-builder.php:115
+msgid "admin.page.builder.split_view"
+msgstr "Split view"
+
+#: templates/admin/responsino-form-builder.php:117
+msgid "admin.page.builder.preview_modal_title"
+msgstr "Open fullscreen preview"
+
+#: templates/admin/responsino-form-builder.php:118
+msgid "admin.page.builder.preview"
+msgstr "Preview"
+
+#: templates/admin/responsino-form-builder.php:123
+msgid "admin.page.builder.close_editor"
+msgstr "Close editor"
+
+#: templates/admin/responsino-form-builder.php:129
+msgid "admin.page.builder.nav_steps"
+msgstr "Editor navigation steps"
+
+#: templates/admin/responsino-form-builder.php:131
+msgid "admin.page.builder.nav.fields"
+msgstr "Fields"
+
+#: templates/admin/responsino-form-builder.php:134
+msgid "admin.page.builder.nav.general"
+msgstr "General"
+
+#: templates/admin/responsino-form-builder.php:137
+msgid "admin.page.builder.nav.styles"
+msgstr "Styles"
+
+#: templates/admin/responsino-form-builder.php:140
+msgid "admin.page.builder.nav.display"
+msgstr "Display"
+
+#: templates/admin/responsino-form-builder.php:143
+msgid "admin.page.builder.nav.targeting"
+msgstr "Targeting"
+
+#: templates/admin/responsino-form-builder.php:146
+msgid "admin.page.builder.nav.confirmation"
+msgstr "Confirmation"
+
+#: templates/admin/responsino-form-builder.php:149
+msgid "admin.page.builder.nav.notification"
+msgstr "Notification"
+
+#: templates/admin/responsino-form-builder.php:152
+msgid "admin.page.builder.nav.tracking"
+msgstr "Tracking"
+
+#: templates/admin/responsino-form-builder.php:183
+msgid "admin.page.builder.json_modal.title"
+msgstr "Form storage definition (JSON)"
+
+#: templates/admin/responsino-form-builder.php:184
+#: templates/admin/responsino-form-builder.php:203
+msgid "admin.page.builder.close"
+msgstr "Close"
+
+#: templates/admin/responsino-form-builder.php:188
+msgid "admin.page.builder.json_modal.description"
+msgstr "This is the serialized definition of the current form. You can copy the JSON to save it, or paste a previously saved definition to restore the form directly."
+
+#: templates/admin/responsino-form-builder.php:192
+msgid "admin.page.builder.json_modal.label"
+msgstr "JSON definition"
+
+#: templates/admin/responsino-form-builder.php:193
+msgid "admin.page.builder.json_modal.placeholder"
+msgstr "Paste a JSON definition here..."
+
+#: templates/admin/responsino-form-builder.php:198
+msgid "admin.page.builder.json_modal.import_btn"
+msgstr "Load / Import JSON"
+
+#: templates/admin/responsino-form-builder.php:201
+msgid "admin.page.builder.json_modal.copy_btn"
+msgstr "Copy to clipboard"
+
+#: templates/admin/responsino-form-builder.php:221
+msgid "admin.page.builder.modal_tmpl_title"
+msgstr "Load feedback template"
+
+#: templates/admin/responsino-form-builder.php:226
+msgid "admin.page.builder.modal_tmpl_desc"
+msgstr "Choose a professionally designed template as a starting point for your feedback form. Please note that this will overwrite your current form in the editor."
+
+#: templates/admin/responsino-form-builder.php:234
+msgid "admin.page.builder.modal_tmpl_cancel"
+msgstr "Cancel"
+
+#: templates/admin/responsino-form-builder.php:245
+msgid "admin.page.builder.pro.title"
+msgstr "Unlock Responsino Pro"
+
+#: templates/admin/responsino-form-builder.php:254
+msgid "admin.page.builder.pro.subtitle"
+msgstr "Take your feedback to the next level!"
+
+#: templates/admin/responsino-form-builder.php:256
+msgid "admin.page.builder.pro.description"
+msgstr "This feature is exclusively available in the PRO version of FLWP. Optimise your conversion rate and gain deeper insights."
+
+#: templates/admin/responsino-form-builder.php:261
+msgid "admin.page.builder.pro.benefits_title"
+msgstr "Your Pro benefits:"
+
+#: templates/admin/responsino-form-builder.php:265
+msgid "admin.page.builder.pro.benefit.1"
+msgstr "Premium rating elements: Use thumbs-up/down, interactive smileys and the industry standard NPS."
+
+#: templates/admin/responsino-form-builder.php:269
+msgid "admin.page.builder.pro.benefit.2"
+msgstr "Advanced URL filters: Show forms only on specific pages, paths or exclude them specifically."
+
+#: templates/admin/responsino-form-builder.php:273
+msgid "admin.page.builder.pro.benefit.3"
+msgstr "Advanced user tracking: Automatically capture screen resolution, time spent, language, device type and more."
+
+#: templates/admin/responsino-form-builder.php:279
+msgid "admin.page.builder.pro.cancel_btn"
+msgstr "Cancel"
+
+#: templates/admin/responsino-form-builder.php:281
+msgid "admin.page.builder.pro.upgrade_btn"
+msgstr "Upgrade now & unlock"
+
+#: templates/admin/responsino-form-builder.php:317
+msgid "admin.builder.overlay_template.back"
+msgstr "Back"
+
+#: templates/admin/responsino-form-builder.php:329
+msgid "admin.builder.overlay_template.feedback"
+msgstr "Feedback"
+
+#: templates/admin/responsino-form-builder.php:336
+msgid "admin.builder.overlay_template.close"
+msgstr "Close"
+
+#: templates/admin/responsino-form-builder.php:348
+msgid "admin.builder.overlay_template.footer_text"
+msgstr "We value your honest feedback!"
+
+#: templates/admin/responsino-form-feedback-list.php:9
+msgid "admin.page.feedback_list.title"
+msgstr "Form Feedback"
+
+#: templates/admin/responsino-form-feedback-list.php:29
+msgid "admin.page.feedback_list.modal.id_title"
+msgstr "Feedback - #{{id}}"
+
+#: templates/admin/responsino-form-feedback-list.php:30
+msgid "admin.page.feedback_list.modal.created_at"
+msgstr "Created on"
+
+#: templates/admin/responsino-form-feedback-list.php:33
+msgid "admin.page.feedback_list.modal.close"
+msgstr "Close modal"
+
+#: templates/admin/responsino-form-feedback-list.php:45
+msgid "admin.page.feedback_list.modal.status.title"
+msgstr "Processing status"
+
+#: templates/admin/responsino-form-feedback-list.php:49
+msgid "admin.page.feedback_list.modal.status.unread"
+msgstr "Unread"
+
+#: templates/admin/responsino-form-feedback-list.php:52
+msgid "admin.page.feedback_list.modal.status.read"
+msgstr "Read"
+
+#: templates/admin/responsino-form-feedback-list.php:55
+msgid "admin.page.feedback_list.modal.status.archived"
+msgstr "Archived"
+
+#: templates/admin/responsino-form-feedback-list.php:64
+msgid "admin.page.feedback_list.modal.customer_form_values"
+msgstr "Customer form values"
+
+#: templates/admin/responsino-form-feedback-list.php:72
+msgid "admin.page.feedback_list.modal.source_url"
+msgstr "Source (page URL)"
+
+#: templates/admin/responsino-form-feedback-list.php:76
+msgid "admin.page.feedback_list.modal.copy_to_clipboard"
+msgstr "Copy to clipboard"
+
+#: templates/admin/responsino-form-feedback-list.php:79
+msgid "admin.page.feedback_list.modal.open_in_new_window"
+msgstr "Open in new window"
+
+#: templates/admin/responsino-form-feedback-list.php:92
+msgid "admin.page.feedback_list.modal.tracking.title"
+msgstr "Technical tracking metrics"
+
+#: templates/admin/responsino-form-feedback-list.php:101
+msgid "admin.page.feedback_list.modal.tracking.user_agent"
+msgstr "Full user-agent string"
+
+#: templates/admin/responsino-form-feedback-list.php:110
+msgid "admin.page.feedback_list.modal.json_data"
+msgstr "Technical raw JSON data"
+
+#: templates/admin/responsino-form-feedback-list.php:121
+msgid "admin.page.feedback_list.modal.close_button"
+msgstr "Close"
+
+#: templates/admin/responsino-form-list.php:9
+msgid "admin.page.form_list.title"
+msgstr "All forms"
+
+#: templates/admin/responsino-form-list.php:10
+msgid "admin.page.form_list.add_new"
+msgstr "Add new"
+
+#: templates/admin/responsino-form-list.php:15
+msgid "admin.page.form_list.notice.duplicate_success"
+msgstr "Form duplicated successfully."
+
+#: templates/admin/responsino-form-list.php:21
+msgid "admin.page.form_list.notice.delete_success"
+msgstr "Form and all associated feedback deleted successfully."
+
+#: templates/admin/responsino-form-list.php:27
+msgid "admin.page.form_list.notice.form_not_found"
+msgstr "The requested form does not exist."
+
+#: templates/admin/form-builder/confirmation.php:7
+msgid "admin.builder.confirmation.aria_label"
+msgstr "Submission confirmations"
+
+#: templates/admin/form-builder/confirmation.php:12
+msgid "admin.builder.confirmation.title"
+msgstr "Confirmations"
+
+#: templates/admin/form-builder/confirmation.php:17
+msgid "admin.builder.confirmation.description"
+msgstr "Define here what happens after the user has successfully submitted the feedback."
+
+#: templates/admin/form-builder/confirmation.php:21
+msgid "admin.builder.confirmation.confirm_type.label"
+msgstr "Type of confirmation"
+
+#: templates/admin/form-builder/confirmation.php:23
+msgid "admin.builder.confirmation.confirm_type.message"
+msgstr "Message (Show directly in overlay)"
+
+#: templates/admin/form-builder/confirmation.php:24
+msgid "admin.builder.confirmation.confirm_type.url"
+msgstr "Load any web URL (Ext. redirect)"
+
+#: templates/admin/form-builder/confirmation.php:30
+msgid "admin.builder.confirmation.confirm_color.label"
+msgstr "Confirmation colour (text & icon)"
+
+#: templates/admin/form-builder/confirmation.php:38
+msgid "admin.builder.confirmation.confirm_message.label"
+msgstr "Confirmation message"
+
+#: templates/admin/form-builder/confirmation.php:42
+msgid "admin.builder.confirmation.confirm_message.default"
+msgstr "Thank you for your feedback! It helps us to improve continuously."
+
+#: templates/admin/form-builder/confirmation.php:59
+msgid "admin.builder.confirmation.redirect_url.label"
+msgstr "Redirect URL"
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.default_value"
+msgstr "https://my-website.com/thank-you"
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.placeholder"
+msgstr "https://example-url.com/page"
+
+#: templates/admin/form-builder/display.php:17
+msgid "admin.builder.display.header.title"
+msgstr "Display type & global settings"
+
+#: templates/admin/form-builder/display.php:28
+msgid "admin.builder.display.section1.title"
+msgstr "1. Choose main display type"
+
+#: templates/admin/form-builder/display.php:30
+msgid "admin.builder.display.step1"
+msgstr "Step 1"
+
+#: templates/admin/form-builder/display.php:33
+msgid "admin.builder.display.section1.description"
+msgstr "Determine how and where the form is rendered on your WordPress website."
+
+#: templates/admin/form-builder/display.php:43
+msgid "admin.builder.display.card1.title"
+msgstr "In-Content (Shortcode)"
+
+#: templates/admin/form-builder/display.php:44
+msgid "admin.builder.display.card1.description"
+msgstr "Embedded directly in the post text or via shortcode."
+
+#: templates/admin/form-builder/display.php:57
+msgid "admin.builder.display.card2.title"
+msgstr "Overlay Modal (Pop-up)"
+
+#: templates/admin/form-builder/display.php:58
+msgid "admin.builder.display.card2.description"
+msgstr "Centered dialog window over the page with a dimmed background."
+
+#: templates/admin/form-builder/display.php:71
+msgid "admin.builder.display.card3.title"
+msgstr "Slide-In Widget"
+
+#: templates/admin/form-builder/display.php:72
+msgid "admin.builder.display.card3.description"
+msgstr "Subtle widget that rises from a corner (e.g. bottom right)."
+
+#: templates/admin/form-builder/display.php:85
+msgid "admin.builder.display.card4.title"
+msgstr "Floating Feedback-Button"
+
+#: templates/admin/form-builder/display.php:86
+msgid "admin.builder.display.card4.description"
+msgstr "Fixed button on the side of the page that opens the form on click."
+
+#: templates/admin/form-builder/display.php:98
+msgid "admin.builder.display.in_content.auto_insert"
+msgstr "Enable automatic insertion without shortcode"
+
+#: templates/admin/form-builder/display.php:106
+msgid "admin.builder.display.in_content.position.label"
+msgstr "Insertion position in post"
+
+#: templates/admin/form-builder/display.php:108
+msgid "admin.builder.display.in_content.position.bottom"
+msgstr "At the end of content (recommended)"
+
+#: templates/admin/form-builder/display.php:109
+msgid "admin.builder.display.in_content.position.top"
+msgstr "At the beginning of content"
+
+#: templates/admin/form-builder/display.php:119
+msgid "admin.builder.display.section2.title"
+msgstr "2. Triggers & timing"
+
+#: templates/admin/form-builder/display.php:121
+msgid "admin.builder.display.step2"
+msgstr "Step 2"
+
+#: templates/admin/form-builder/display.php:124
+msgid "admin.builder.display.section2.description"
+msgstr "When should the form be displayed or the trigger activated?"
+
+#: templates/admin/form-builder/display.php:138
+msgid "admin.builder.display.trigger.click"
+msgstr "Click event"
+
+#: templates/admin/form-builder/display.php:141
+msgid "admin.builder.display.trigger.exit_intent"
+msgstr "Exit-intent"
+
+#: templates/admin/form-builder/display.php:144
+msgid "admin.builder.display.trigger.delay"
+msgstr "Time delay"
+
+#: templates/admin/form-builder/display.php:147
+msgid "admin.builder.display.trigger.scroll"
+msgstr "Scroll depth"
+
+#: templates/admin/form-builder/display.php:157
+msgid "admin.builder.display.trigger.click.selector.label"
+msgstr "Click trigger CSS selector"
+
+#: templates/admin/form-builder/display.php:159
+msgid "admin.builder.display.trigger.click.hint"
+msgstr "The overlay or panel opens when a visitor clicks an element with this CSS selector."
+
+#: templates/admin/form-builder/display.php:163
+msgid "admin.builder.display.trigger.click.standard_button.label"
+msgstr "Create standard feedback button"
+
+#: templates/admin/form-builder/display.php:174
+msgid "admin.builder.display.trigger.exit_intent.hint"
+msgstr "Reacts automatically when the user moves their mouse towards the top edge of the screen."
+
+#: templates/admin/form-builder/display.php:177
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.label"
+msgstr "Exit-intent sensitivity / dwell time"
+
+#: templates/admin/form-builder/display.php:179
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.immediate"
+msgstr "Immediate mouse exit (default)"
+
+#: templates/admin/form-builder/display.php:180
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.5s"
+msgstr "Mouse exit only after min. 5s dwell time"
+
+#: templates/admin/form-builder/display.php:181
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.10s"
+msgstr "Mouse exit only after min. 10s dwell time"
+
+#: templates/admin/form-builder/display.php:182
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.60s"
+msgstr "Mouse exit only after min. 60s dwell time"
+
+#: templates/admin/form-builder/display.php:190
+msgid "admin.builder.display.trigger.delay.hint"
+msgstr "Displays the form after a set time period on the page."
+
+#: templates/admin/form-builder/display.php:193
+msgid "admin.builder.display.trigger.delay.label"
+msgstr "Delay after page load (seconds)"
+
+#: templates/admin/form-builder/display.php:201
+msgid "admin.builder.display.trigger.scroll.hint"
+msgstr "Displays the form once the reader has reached a specific scroll depth."
+
+#: templates/admin/form-builder/display.php:204
+msgid "admin.builder.display.trigger.scroll.condition.label"
+msgstr "Scroll condition"
+
+#: templates/admin/form-builder/display.php:206
+msgid "admin.builder.display.trigger.scroll.condition.end"
+msgstr "End of page (scroll to bottom)"
+
+#: templates/admin/form-builder/display.php:207
+msgid "admin.builder.display.trigger.scroll.condition.percent"
+msgstr "Percentage of scroll depth"
+
+#: templates/admin/form-builder/display.php:211
+msgid "admin.builder.display.trigger.scroll.percent.label"
+msgstr "Scroll depth (%)"
+
+#: templates/admin/form-builder/display.php:223
+msgid "admin.builder.display.feedback_button.title"
+msgstr "Feedback button settings"
+
+#: templates/admin/form-builder/display.php:225
+msgid "admin.builder.display.step.2"
+msgstr "Step 2"
+
+#: templates/admin/form-builder/display.php:228
+msgid "admin.builder.display.feedback_button.description"
+msgstr "Configure the appearance, label, and positioning of the floating feedback button."
+
+#: templates/admin/form-builder/display.php:233
+msgid "admin.builder.display.feedback_button.label.text"
+msgstr "Button label"
+
+#: templates/admin/form-builder/display.php:234
+msgid "admin.builder.display.feedback_button.label.default"
+msgstr "Feedback"
+
+#: templates/admin/form-builder/display.php:237
+msgid "admin.builder.display.feedback_button.position.label"
+msgstr "Button position"
+
+#: templates/admin/form-builder/display.php:239
+msgid "admin.builder.display.feedback_button.position.right_middle"
+msgstr "Floating middle right"
+
+#: templates/admin/form-builder/display.php:240
+msgid "admin.builder.display.feedback_button.position.left_middle"
+msgstr "Floating middle left"
+
+#: templates/admin/form-builder/display.php:241
+msgid "admin.builder.display.feedback_button.position.bottom_right"
+msgstr "Floating bottom right"
+
+#: templates/admin/form-builder/display.php:242
+msgid "admin.builder.display.feedback_button.position.bottom_middle"
+msgstr "Floating bottom middle"
+
+#: templates/admin/form-builder/display.php:243
+msgid "admin.builder.display.feedback_button.position.bottom_left"
+msgstr "Floating bottom left"
+
+#: templates/admin/form-builder/display.php:247
+msgid "admin.builder.display.feedback_button.hide_option.label"
+msgstr "Show 'Temporarily hide feedback button' link if footer text is disabled"
+
+#: templates/admin/form-builder/display.php:257
+msgid "admin.builder.display.feedback_button.custom_design.title"
+msgstr "Custom design &amp; colours for feedback button"
+
+#: templates/admin/form-builder/display.php:258
+msgid "admin.builder.display.feedback_button.custom_design.description"
+msgstr "Customise colours and font size"
+
+#: templates/admin/form-builder/display.php:271
+msgid "admin.builder.display.feedback_button.font_size.label"
+msgstr "Font size"
+
+#: templates/admin/form-builder/display.php:281
+msgid "admin.builder.display.feedback_button.background.label"
+msgstr "Background"
+
+#: templates/admin/form-builder/display.php:289
+msgid "admin.builder.display.feedback_button.text_color.label"
+msgstr "Text colour"
+
+#: templates/admin/form-builder/display.php:297
+msgid "admin.builder.display.feedback_button.border.label"
+msgstr "Border / Edge"
+
+#: templates/admin/form-builder/display.php:305
+msgid "admin.builder.display.feedback_button.hover.background.label"
+msgstr "Hover background"
+
+#: templates/admin/form-builder/display.php:313
+msgid "admin.builder.display.feedback_button.hover.text_color.label"
+msgstr "Hover text colour"
+
+#: templates/admin/form-builder/display.php:321
+msgid "admin.builder.display.feedback_button.hover.border.label"
+msgstr "Hover border"
+
+#: templates/admin/form-builder/display.php:337
+msgid "admin.builder.display.global.title"
+msgstr "3. Global settings"
+
+#: templates/admin/form-builder/display.php:339
+msgid "admin.builder.display.step.3"
+msgstr "Step 3"
+
+#: templates/admin/form-builder/display.php:342
+msgid "admin.builder.display.global.description"
+msgstr "Fine-tuning of spacing, frequency, closing behaviour, and design adjustments."
+
+#: templates/admin/form-builder/display.php:348
+msgid "admin.builder.display.tab.behavior"
+msgstr "Behaviour & frequency"
+
+#: templates/admin/form-builder/display.php:351
+msgid "admin.builder.display.tab.box_model"
+msgstr "Spacing & dimensions"
+
+#: templates/admin/form-builder/display.php:354
+msgid "admin.builder.display.tab.styling"
+msgstr "Design & colours"
+
+#: templates/admin/form-builder/display.php:362
+msgid "admin.builder.display.group.frequency.title"
+msgstr "Frequency & re-display"
+
+#: templates/admin/form-builder/display.php:367
+msgid "admin.builder.display.frequency.close_days.label"
+msgstr "Hide after closing"
+
+#: templates/admin/form-builder/display.php:371
+#: templates/admin/form-builder/display.php:382
+msgid "admin.builder.display.days"
+msgstr "Days"
+
+#: templates/admin/form-builder/display.php:373
+msgid "admin.builder.display.frequency.close_days.hint"
+msgstr "0 = Show on every visit"
+
+#: templates/admin/form-builder/display.php:378
+msgid "admin.builder.display.frequency.submit_days.label"
+msgstr "Hide after submission"
+
+#: templates/admin/form-builder/display.php:384
+msgid "admin.builder.display.frequency.submit_days.hint"
+msgstr "Permanent hiding after feedback"
+
+#: templates/admin/form-builder/display.php:389
+msgid "admin.builder.display.cookie_scope.label"
+msgstr "Cookie scope"
+
+#: templates/admin/form-builder/display.php:391
+msgid "admin.builder.display.cookie_scope.domain"
+msgstr "🌐 Entire website / domain (default)"
+
+#: templates/admin/form-builder/display.php:392
+msgid "admin.builder.display.cookie_scope.page"
+msgstr "📄 Current page only (path-specific)"
+
+#: templates/admin/form-builder/display.php:400
+msgid "admin.builder.display.trigger.hide_click_on_close.label"
+msgstr "Hide click trigger on 'Close'"
+
+#: templates/admin/form-builder/display.php:401
+msgid "admin.builder.display.trigger.hide_click_on_close.desc"
+msgstr "Permanently hides the element when the overlay is closed."
+
+#: templates/admin/form-builder/display.php:413
+msgid "admin.builder.display.trigger.hide_click_on_submit.label"
+msgstr "Hide click trigger on 'Submit'"
+
+#: templates/admin/form-builder/display.php:414
+msgid "admin.builder.display.trigger.hide_click_on_submit.desc"
+msgstr "Permanently hides the element once submitted successfully."
+
+#: templates/admin/form-builder/display.php:425
+msgid "admin.builder.display.group.closing_options.title"
+msgstr "Closing & overlay options"
+
+#: templates/admin/form-builder/display.php:430
+msgid "admin.builder.display.overlay.allow_scroll.title"
+msgstr "Allow scrolling when overlay is open"
+
+#: templates/admin/form-builder/display.php:431
+msgid "admin.builder.display.overlay.allow_scroll.desc"
+msgstr "Should the user be allowed to scroll the page in the background?"
+
+#: templates/admin/form-builder/display.php:441
+msgid "admin.builder.display.overlay.hide_header.title"
+msgstr "Hide header"
+
+#: templates/admin/form-builder/display.php:442
+msgid "admin.builder.display.overlay.hide_header.desc"
+msgstr "Removes the header area from the overlay"
+
+#: templates/admin/form-builder/display.php:452
+msgid "admin.builder.display.overlay.hide_footer.title"
+msgstr "Hide footer"
+
+#: templates/admin/form-builder/display.php:453
+msgid "admin.builder.display.overlay.hide_footer.desc"
+msgstr "Removes the footer area from the overlay"
+
+#: templates/admin/form-builder/display.php:463
+msgid "admin.builder.display.overlay.show_backdrop.title"
+msgstr "Dimmed background (backdrop)"
+
+#: templates/admin/form-builder/display.php:464
+msgid "admin.builder.display.overlay.show_backdrop.desc"
+msgstr "Overlay stands out from the page by dimming"
+
+#: templates/admin/form-builder/display.php:474
+msgid "admin.builder.display.overlay.close_on_backdrop.title"
+msgstr "Click on background closes window"
+
+#: templates/admin/form-builder/display.php:475
+msgid "admin.builder.display.overlay.close_on_backdrop.desc"
+msgstr "Allows user to close by clicking outside the window"
+
+#: templates/admin/form-builder/display.php:485
+msgid "admin.builder.display.overlay.esc_close.title"
+msgstr "ESC key closes window"
+
+#: templates/admin/form-builder/display.php:486
+msgid "admin.builder.display.overlay.esc_close.desc"
+msgstr "Accessible closing via keyboard"
+
+#: templates/admin/form-builder/display.php:504
+msgid "admin.builder.display.box_model.padding.title"
+msgstr "Padding"
+
+#: templates/admin/form-builder/display.php:511
+#: templates/admin/form-builder/display.php:550
+msgid "admin.builder.display.box_model.link.title"
+msgstr "Link values"
+
+#: templates/admin/form-builder/display.php:514
+#: templates/admin/form-builder/display.php:553
+msgid "admin.builder.display.box_model.reset.title"
+msgstr "Restore default values"
+
+#: templates/admin/form-builder/display.php:522
+#: templates/admin/form-builder/display.php:561
+msgid "admin.builder.display.box_model.label.top"
+msgstr "Top"
+
+#: templates/admin/form-builder/display.php:526
+#: templates/admin/form-builder/display.php:565
+msgid "admin.builder.display.box_model.label.right"
+msgstr "Right"
+
+#: templates/admin/form-builder/display.php:530
+#: templates/admin/form-builder/display.php:569
+msgid "admin.builder.display.box_model.label.bottom"
+msgstr "Bottom"
+
+#: templates/admin/form-builder/display.php:534
+#: templates/admin/form-builder/display.php:573
+msgid "admin.builder.display.box_model.label.left"
+msgstr "Left"
+
+#: templates/admin/form-builder/display.php:543
+msgid "admin.builder.display.box_model.margin.title"
+msgstr "Margin"
+
+#: templates/admin/form-builder/display.php:581
+msgid "admin.builder.display.dimensions.title"
+msgstr "Alignment & dimensions"
+
+#: templates/admin/form-builder/display.php:583
+msgid "admin.builder.display.dimensions.overlay_position.label"
+msgstr "Overlay position on screen"
+
+#: templates/admin/form-builder/display.php:585
+msgid "admin.builder.display.dimensions.overlay_position.center"
+msgstr "Centered (screen center)"
+
+#: templates/admin/form-builder/display.php:586
+msgid "admin.builder.display.dimensions.overlay_position.bottom_right"
+msgstr "Bottom right (default for slide-in)"
+
+#: templates/admin/form-builder/display.php:587
+msgid "admin.builder.display.dimensions.overlay_position.bottom_left"
+msgstr "Bottom left"
+
+#: templates/admin/form-builder/display.php:588
+msgid "admin.builder.display.dimensions.overlay_position.bottom_middle"
+msgstr "Bottom middle"
+
+#: templates/admin/form-builder/display.php:589
+msgid "admin.builder.display.dimensions.overlay_position.right_middle"
+msgstr "Floating middle right"
+
+#: templates/admin/form-builder/display.php:590
+msgid "admin.builder.display.dimensions.overlay_position.left_middle"
+msgstr "Floating middle left"
+
+#: templates/admin/form-builder/display.php:591
+msgid "admin.builder.display.dimensions.overlay_position.top_right"
+msgstr "Top right"
+
+#: templates/admin/form-builder/display.php:592
+msgid "admin.builder.display.dimensions.overlay_position.top_middle"
+msgstr "Top middle"
+
+#: templates/admin/form-builder/display.php:593
+msgid "admin.builder.display.dimensions.overlay_position.top_left"
+msgstr "Top left"
+
+#: templates/admin/form-builder/display.php:598
+msgid "admin.builder.display.dimensions.max_width.label"
+msgstr "Maximum width"
+
+#: templates/admin/form-builder/display.php:606
+msgid "admin.builder.display.dimensions.min_height.label"
+msgstr "Minimum height"
+
+#: templates/admin/form-builder/display.php:623
+msgid "admin.builder.display.custom_colors.title"
+msgstr "Enable custom colour adjustment"
+
+#: templates/admin/form-builder/display.php:624
+msgid "admin.builder.display.custom_colors.desc"
+msgstr "Overrides your theme's default colours"
+
+#: templates/admin/form-builder/display.php:636
+msgid "admin.builder.display.custom_colors.label.background"
+msgstr "Background"
+
+#: templates/admin/form-builder/display.php:644
+msgid "admin.builder.display.custom_colors.label.border"
+msgstr "Border"
+
+#: templates/admin/form-builder/display.php:652
+msgid "admin.builder.display.custom_colors.label.border_style"
+msgstr "Border style"
+
+#: templates/admin/form-builder/display.php:654
+msgid "admin.builder.display.custom_colors.option.solid"
+msgstr "Solid"
+
+#: templates/admin/form-builder/display.php:655
+msgid "admin.builder.display.custom_colors.option.dashed"
+msgstr "Dashed"
+
+#: templates/admin/form-builder/display.php:656
+msgid "admin.builder.display.custom_colors.option.dotted"
+msgstr "Dotted"
+
+#: templates/admin/form-builder/display.php:661
+msgid "admin.builder.display.custom_colors.label.border_width"
+msgstr "Border width"
+
+#: templates/admin/form-builder/display.php:669
+msgid "admin.builder.display.custom_colors.label.border_radius"
+msgstr "Border radius"
+
+#: templates/admin/form-builder/display.php:681
+msgid "admin.builder.display.header_footer.title"
+msgstr "Header indicator & footer"
+
+#: templates/admin/form-builder/display.php:684
+msgid "admin.builder.display.header_footer.indicator_type.label"
+msgstr "Indicator type"
+
+#: templates/admin/form-builder/display.php:686
+msgid "admin.builder.display.header_footer.indicator_type.option.progress"
+msgstr "📊 Progress bar (default)"
+
+#: templates/admin/form-builder/display.php:687
+msgid "admin.builder.display.header_footer.indicator_type.option.title"
+msgstr "📝 Form title in header"
+
+#: templates/admin/form-builder/display.php:688
+msgid "admin.builder.display.header_footer.indicator_type.option.step"
+msgstr "🔢 Step indicator (e.g. Step 1 / 2)"
+
+#: templates/admin/form-builder/display.php:689
+msgid "admin.builder.display.header_footer.indicator_type.option.none"
+msgstr "🚫 Do not show indicator"
+
+#: templates/admin/form-builder/display.php:694
+msgid "admin.builder.display.header_footer.custom_title.label"
+msgstr "Custom title"
+
+#: templates/admin/form-builder/display.php:695
+msgid "admin.builder.display.header_footer.custom_title.placeholder"
+msgstr "Default: Form title"
+
+#: templates/admin/form-builder/display.php:700
+msgid "admin.builder.display.header_footer.show_footer.label"
+msgstr "Show footer text in overlay"
+
+#: templates/admin/form-builder/display.php:708
+msgid "admin.builder.display.header_footer.custom_footer_text.label"
+msgstr "Custom footer text"
+
+#: templates/admin/form-builder/display.php:709
+msgid "admin.builder.display.header_footer.custom_footer_text.placeholder"
+msgstr "We appreciate your honest feedback!"
+
+#: templates/admin/form-builder/fields.php:7
+msgid "admin.builder.fields.title"
+msgstr "Edit form fields"
+
+#: templates/admin/form-builder/fields.php:15
+msgid "admin.builder.fields.add_fields"
+msgstr "Add fields"
+
+#: templates/admin/form-builder/fields.php:18
+msgid "admin.builder.fields.field_options"
+msgstr "Field options"
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_placeholder"
+msgstr "Search fields ..."
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_title"
+msgstr "Search fields"
+
+#: templates/admin/form-builder/fields.php:38
+msgid "admin.builder.fields.standard_fields"
+msgstr "Standard fields"
+
+#: templates/admin/form-builder/fields.php:49
+msgid "admin.builder.fields.headline"
+msgstr "Headline"
+
+#: templates/admin/form-builder/fields.php:54
+msgid "admin.builder.fields.description"
+msgstr "Description"
+
+#: templates/admin/form-builder/fields.php:59
+msgid "admin.builder.fields.button"
+msgstr "Button"
+
+#: templates/admin/form-builder/fields.php:64
+msgid "admin.builder.fields.textarea"
+msgstr "Text paragraph"
+
+#: templates/admin/form-builder/fields.php:94
+msgid "admin.builder.fields.reviews"
+msgstr "Reviews"
+
+#: templates/admin/form-builder/fields.php:102
+msgid "admin.builder.fields.rating"
+msgstr "Star rating"
+
+#: templates/admin/form-builder/fields.php:107
+msgid "admin.builder.fields.pro_section.headline"
+msgstr "Pro Fields"
+
+#: templates/admin/form-builder/fields.php:114
+msgid "admin.builder.fields.thumbs"
+msgstr "Thumbs feedback"
+
+#: templates/admin/form-builder/fields.php:119
+msgid "admin.builder.fields.smileys"
+msgstr "Smiley rating"
+
+#: templates/admin/form-builder/fields.php:124
+msgid "admin.builder.fields.nps"
+msgstr "Recommendation (NPS)"
+
+#: templates/admin/form-builder/fields.php:132
+msgid "admin.builder.fields.search_no_results"
+msgstr "No fields match your search."
+
+#: templates/admin/form-builder/fields.php:137
+msgid "admin.builder.fields.tip"
+msgstr "Tip"
+
+#: templates/admin/form-builder/fields.php:137
+msgid "admin.builder.fields.tip_text"
+msgstr "Drag elements onto the canvas in step 1/step 2 or simply click them to add them."
+
+#: templates/admin/form-builder/fields.php:148
+msgid "admin.builder.fields.no_field_selected"
+msgstr "Click on an element in the editor to view and edit its settings."
+
+#: templates/admin/form-builder/fields.php:156
+msgid "admin.builder.fields.options.field_type"
+msgstr "FIELD"
+
+#: templates/admin/form-builder/fields.php:157
+msgid "admin.builder.fields.options.id"
+msgstr "ID"
+
+#: templates/admin/form-builder/fields.php:162
+msgid "admin.builder.fields.options.label.title"
+msgstr "Label"
+
+#: templates/admin/form-builder/fields.php:162
+msgid "admin.builder.fields.options.label.hint"
+msgstr "The text displayed for this element."
+
+#: templates/admin/form-builder/fields.php:170
+msgid "admin.builder.fields.options.description.title"
+msgstr "Supplementary text / description"
+
+#: templates/admin/form-builder/fields.php:171
+msgid "admin.builder.fields.options.description.placeholder"
+msgstr "Enter optional description..."
+
+#: templates/admin/form-builder/fields.php:176
+msgid "admin.builder.fields.options.placeholder.title"
+msgstr "Placeholder text"
+
+#: templates/admin/form-builder/fields.php:177
+msgid "admin.builder.fields.options.placeholder.placeholder"
+msgstr "E.g. Write here..."
+
+#: templates/admin/form-builder/fields.php:182
+msgid "admin.builder.fields.options.button_type.title"
+msgstr "Button type / action"
+
+#: templates/admin/form-builder/fields.php:184
+msgid "admin.builder.fields.options.button_type.next"
+msgstr "Default button with icon (Continue / Submit)"
+
+#: templates/admin/form-builder/fields.php:185
+msgid "admin.builder.fields.options.button_type.submit"
+msgstr "Submit button"
+
+#: templates/admin/form-builder/fields.php:186
+msgid "admin.builder.fields.options.button_type.back"
+msgstr "Back button (Optional for step 2 -> 1)"
+
+#: templates/admin/form-builder/fields.php:192
+msgid "admin.builder.fields.options.icon.title"
+msgstr "Symbol / icon"
+
+#: templates/admin/form-builder/fields.php:192
+msgid "admin.builder.fields.options.icon.hint"
+msgstr "Select the icon to be displayed."
+
+#: templates/admin/form-builder/fields.php:194
+msgid "admin.builder.fields.options.icon.option.arrow_right"
+msgstr "Arrow right (➜)"
+
+#: templates/admin/form-builder/fields.php:195
+msgid "admin.builder.fields.options.icon.option.arrow_circle_right"
+msgstr "Arrow circle right"
+
+#: templates/admin/form-builder/fields.php:196
+msgid "admin.builder.fields.options.icon.option.arrow_left"
+msgstr "Arrow left (⬅)"
+
+#: templates/admin/form-builder/fields.php:197
+msgid "admin.builder.fields.options.icon.option.arrow_circle_left"
+msgstr "Arrow circle left"
+
+#: templates/admin/form-builder/fields.php:198
+msgid "admin.builder.fields.options.icon.option.paper_plane"
+msgstr "Paper plane (submit)"
+
+#: templates/admin/form-builder/fields.php:199
+msgid "admin.builder.fields.options.icon.option.check"
+msgstr "Tick"
+
+#: templates/admin/form-builder/fields.php:200
+msgid "admin.builder.fields.options.icon.option.heart"
+msgstr "Heart"
+
+#: templates/admin/form-builder/fields.php:201
+msgid "admin.builder.fields.options.icon.option.comment"
+msgstr "Speech bubble"
+
+#: templates/admin/form-builder/fields.php:202
+msgid "admin.builder.fields.options.icon.option.laugh_beam"
+msgstr "Laughing face"
+
+#: templates/admin/form-builder/fields.php:203
+msgid "admin.builder.fields.options.icon.option.futbol"
+msgstr "Football"
+
+#: templates/admin/form-builder/fields.php:204
+msgid "admin.builder.fields.options.icon.option.lightbulb"
+msgstr "Lightbulb"
+
+#: templates/admin/form-builder/fields.php:205
+msgid "admin.builder.fields.options.icon.option.bug"
+msgstr "Bug"
+
+#: templates/admin/form-builder/fields.php:206
+msgid "admin.builder.fields.options.icon.option.comment_dots"
+msgstr "Speech bubble with dots"
+
+#: templates/admin/form-builder/fields.php:207
+msgid "admin.builder.fields.options.icon.option.none"
+msgstr "No icon"
+
+#: templates/admin/form-builder/fields.php:213
+msgid "admin.builder.fields.options.icon_position.title"
+msgstr "Icon position"
+
+#: templates/admin/form-builder/fields.php:215
+msgid "admin.builder.fields.options.icon_position.right"
+msgstr "Right of the text"
+
+#: templates/admin/form-builder/fields.php:216
+msgid "admin.builder.fields.options.icon_position.left"
+msgstr "Left of the text"
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.options.rating_stars.title"
+msgstr "Number of stars"
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.options.rating_stars.hint"
+msgstr "Use a 3 or 5-point rating scale."
+
+#: templates/admin/form-builder/fields.php:224
+msgid "admin.builder.fields.options.rating_stars.3"
+msgstr "3 stars"
+
+#: templates/admin/form-builder/fields.php:225
+msgid "admin.builder.fields.options.rating_stars.5"
+msgstr "5 stars"
+
+#: templates/admin/form-builder/fields.php:231
+msgid "admin.builder.fields.options.alignment.title"
+msgstr "Alignment"
+
+#: templates/admin/form-builder/fields.php:231
+msgid "admin.builder.fields.options.alignment.hint"
+msgstr "Choose the alignment for this element: Left, Center, Right."
+
+#: templates/admin/form-builder/fields.php:233
+msgid "admin.builder.fields.options.alignment.left"
+msgstr "Left"
+
+#: templates/admin/form-builder/fields.php:234
+msgid "admin.builder.fields.options.alignment.center"
+msgstr "Center"
+
+#: templates/admin/form-builder/fields.php:235
+msgid "admin.builder.fields.options.alignment.right"
+msgstr "Right"
+
+#: templates/admin/form-builder/fields.php:241
+msgid "admin.builder.fields.h_type.title"
+msgstr "HTML tag type"
+
+#: templates/admin/form-builder/fields.php:241
+msgid "admin.builder.fields.h_type.hint"
+msgstr "Select the HTML tag for this element."
+
+#: templates/admin/form-builder/fields.php:243
+msgid "admin.builder.fields.h_type.h1"
+msgstr "Heading 1 (H1)"
+
+#: templates/admin/form-builder/fields.php:244
+msgid "admin.builder.fields.h_type.h2"
+msgstr "Heading 2 (H2)"
+
+#: templates/admin/form-builder/fields.php:245
+msgid "admin.builder.fields.h_type.h3"
+msgstr "Heading 3 (H3)"
+
+#: templates/admin/form-builder/fields.php:246
+msgid "admin.builder.fields.h_type.h4"
+msgstr "Heading 4 (H4)"
+
+#: templates/admin/form-builder/fields.php:247
+msgid "admin.builder.fields.h_type.h5"
+msgstr "Heading 5 (H5)"
+
+#: templates/admin/form-builder/fields.php:248
+msgid "admin.builder.fields.h_type.h6"
+msgstr "Heading 6 (H6)"
+
+#: templates/admin/form-builder/fields.php:249
+msgid "admin.builder.fields.h_type.div"
+msgstr "Container (DIV)"
+
+#: templates/admin/form-builder/fields.php:255
+msgid "admin.builder.fields.text_formatting.title"
+msgstr "Text formatting"
+
+#: templates/admin/form-builder/fields.php:255
+msgid "admin.builder.fields.text_formatting.hint"
+msgstr "Format the text bold, italic or underlined."
+
+#: templates/admin/form-builder/fields.php:277
+msgid "fields.name.format.label"
+msgstr "Format"
+
+#: templates/admin/form-builder/fields.php:279
+msgid "fields.name.format.full"
+msgstr "Name"
+
+#: templates/admin/form-builder/fields.php:280
+msgid "fields.name.format.first_last"
+msgstr "First Last"
+
+#: templates/admin/form-builder/fields.php:281
+msgid "fields.name.format.first_middle_last"
+msgstr "First Middle Last"
+
+#: templates/admin/form-builder/fields.php:286
+#: templates/admin/form-builder/fields.php:428
+msgid "admin.builder.fields.placeholder.label"
+msgstr "Placeholder"
+
+#: templates/admin/form-builder/fields.php:288
+#: assets/js/dist/responsino-form-builder.js:1515
+#: assets/js/dist/responsino-form-builder.js:1520
+#: assets/js/dist/responsino-form-builder.js:1549
+#: assets/js/dist/responsino-form-frontend.js:1598
+#: assets/js/dist/responsino-form-frontend.js:1603
+#: assets/js/dist/responsino-form-frontend.js:1632
+msgid "fields.name.first_name"
+msgstr "First name"
+
+#: templates/admin/form-builder/fields.php:289
+#: assets/js/dist/responsino-form-builder.js:1521
+#: assets/js/dist/responsino-form-builder.js:1555
+#: assets/js/dist/responsino-form-frontend.js:1604
+#: assets/js/dist/responsino-form-frontend.js:1638
+msgid "fields.name.middle_name"
+msgstr "Middle name"
+
+#: templates/admin/form-builder/fields.php:290
+#: assets/js/dist/responsino-form-builder.js:1516
+#: assets/js/dist/responsino-form-builder.js:1522
+#: assets/js/dist/responsino-form-builder.js:1558
+#: assets/js/dist/responsino-form-frontend.js:1599
+#: assets/js/dist/responsino-form-frontend.js:1605
+#: assets/js/dist/responsino-form-frontend.js:1641
+msgid "fields.name.last_name"
+msgstr "Last name"
+
+#: templates/admin/form-builder/fields.php:299
+msgid "admin.builder.fields.font_size.title"
+msgstr "Font size"
+
+#: templates/admin/form-builder/fields.php:300
+msgid "admin.builder.fields.font_size.reset"
+msgstr "Default"
+
+#: templates/admin/form-builder/fields.php:315
+msgid "admin.builder.fields.line_height.title"
+msgstr "Line height"
+
+#: templates/admin/form-builder/fields.php:316
+msgid "admin.builder.fields.line_height.reset"
+msgstr "Default"
+
+#: templates/admin/form-builder/fields.php:334
+msgid "admin.builder.fields.border_radius.title"
+msgstr "Border radius"
+
+#: templates/admin/form-builder/fields.php:335
+msgid "admin.builder.fields.border_radius.reset"
+msgstr "Default"
+
+#: templates/admin/form-builder/fields.php:351
+msgid "admin.builder.fields.text_color.title"
+msgstr "Text colour"
+
+#: templates/admin/form-builder/fields.php:361
+msgid "admin.builder.fields.required.title"
+msgstr "Required (mandatory field)"
+
+#: templates/admin/form-builder/fields.php:370
+msgid "admin.builder.fields.hide_label.title"
+msgstr "Hide label"
+
+#: templates/admin/form-builder/fields.php:381
+msgid "fields.dropdown.choices_title"
+msgstr "Choices"
+
+#: templates/admin/form-builder/fields.php:381
+msgid "fields.dropdown.choices_tooltip"
+msgstr "Configure the choices for the dropdown field. Use the radio button to select the default choice. Drag and drop the options to change their order."
+
+#: templates/admin/form-builder/fields.php:389
+msgid "admin.builder.fields.full_width.title"
+msgstr "Full width"
+
+#: templates/admin/form-builder/fields.php:399
+msgid "admin.builder.fields.width.title"
+msgstr "Element width"
+
+#: templates/admin/form-builder/fields.php:402
+msgid "admin.builder.fields.width.100"
+msgstr "100% (Full row)"
+
+#: templates/admin/form-builder/fields.php:403
+msgid "admin.builder.fields.width.50"
+msgstr "50% (Half row)"
+
+#: templates/admin/form-builder/fields.php:404
+msgid "admin.builder.fields.width.33"
+msgstr "33% (Third of a row)"
+
+#: templates/admin/form-builder/fields.php:405
+msgid "admin.builder.fields.width.25"
+msgstr "25% (Quarter of a row)"
+
+#: templates/admin/form-builder/fields.php:411
+msgid "admin.builder.fields.clear_before.title"
+msgstr "Start in a new row"
+
+#: templates/admin/form-builder/fields.php:420
+msgid "fields.email.confirmation_activation"
+msgstr "Activate confirmation field"
+
+#: templates/admin/form-builder/fields.php:430
+#: assets/js/dist/responsino-form-builder.js:892
+#: assets/js/dist/responsino-form-builder.js:1582
+#: assets/js/dist/responsino-form-frontend.js:975
+#: assets/js/dist/responsino-form-frontend.js:1665
+msgid "fields.email.placeholder"
+msgstr "E-mail address"
+
+#: templates/admin/form-builder/fields.php:431
+#: assets/js/dist/responsino-form-builder.js:893
+#: assets/js/dist/responsino-form-builder.js:1584
+#: assets/js/dist/responsino-form-frontend.js:976
+#: assets/js/dist/responsino-form-frontend.js:1667
+msgid "fields.email.confirmation_placeholder"
+msgstr "Confirm email address"
+
+#: templates/admin/form-builder/fields.php:438
+msgid "admin.builder.fields.custom_colors.title"
+msgstr "Customise colours"
+
+#: templates/admin/form-builder/fields.php:443
+msgid "admin.builder.fields.custom_colors.enabled_label"
+msgstr "Activate individual colours"
+
+#: templates/admin/form-builder/fields.php:452
+msgid "admin.builder.fields.custom_colors.standard_state"
+msgstr "Standard state"
+
+#: templates/admin/form-builder/fields.php:455
+msgid "admin.builder.fields.custom_colors.bg_color"
+msgstr "Background colour"
+
+#: templates/admin/form-builder/fields.php:463
+msgid "admin.builder.fields.custom_colors.text_color"
+msgstr "Text colour"
+
+#: templates/admin/form-builder/fields.php:471
+msgid "admin.builder.fields.custom_colors.border_color"
+msgstr "Border colour"
+
+#: templates/admin/form-builder/fields.php:479
+msgid "admin.builder.fields.custom_colors.hover_state"
+msgstr "Hover state"
+
+#: templates/admin/form-builder/fields.php:482
+msgid "admin.builder.fields.custom_colors.bg_color_hover"
+msgstr "Background colour (hover)"
+
+#: templates/admin/form-builder/fields.php:490
+msgid "admin.builder.fields.custom_colors.text_color_hover"
+msgstr "Text colour (hover)"
+
+#: templates/admin/form-builder/fields.php:498
+msgid "admin.builder.fields.custom_colors.border_color_hover"
+msgstr "Border colour (hover)"
+
+#: templates/admin/form-builder/fields.php:506
+msgid "admin.builder.fields.custom_colors.reset"
+msgstr "Restore default values"
+
+#: templates/admin/form-builder/fields.php:515
+msgid "admin.builder.fields.step2.title_activate"
+msgstr "Activate step 2"
+
+#: templates/admin/form-builder/fields.php:523
+msgid "admin.builder.fields.step2.description"
+msgstr "If activated, the form jumps to step 2 upon interaction with this element. A separate area in the editor is unlocked for this."
+
+#: templates/admin/form-builder/fields.php:547
+msgid "admin.builder.fields.step1.title"
+msgstr "Step 1"
+
+#: templates/admin/form-builder/fields.php:548
+msgid "admin.builder.fields.step1.subtitle"
+msgstr "Initial view of the popup / widget"
+
+#: templates/admin/form-builder/fields.php:552
+msgid "admin.builder.fields.nav.back"
+msgstr "Back to overview"
+
+#: templates/admin/form-builder/fields.php:561
+msgid "admin.builder.fields.step1.empty_notifier"
+msgstr "Drag elements here to start creating."
+
+#: templates/admin/form-builder/fields.php:582
+msgid "admin.builder.fields.step2.title"
+msgstr "Step 2"
+
+#: templates/admin/form-builder/fields.php:583
+msgid "admin.builder.fields.step2.subtitle"
+msgstr "Additional detailed feedback upon rating/button click"
+
+#: templates/admin/form-builder/fields.php:587
+msgid "admin.builder.fields.nav.maximize"
+msgstr "Maximise edit focus"
+
+#: templates/admin/form-builder/fields.php:596
+msgid "admin.builder.fields.step2.disabled_notifier"
+msgstr "Activate \"Step 2\" in the field options of an element on step 1 to unlock this step."
+
+#: templates/admin/form-builder/fields.php:601
+msgid "admin.builder.fields.step2.enabled_notifier"
+msgstr "This step is unlocked. Drag elements inside for follow-up feedback."
+
+#: templates/admin/form-builder/general.php:7
+#: templates/admin/form-builder/general.php:12
+msgid "admin.builder.general.title"
+msgstr "General settings"
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.label"
+msgstr "Internal unique form ID"
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.hint"
+msgstr "WordPress shortcode ID"
+
+#: templates/admin/form-builder/general.php:19
+msgid "admin.builder.general.form_id.description"
+msgstr "Unique ID for registration in the WordPress plugin. Can be used for shortcodes such as %s."
+
+#: templates/admin/form-builder/general.php:23
+msgid "admin.builder.general.form_name.label"
+msgstr "Form name"
+
+#: templates/admin/form-builder/general.php:24
+msgid "admin.builder.general.form_name.default"
+msgstr "Customer satisfaction form"
+
+#: templates/admin/form-builder/general.php:25
+msgid "admin.builder.general.form_name.description"
+msgstr "Allows for identification of the feedback form in the administrative list."
+
+#: templates/admin/form-builder/general.php:29
+msgid "admin.builder.general.custom_classes.label"
+msgstr "Custom CSS classes for the wrapper"
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.default"
+msgstr "responsino-widget-shadow responsino-custom-style-dark"
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.placeholder"
+msgstr "responsino-mycustom-css"
+
+#: templates/admin/form-builder/general.php:31
+msgid "admin.builder.general.custom_classes.description"
+msgstr "For manual overriding of the default styles in the WordPress theme."
+
+#: templates/admin/form-builder/general.php:36
+msgid "admin.builder.general.honeypot.label"
+msgstr "Anti-spam (activate honeypot method)"
+
+#: templates/admin/form-builder/notification.php:7
+#: templates/admin/form-builder/notification.php:12
+msgid "admin.builder.notification.title"
+msgstr "Email notifications"
+
+#: templates/admin/form-builder/notification.php:17
+msgid "admin.builder.notification.description"
+msgstr "Here you can configure whether you want to receive automatic email notifications as soon as a user submits new feedback via your form. This way, you are always directly informed."
+
+#: templates/admin/form-builder/notification.php:23
+msgid "admin.builder.notification.enabled.label"
+msgstr "Activate notifications"
+
+#: templates/admin/form-builder/notification.php:34
+msgid "admin.builder.notification.recipient.label"
+msgstr "Recipient email"
+
+#: templates/admin/form-builder/notification.php:34
+msgid "admin.builder.notification.recipient.hint"
+msgstr "Can be an email or a tag."
+
+#: templates/admin/form-builder/notification.php:36
+msgid "admin.builder.notification.recipient.default"
+msgstr "Website administrator email"
+
+#: templates/admin/form-builder/notification.php:41
+msgid "admin.builder.notification.subject.label"
+msgstr "Email subject line"
+
+#: templates/admin/form-builder/notification.php:43
+msgid "admin.builder.notification.subject.default"
+msgstr "New entry: Customer satisfaction form"
+
+#: templates/admin/form-builder/notification.php:48
+msgid "admin.builder.notification.sender_name.label"
+msgstr "Sender name"
+
+#: templates/admin/form-builder/notification.php:50
+msgid "admin.builder.notification.sender_name.default"
+msgstr "Website title"
+
+#: templates/admin/form-builder/notification.php:55
+msgid "admin.builder.notification.sender_email.label"
+msgstr "Sender email address"
+
+#: templates/admin/form-builder/styles.php:7
+#: templates/admin/form-builder/styles.php:12
+msgid "admin.builder.styles.title"
+msgstr "Design & Styles"
+
+#: templates/admin/form-builder/styles.php:17
+msgid "admin.builder.styles.description"
+msgstr "Here you can set default colours for your form. Many colours can also be overridden in the fields and customised to your wishes."
+
+#: templates/admin/form-builder/styles.php:21
+msgid "admin.builder.styles.accent_color.label"
+msgstr "Main accent colour"
+
+#: templates/admin/form-builder/styles.php:25
+msgid "admin.builder.styles.accent_color.description"
+msgstr "Colour for links and buttons."
+
+#: templates/admin/form-builder/styles.php:29
+msgid "admin.builder.styles.secondary_color.label"
+msgstr "Secondary colour (hover)"
+
+#: templates/admin/form-builder/styles.php:33
+msgid "admin.builder.styles.secondary_color.description"
+msgstr "Secondary colour used for hover effects."
+
+#: templates/admin/form-builder/targeting.php:7
+msgid "admin.builder.targeting.title"
+msgstr "Display rules"
+
+#: templates/admin/form-builder/targeting.php:12
+msgid "admin.builder.targeting.header"
+msgstr "Display"
+
+#: templates/admin/form-builder/targeting.php:17
+msgid "admin.builder.targeting.description"
+msgstr "Configure the conditions under which the form should be displayed on your WordPress site here. The rules can be set separately per display type."
+
+#: templates/admin/form-builder/tracking.php:8
+#: templates/admin/form-builder/tracking.php:13
+msgid "admin.builder.tracking.title"
+msgstr "User tracking & metadata"
+
+#: templates/admin/form-builder/tracking.php:19
+msgid "admin.builder.tracking.description"
+msgstr "Here you can configure which technical user and system metadata should be collected together with the feedback. This additional information helps you to better analyse and filter submissions in the WordPress backend."
+
+#: templates/admin/form-builder/tracking.php:25
+msgid "admin.builder.tracking.enabled.label"
+msgstr "Activate tracking generally"
+
+#: templates/admin/form-builder/tracking.php:35
+msgid "admin.builder.tracking.data_points.title"
+msgstr "Select additional data points to collect:"
+
+#: templates/admin/form-builder/tracking.php:40
+msgid "admin.builder.tracking.url.label"
+msgstr "Page URL (URL on which the form was submitted)"
+
+#: templates/admin/form-builder/tracking.php:51
+msgid "admin.builder.tracking.page_title.label"
+msgstr "Page title (HTML title of the page)"
+
+#: templates/admin/form-builder/tracking.php:62
+msgid "admin.builder.tracking.referrer.label"
+msgstr "Referrer URL (previous page)"
+
+#: templates/admin/form-builder/tracking.php:73
+msgid "admin.builder.tracking.user_agent.label"
+msgstr "User agent (browser & system version)"
+
+#: templates/admin/form-builder/tracking.php:84
+msgid "admin.builder.tracking.language.label"
+msgstr "Browser language"
+
+#: templates/admin/form-builder/tracking.php:94
+msgid "admin.builder.tracking.screen_resolution.label"
+msgstr "Screen resolution"
+
+#: templates/admin/form-builder/tracking.php:104
+msgid "admin.builder.tracking.viewport_size.label"
+msgstr "Viewport size (browser window pixels)"
+
+#: templates/admin/form-builder/tracking.php:114
+msgid "admin.builder.tracking.timezone.label"
+msgstr "Local timezone"
+
+#: templates/admin/form-builder/tracking.php:124
+msgid "admin.builder.tracking.connection_type.label"
+msgstr "Network connection type (4g/wifi/etc.)"
+
+#: templates/admin/form-builder/tracking.php:134
+msgid "admin.builder.tracking.device_type.label"
+msgstr "Device type (desktop, tablet, mobile device)"
+
+#: templates/admin/form-builder/tracking.php:144
+msgid "admin.builder.tracking.session_id.label"
+msgstr "Anonymised session ID"
+
+#: templates/admin/form-builder/tracking.php:154
+msgid "admin.builder.tracking.time_on_page.label"
+msgstr "Time spent (in seconds)"
+
+#: templates/admin/form-builder/tracking.php:164
+msgid "admin.builder.tracking.color_scheme.label"
+msgstr "Colour scheme (system light/dark mode)"
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:6
+msgid "admin.builder.pro.headline"
+msgstr "Take your feedback to the next level!"
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:7
+msgid "admin.builder.pro.intro"
+msgstr "This feature is available exclusively in the <strong>PRO version</strong> of FLWP. Optimize your conversion rate and gain deeper insights."
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:9
+msgid "admin.builder.pro.advantage.1"
+msgstr "<strong>Premium rating elements</strong>: Use thumbs-up/down, interactive smileys and the industry standard NPS."
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:10
+msgid "admin.builder.pro.advantage.2"
+msgstr "<strong>Advanced URL filters</strong>: Display forms only on specific pages, paths or exclude them specifically."
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:11
+msgid "admin.builder.pro.advantage.3"
+msgstr "<strong>Advanced user tracking</strong>: Automatically collect screen resolution, time spent, language, device type and more."
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:21
+msgid "admin.builder.pro.title"
+msgstr "Unlock Responsino Pro"
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:36
+msgid "admin.builder.pro.advantages_title"
+msgstr "Your Pro benefits:"
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:49
+msgid "admin.builder.pro.cta_text"
+msgstr "Upgrade & unlock now"
+
+#: templates/admin/partial/mockup/export.php:19
+msgid "Content feedback"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:23
+msgid "Exit-intent form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:27
+msgid "Feedback button form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:44
+msgid "Data management (import & export)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:49
+msgid "Manage your form structures, plugin configurations, and collected feedback entries in one central location."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:103
+msgid "1. Feedback entries (received user data)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:150
+msgid "Export entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:159
+msgid "Select your filters and download the feedback data in the desired format."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:194
+msgid "Filter by form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:228
+#: templates/admin/partial/mockup/export.php:679
+msgid "Select all forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:287
+msgid "Time period"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:303
+msgid "Last 30 days"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:319
+#: templates/admin/partial/mockup/feedback-list.php:53
+#: templates/admin/partial/mockup/feedback-list.php:106
+#: templates/admin/partial/mockup/feedback-list.php:198
+msgid "Status"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:335
+msgid "All entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:362
+msgid "Export hint:"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:366
+msgid "CSV contains dynamic columns (each question in your form gets its own column). JSON provides structured raw data including detailed device and meta data."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:391
+msgid "Download CSV"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:406
+msgid "Download JSON"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:452
+msgid "Import feedbacks"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:461
+msgid "Upload an exported feedback file (.json) to restore entries."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:495
+#: templates/admin/partial/mockup/export.php:848
+msgid "Select or drag file"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:503
+msgid "Supports .json feedback files"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:551
+msgid "2. Form structures (templates)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:598
+msgid "Export forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:607
+msgid "Export selected form layouts as .json for other WordPress instances."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:641
+msgid "Which forms would you like to export?"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:736
+msgid "Export layout(s) (.json)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:757
+msgid "Ideal for transferring from a test (staging) to a live environment."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:805
+msgid "Import forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:814
+msgid "Upload an exported form layout (.json) to add it. Note that existing form data with the same form ID will be overwritten."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:856
+msgid "Supports .json form files (single or multiple forms)"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:45
+msgid "Form"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:49
+#: templates/admin/partial/mockup/feedback-list.php:94
+#: templates/admin/partial/mockup/feedback-list.php:170
+msgid "Display Type"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:57
+msgid "Date Range"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:61
+msgid "Filter"
+msgstr ""
+
+#. translators: %d: Number of demo feedback entries.
+#: templates/admin/partial/mockup/feedback-list.php:71
+#: templates/admin/partial/mockup/feedback-list.php:233
+#, php-format
+msgid "%d entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:86
+#: templates/admin/partial/mockup/feedback-list.php:144
+msgid "ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:90
+#: templates/admin/partial/mockup/feedback-list.php:163
+msgid "Form ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:98
+#: templates/admin/partial/mockup/feedback-list.php:179
+msgid "Form Name"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:102
+#: templates/admin/partial/mockup/feedback-list.php:186
+msgid "Page URL"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:110
+#: templates/admin/partial/mockup/feedback-list.php:207
+msgid "Created"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:114
+#: templates/admin/partial/mockup/feedback-list.php:214
+msgid "Updated"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:153
+msgid "View"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:156
+msgid "Delete"
+msgstr ""
+
+#. translators: 1: Current page, 2: Total number of pages.
+#: templates/admin/partial/mockup/feedback-list.php:247
+#, php-format
+msgid "%1$d of %2$d"
+msgstr ""
+
+#: assets/js/dist/responsino-admin.js:85
+msgid "admin.feedback.load_error"
+msgstr "Error loading feedback details"
+
+#: assets/js/dist/responsino-admin.js:89
+msgid "admin.feedback.load_network_error"
+msgstr "Network error loading feedback details"
+
+#: assets/js/dist/responsino-admin.js:110
+#: assets/js/dist/responsino-admin.js:235
+msgid "admin.feedback.delete_error"
+msgstr "Error deleting feedback"
+
+#: assets/js/dist/responsino-admin.js:114
+msgid "admin.feedback.delete_network_error"
+msgstr "Network error deleting feedback"
+
+#: assets/js/dist/responsino-admin.js:214
+#: assets/js/dist/responsino-form-builder.js:922
+#: assets/js/dist/responsino-form-builder.js:4297
+#: assets/js/dist/responsino-form-frontend.js:1005
+msgid "fields.unnamed"
+msgstr "Unnamed"
+
+#: assets/js/dist/responsino-admin.js:215
+msgid "admin.feedback.delete_form_confirm"
+msgstr "Do you really want to permanently delete the form \"{name}\"? This will also delete all associated feedback."
+
+#: assets/js/dist/responsino-admin.js:227
+msgid "admin.feedback.delete_confirm"
+msgstr "Do you really want to permanently delete feedback #{id}?"
+
+#: assets/js/dist/responsino-admin.js:240
+msgid "admin.feedback.saving"
+msgstr "Saving..."
+
+#: assets/js/dist/responsino-admin.js:320
+msgid "admin.feedback.url_open_error"
+msgstr "Could not open URL:"
+
+#: assets/js/dist/responsino-admin.js:406
+msgid "admin.feedback.status_update_error"
+msgstr "Error updating status"
+
+#: assets/js/dist/responsino-form-builder.js:476
+#: assets/js/dist/responsino-form-frontend.js:480
+msgid "admin.builder.default_step2.headline"
+msgstr "Tell us more"
+
+#: assets/js/dist/responsino-form-builder.js:477
+#: assets/js/dist/responsino-form-frontend.js:481
+msgid "admin.builder.default_step2.textarea_label"
+msgstr "What can we do better?"
+
+#: assets/js/dist/responsino-form-builder.js:477
+#: assets/js/dist/responsino-form-frontend.js:481
+msgid "admin.builder.default_step2.textarea_placeholder"
+msgstr "Write your feedback here..."
+
+#: assets/js/dist/responsino-form-builder.js:478
+#: assets/js/dist/responsino-form-frontend.js:482
+msgid "admin.builder.default_step2.button_label"
+msgstr "Send feedback"
+
+#: assets/js/dist/responsino-form-builder.js:689
+#: assets/js/dist/responsino-form-builder.js:772
+#: assets/js/dist/responsino-form-frontend.js:693
+#: assets/js/dist/responsino-form-frontend.js:776
+msgid "admin.builder.unlink_values"
+msgstr "Unlink values"
+
+#: assets/js/dist/responsino-form-builder.js:700
+#: assets/js/dist/responsino-form-builder.js:775
+#: assets/js/dist/responsino-form-frontend.js:704
+#: assets/js/dist/responsino-form-frontend.js:779
+msgid "admin.builder.link_values"
+msgstr "Link values"
+
+#: assets/js/dist/responsino-form-builder.js:841
+#: assets/js/dist/responsino-form-frontend.js:924
+msgid "admin.builder.default_feedback_placeholder"
+msgstr "Enter your feedback here..."
+
+#: assets/js/dist/responsino-form-builder.js:852
+#: assets/js/dist/responsino-form-builder.js:856
+#: assets/js/dist/responsino-form-builder.js:865
+#: assets/js/dist/responsino-form-builder.js:869
+#: assets/js/dist/responsino-form-builder.js:875
+#: assets/js/dist/responsino-form-builder.js:879
+#: assets/js/dist/responsino-form-builder.js:1633
+#: assets/js/dist/responsino-form-builder.js:1637
+#: assets/js/dist/responsino-form-builder.js:1640
+#: assets/js/dist/responsino-form-builder.js:1644
+#: assets/js/dist/responsino-form-builder.js:1647
+#: assets/js/dist/responsino-form-builder.js:1651
+#: assets/js/dist/responsino-form-frontend.js:935
+#: assets/js/dist/responsino-form-frontend.js:939
+#: assets/js/dist/responsino-form-frontend.js:948
+#: assets/js/dist/responsino-form-frontend.js:952
+#: assets/js/dist/responsino-form-frontend.js:958
+#: assets/js/dist/responsino-form-frontend.js:962
+#: assets/js/dist/responsino-form-frontend.js:1716
+#: assets/js/dist/responsino-form-frontend.js:1720
+#: assets/js/dist/responsino-form-frontend.js:1723
+#: assets/js/dist/responsino-form-frontend.js:1727
+#: assets/js/dist/responsino-form-frontend.js:1730
+#: assets/js/dist/responsino-form-frontend.js:1734
+msgid "fields.choices_list.general"
+msgstr "General questions"
+
+#: assets/js/dist/responsino-form-builder.js:853
+#: assets/js/dist/responsino-form-builder.js:866
+#: assets/js/dist/responsino-form-builder.js:876
+#: assets/js/dist/responsino-form-builder.js:1634
+#: assets/js/dist/responsino-form-builder.js:1641
+#: assets/js/dist/responsino-form-builder.js:1648
+#: assets/js/dist/responsino-form-frontend.js:936
+#: assets/js/dist/responsino-form-frontend.js:949
+#: assets/js/dist/responsino-form-frontend.js:959
+#: assets/js/dist/responsino-form-frontend.js:1717
+#: assets/js/dist/responsino-form-frontend.js:1724
+#: assets/js/dist/responsino-form-frontend.js:1731
+msgid "fields.choices_list.pre_purchase"
+msgstr "Pre-purchase questions"
+
+#: assets/js/dist/responsino-form-builder.js:854
+#: assets/js/dist/responsino-form-builder.js:867
+#: assets/js/dist/responsino-form-builder.js:877
+#: assets/js/dist/responsino-form-builder.js:1635
+#: assets/js/dist/responsino-form-builder.js:1642
+#: assets/js/dist/responsino-form-builder.js:1649
+#: assets/js/dist/responsino-form-frontend.js:937
+#: assets/js/dist/responsino-form-frontend.js:950
+#: assets/js/dist/responsino-form-frontend.js:960
+#: assets/js/dist/responsino-form-frontend.js:1718
+#: assets/js/dist/responsino-form-frontend.js:1725
+#: assets/js/dist/responsino-form-frontend.js:1732
+msgid "fields.choices_list.technical_support"
+msgstr "Technical support"
+
+#: assets/js/dist/responsino-form-builder.js:1025
+#: assets/js/dist/responsino-form-frontend.js:1108
+msgid "admin.builder.submit_action"
+msgstr "Submit action"
+
+#: assets/js/dist/responsino-form-builder.js:1025
+#: assets/js/dist/responsino-form-frontend.js:1108
+msgid "admin.builder.back_action"
+msgstr "Back to step 1"
+
+#: assets/js/dist/responsino-form-builder.js:1034
+#: assets/js/dist/responsino-form-builder.js:1121
+#: assets/js/dist/responsino-form-frontend.js:1117
+#: assets/js/dist/responsino-form-frontend.js:1204
+msgid "admin.builder.step2_connected"
+msgstr "Linked to step 2"
+
+#: assets/js/dist/responsino-form-builder.js:1236
+#: assets/js/dist/responsino-form-builder.js:1255
+#: assets/js/dist/responsino-form-frontend.js:1319
+#: assets/js/dist/responsino-form-frontend.js:1338
+msgid "fields.choices_list.placeholder"
+msgstr "Please select..."
+
+#: assets/js/dist/responsino-form-builder.js:1673
+#: assets/js/dist/responsino-form-frontend.js:1756
+msgid "fields.choices_list.drag_to_sort"
+msgstr "Drag to sort"
+
+#: assets/js/dist/responsino-form-builder.js:1677
+#: assets/js/dist/responsino-form-frontend.js:1760
+msgid "fields.choices_list.set_as_default"
+msgstr "Set option as default"
+
+#: assets/js/dist/responsino-form-builder.js:1811
+#: assets/js/dist/responsino-form-frontend.js:1894
+msgid "fields.choices_list.add_option"
+msgstr "Add option"
+
+#: assets/js/dist/responsino-form-builder.js:1833
+#: assets/js/dist/responsino-form-frontend.js:1916
+msgid "fields.choices_list.remove_option"
+msgstr "Remove option"
+
+#: assets/js/dist/responsino-form-builder.js:1837
+#: assets/js/dist/responsino-form-frontend.js:1920
+msgid "fields.choices_list.at_least_one_option"
+msgstr "At least one option must be present."
+
+#: assets/js/dist/responsino-form-builder.js:1921
+msgid "admin.builder.reset_preview"
+msgstr "Reset preview"
+
+#: assets/js/dist/responsino-form-builder.js:1966
+msgid "admin.builder.use_template"
+msgstr "Use template"
+
+#: assets/js/dist/responsino-form-builder.js:1975
+msgid "admin.confirm.load_template"
+msgstr "Do you really want to load this template? This will overwrite your current draft."
+
+#: assets/js/dist/responsino-form-builder.js:1987
+msgid "admin.toast.template_loaded"
+msgstr "Template \"{title}\" loaded!"
+
+#: assets/js/dist/responsino-form-builder.js:2028
+msgid "admin.conditions.page_type.label"
+msgstr "Page type"
+
+#: assets/js/dist/responsino-form-builder.js:2033
+#: assets/js/dist/responsino-form-builder.js:2048
+msgid "admin.conditions.operators.in"
+msgstr "is one of"
+
+#: assets/js/dist/responsino-form-builder.js:2037
+msgid "admin.conditions.options.pages"
+msgstr "Pages"
+
+#: assets/js/dist/responsino-form-builder.js:2038
+msgid "admin.conditions.options.posts"
+msgstr "Posts"
+
+#: assets/js/dist/responsino-form-builder.js:2043
+msgid "admin.conditions.device.label"
+msgstr "Device type"
+
+#: assets/js/dist/responsino-form-builder.js:2052
+msgid "admin.conditions.options.desktop"
+msgstr "Desktop"
+
+#: assets/js/dist/responsino-form-builder.js:2053
+msgid "admin.conditions.options.mobile"
+msgstr "Mobile"
+
+#: assets/js/dist/responsino-form-builder.js:2147
+msgid "admin.conditions.title"
+msgstr "Rule conditions"
+
+#: assets/js/dist/responsino-form-builder.js:2155
+msgid "admin.conditions.show_on_frontpage"
+msgstr "Show on front page"
+
+#: assets/js/dist/responsino-form-builder.js:2156
+msgid "admin.conditions.show_on_frontpage_desc"
+msgstr "Should this form appear on your website's front page?"
+
+#: assets/js/dist/responsino-form-builder.js:2176
+msgid "admin.conditions.and_group"
+msgstr "AND group (All conditions must be met)"
+
+#: assets/js/dist/responsino-form-builder.js:2182
+msgid "admin.conditions.connector"
+msgstr "CONNECTOR"
+
+#: assets/js/dist/responsino-form-builder.js:2186
+msgid "admin.conditions.or_group"
+msgstr "OR group (At least one condition must be met)"
+
+#: assets/js/dist/responsino-form-builder.js:2192
+msgid "admin.conditions.hint.title"
+msgstr "Why can't I add any more conditions?"
+
+#: assets/js/dist/responsino-form-builder.js:2194
+msgid "admin.conditions.hint.text"
+msgstr "Some conditions (like <em>Device type</em> or <em>Page type</em>) are <strong>unique</strong> and can only be used once. Other conditions (like <em>URL filter</em> or <em>Cookie value</em>) require the <strong>PRO version</strong>. Once all conditions available to you have been added, the add button will be disabled."
+
+#: assets/js/dist/responsino-form-builder.js:2207
+msgid "admin.conditions.type.and"
+msgstr "AND"
+
+#: assets/js/dist/responsino-form-builder.js:2207
+msgid "admin.conditions.type.or"
+msgstr "OR"
+
+#: assets/js/dist/responsino-form-builder.js:2223
+#: assets/js/dist/responsino-form-builder.js:2228
+msgid "admin.conditions.empty_state"
+msgstr "No {type} conditions defined. These conditions will be ignored."
+
+#: assets/js/dist/responsino-form-builder.js:2244
+msgid "admin.conditions.add_button"
+msgstr "Add condition"
+
+#: assets/js/dist/responsino-form-builder.js:2255
+msgid "admin.conditions.add_button_disabled_title"
+msgstr "All available conditions have already been added."
+
+#: assets/js/dist/responsino-form-builder.js:2399
+msgid "admin.conditions.delete_condition"
+msgstr "Remove condition"
+
+#: assets/js/dist/responsino-form-builder.js:2415
+msgid "admin.warning.submit_button"
+msgstr "Warning: This form contains multiple input fields, but no submit button or next button with activated step 2. Add a button so users can submit the form."
+
+#: assets/js/dist/responsino-form-builder.js:2423
+msgid "admin.warning.step2_empty"
+msgstr "Warning: Step 2 is enabled for at least one element in Step 1, but no elements were defined in Step 2. Add elements to Step 2 or disable Step 2."
+
+#: assets/js/dist/responsino-form-builder.js:2431
+msgid "admin.warning.step2_missing_submit"
+msgstr "Attention: Step 2 contains input fields, but no submit button."
+
+#: assets/js/dist/responsino-form-builder.js:2438
+msgid "admin.warning.empty_form"
+msgstr "Warning: The form does not contain any elements yet. Add at least one element."
+
+#: assets/js/dist/responsino-form-builder.js:2505
+#: assets/js/dist/responsino-form-builder.js:2517
+msgid "validation.error.active_warnings"
+msgstr "{count} active warnings"
+
+#: assets/js/dist/responsino-form-builder.js:2674
+#: assets/js/dist/responsino-form-builder.js:2685
+msgid "admin.preview.title"
+msgstr "Plugin live preview"
+
+#: assets/js/dist/responsino-form-builder.js:2689
+msgid "admin.preview.address_placeholder"
+msgstr "https://your-website.com/blog/article"
+
+#: assets/js/dist/responsino-form-builder.js:2693
+msgid "admin.preview.desktop_view"
+msgstr "Desktop view"
+
+#: assets/js/dist/responsino-form-builder.js:2696
+msgid "admin.preview.mobile_view"
+msgstr "Mobile view"
+
+#: assets/js/dist/responsino-form-builder.js:2701
+msgid "admin.preview.refresh_preview"
+msgstr "Refresh preview"
+
+#: assets/js/dist/responsino-form-builder.js:2705
+msgid "admin.preview.close_preview"
+msgstr "Close preview"
+
+#: assets/js/dist/responsino-form-builder.js:2725
+msgid "admin.preview.active_mode_label"
+msgstr "Active mode:"
+
+#: assets/js/dist/responsino-form-builder.js:2727
+msgid "admin.preview.simulate_trigger"
+msgstr "Simulate trigger"
+
+#: assets/js/dist/responsino-form-builder.js:2736
+msgid "admin.preview.modes.in_content_shortcode"
+msgstr "Shortcode"
+
+#: assets/js/dist/responsino-form-builder.js:2736
+msgid "admin.preview.modes.in_content_inline"
+msgstr "Inline"
+
+#: assets/js/dist/responsino-form-builder.js:2737
+msgid "admin.preview.modes.in_content"
+msgstr "In-content ({type})"
+
+#: assets/js/dist/responsino-form-builder.js:2740
+msgid "admin.preview.modes.feedback_button"
+msgstr "Floating feedback button"
+
+#: assets/js/dist/responsino-form-builder.js:2742
+msgid "admin.preview.modes.slide_in"
+msgstr "Slide-in widget"
+
+#: assets/js/dist/responsino-form-builder.js:2744
+msgid "admin.preview.modes.overlay_modal"
+msgstr "Overlay modal"
+
+#: assets/js/dist/responsino-form-builder.js:2752
+msgid "admin.preview.mock.logo"
+msgstr "My blog"
+
+#: assets/js/dist/responsino-form-builder.js:2755
+msgid "admin.preview.mock.headline"
+msgstr "What can I use the Responsino plugin for?"
+
+#: assets/js/dist/responsino-form-builder.js:2756
+msgid "admin.preview.mock.desc1"
+msgstr "With FLWP, you can create many different feedback forms and display them in various ways."
+
+#: assets/js/dist/responsino-form-builder.js:2758
+msgid "admin.preview.mock.desc2"
+msgstr "Simply create a form under \"Fields\" and then select your display type for this form under \"Display\"."
+
+#: assets/js/dist/responsino-form-builder.js:2759
+msgid "admin.preview.mock.desc3"
+msgstr "Then save and publish the form, and your form will be displayed on your site."
+
+#: assets/js/dist/responsino-form-builder.js:2760
+msgid "admin.preview.mock.desc4"
+msgstr "If you have questions about settings, feel free to take a look at our <a href=\"https://responsino.de/docs/\" target=\"_blank\">documentation</a> or visit the <a href=\"https://responsino.de/support-forum/\" target=\"_blank\">support-forum</a>."
+
+#: assets/js/dist/responsino-form-builder.js:2874
+msgid "admin.preview.default_footer_text"
+msgstr "We appreciate your honest feedback!"
+
+#: assets/js/dist/responsino-form-builder.js:3116
+msgid "admin.display.group_title_in_content"
+msgstr "Maximum width &amp; height"
+
+#: assets/js/dist/responsino-form-builder.js:3118
+msgid "admin.display.group_title_default"
+msgstr "Alignment &amp; dimensions"
+
+#: assets/js/dist/responsino-form-builder.js:3133
+msgid "admin.display.tab_btn_in_content"
+msgstr "Spacing &amp; dimensions"
+
+#: assets/js/dist/responsino-form-builder.js:3135
+msgid "admin.display.tab_btn_default"
+msgstr "Alignment &amp; dimensions"
+
+#: assets/js/dist/responsino-form-builder.js:3156
+msgid "admin.display.step_label"
+msgstr "Step {step}"
+
+#: assets/js/dist/responsino-form-builder.js:3913
+msgid "fields.button.submit.default_text"
+msgstr "Submit"
+
+#: assets/js/dist/responsino-form-builder.js:3917
+msgid "fields.button.back.default_text"
+msgstr "Back"
+
+#: assets/js/dist/responsino-form-builder.js:3921
+msgid "fields.button.next.default_text"
+msgstr "Next"
+
+#: assets/js/dist/responsino-form-builder.js:3982
+msgid "admin.toast.step2_unlocked"
+msgstr "Step 2 unlocked for this element!"
+
+#: assets/js/dist/responsino-form-builder.js:4078
+msgid "admin.toast.undo"
+msgstr "Action undone"
+
+#: assets/js/dist/responsino-form-builder.js:4113
+msgid "admin.toast.redo"
+msgstr "Action redone"
+
+#: assets/js/dist/responsino-form-builder.js:4258
+msgid "admin.toast.form_published"
+msgstr "Form published successfully!"
+
+#: assets/js/dist/responsino-form-builder.js:4258
+msgid "admin.toast.draft_saved"
+msgstr "Draft saved successfully!"
+
+#: assets/js/dist/responsino-form-builder.js:4261
+msgid "admin.toast.save_error"
+msgstr "Error saving: {error}"
+
+#: assets/js/dist/responsino-form-builder.js:4261
+msgid "admin.toast.unknown_error"
+msgstr "Unknown error"
+
+#: assets/js/dist/responsino-form-builder.js:4266
+msgid "admin.toast.network_error"
+msgstr "Network error saving data."
+
+#: assets/js/dist/responsino-form-builder.js:4558
+#: assets/js/dist/responsino-form-builder.js:4573
+#: assets/js/dist/responsino-form-builder.js:4578
+msgid "admin.builder.element_count_plural"
+msgstr "{count} elements"
+
+#: assets/js/dist/responsino-form-builder.js:4573
+#: assets/js/dist/responsino-form-builder.js:4578
+msgid "admin.builder.element_count_singular"
+msgstr "{count} element"
+
+#: assets/js/dist/responsino-form-builder.js:4579
+msgid "admin.builder.active_for"
+msgstr "Active for: {label}"
+
+#: assets/js/dist/responsino-form-builder.js:4581
+msgid "admin.builder.switch_recipient"
+msgstr "Switch recipient"
+
+#: assets/js/dist/responsino-form-builder.js:4641
+#: assets/js/dist/responsino-form-builder.js:5096
+msgid "admin.builder.move_to_step2"
+msgstr "Move to step 2"
+
+#: assets/js/dist/responsino-form-builder.js:4641
+#: assets/js/dist/responsino-form-builder.js:5096
+msgid "admin.builder.move_to_step1"
+msgstr "Move to step 1"
+
+#: assets/js/dist/responsino-form-builder.js:4649
+#: assets/js/dist/responsino-form-builder.js:5088
+msgid "admin.builder.duplicate_element"
+msgstr "Duplicate element"
+
+#: assets/js/dist/responsino-form-builder.js:4657
+#: assets/js/dist/responsino-form-builder.js:5107
+msgid "admin.builder.delete_element"
+msgstr "Delete element"
+
+#: assets/js/dist/responsino-form-builder.js:4919
+msgid "admin.builder.customize_colors"
+msgstr "Customise {name} colours"
+
+#: assets/js/dist/responsino-form-builder.js:4936
+msgid "admin.builder.accent_color"
+msgstr "Accent color"
+
+#: assets/js/dist/responsino-form-builder.js:4936
+msgid "admin.builder.background_color"
+msgstr "Background color"
+
+#: assets/js/dist/responsino-form-builder.js:4947
+msgid "admin.builder.colors"
+msgstr "Colors"
+
+#: assets/js/dist/responsino-form-builder.js:4947
+msgid "admin.builder.standard_state"
+msgstr "Standard state"
+
+#: assets/js/dist/responsino-form-builder.js:5008
+msgid "admin.preview.widget_title"
+msgstr "Widget live preview"
+
+#: assets/js/dist/responsino-form-builder.js:5036
+msgid "admin.preview.form_preview_title"
+msgstr "Form preview"
+
+#: assets/js/dist/responsino-form-builder.js:5080
+msgid "admin.builder.edit_element"
+msgstr "Edit element"
+
+#: assets/js/dist/responsino-form-builder.js:5133
+msgid "admin.toast.step2_auto_activated"
+msgstr "Step 2 was automatically activated for \"{label}\"."
+
+#: assets/js/dist/responsino-form-builder.js:5137
+msgid "admin.toast.step2_requirement_error"
+msgstr "Step 2 requires at least one rating or button element in Step 1 with an activated step 2 path."
+
+#: assets/js/dist/responsino-form-builder.js:5152
+msgid "admin.toast.moved_to_step2"
+msgstr "\"{label}\" successfully moved to Step 2!"
+
+#: assets/js/dist/responsino-form-builder.js:5191
+msgid "admin.toast.moved_to_step1"
+msgstr "\"{label}\" successfully moved to Step 1!"
+
+#: assets/js/dist/responsino-form-builder.js:5205
+msgid "admin.builder.back_to_overview"
+msgstr "Back to overview"
+
+#: assets/js/dist/responsino-form-builder.js:5230
+msgid "admin.toast.deleted"
+msgstr "Element deleted"
+
+#: assets/js/dist/responsino-form-builder.js:5245
+msgid "admin.toast.duplicated"
+msgstr "Element duplicated"
+
+#: assets/js/dist/responsino-form-builder.js:5263
+msgid "admin.toast.added"
+msgstr "Element \"{name}\" added"
+
+#: assets/js/dist/responsino-form-builder.js:5346
+msgid "admin.toast.dropped"
+msgstr "Element \"{name}\" dropped"
+
+#: assets/js/dist/responsino-form-builder.js:5356
+msgid "admin.toast.move_step_not_allowed"
+msgstr "Moving between steps is not allowed"
+
+#: assets/js/dist/responsino-form-builder.js:5430
+msgid "admin.toast.view_loaded"
+msgstr "View \"{view}\" loaded"
+
+#: assets/js/dist/responsino-form-builder.js:5822
+msgid "admin.toast.config_copied"
+msgstr "Configuration copied!"
+
+#: assets/js/dist/responsino-form-builder.js:5830
+msgid "admin.toast.invalid_json"
+msgstr "Please enter a valid JSON configuration."
+
+#: assets/js/dist/responsino-form-builder.js:5843
+msgid "admin.toast.config_loaded"
+msgstr "Configuration loaded!"
+
+#: assets/js/dist/responsino-form-builder.js:5847
+msgid "admin.toast.import_error"
+msgstr "Error loading/importing: {error}"
+
+#: assets/js/dist/responsino-form-builder.js:5874
+msgid "admin.builder.display_type_label"
+msgstr "Display for display type {label}"
+
+#: assets/js/dist/responsino-form-builder.js:5891
+msgid "admin.builder.targeting_tabs.in_content"
+msgstr "Automatic placement (In-content)"
+
+#: assets/js/dist/responsino-form-builder.js:5892
+msgid "admin.builder.targeting_tabs.shortcode"
+msgstr "Shortcode"
+
+#: assets/js/dist/responsino-form-builder.js:5896
+msgid "admin.builder.targeting_tabs.overlay"
+msgstr "Overlay"
+
+#: assets/js/dist/responsino-form-builder.js:6025
+#: assets/js/dist/responsino-form-builder.js:6121
+msgid "admin.toast.status_paused"
+msgstr "Paused"
+
+#: assets/js/dist/responsino-form-builder.js:6028
+#: assets/js/dist/responsino-form-builder.js:6122
+msgid "admin.toast.status_live"
+msgstr "Live"
+
+#: assets/js/dist/responsino-form-builder.js:6031
+#: assets/js/dist/responsino-form-builder.js:6123
+msgid "admin.toast.status_admin_only"
+msgstr "Admin-only"
+
+#: assets/js/dist/responsino-form-builder.js:6124
+msgid "admin.toast.status_changed"
+msgstr "Form status changed to \"{status}\""
+
+#: assets/js/dist/responsino-form-builder.js:6151
+msgid "admin.builder.leave_editor_confirm"
+msgstr "Do you really want to leave the editor?"
+
+#: assets/js/dist/responsino-form-builder.js:6165
+msgid "admin.toast.split_preview_reset"
+msgstr "Split preview test reset!"
+
+#: assets/js/dist/responsino-form-builder.js:6178
+#: assets/js/dist/responsino-form-builder.js:6187
+msgid "admin.toast.activate_step2_first"
+msgstr "Activate 'Step 2' in the field options first!"
+
+#: assets/js/dist/responsino-form-frontend.js:2459
+msgid "widget.feedback_button.hide_button"
+msgstr "Hide feedback button for a while"
+
+#: assets/js/dist/responsino-form-frontend.js:2524
+msgid "widget.status_completed"
+msgstr "Completed"
+
+#: assets/js/dist/responsino-form-frontend.js:2526
+msgid "widget.step_indicator_full"
+msgstr "Step {step} of {total}"
+
+#: assets/js/dist/responsino-form-frontend.js:2807
+msgid "validation.error.required"
+msgstr "This field is a required field."
+
+#: assets/js/dist/responsino-form-frontend.js:2857
+#: assets/js/dist/responsino-form-frontend.js:2922
+msgid "widget.step_indicator"
+msgstr "Step {step} / {total}"
+
+#: assets/js/dist/responsino-form-frontend.js:2884
+msgid "widget.status_confirmed"
+msgstr "Confirmed"
+
+#: assets/js/dist/responsino-form-frontend.js:2911
+msgid "admin.builder.simulation_redirect_msg"
+msgstr "[Simulation] Redirecting to:"
+
+#: assets/js/dist/responsino-form-frontend.js:2922
+msgid "widget.step_single"
+msgstr "Step {step}"
+
+#: assets/js/dist/responsino-form-frontend.js:2953
+msgid "widget.no_elements"
+msgstr "No elements selected."
+
+#: assets/js/dist/responsino-form-frontend.js:3020
+msgid "confirmation.message.redirecting"
+msgstr "You will be redirected in {seconds} seconds..."
+
+#: assets/js/dist/responsino-form-frontend.js:3023
+msgid "confirmation.message.target"
+msgstr "Target:"
