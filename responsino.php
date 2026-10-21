@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Responsino – User Feedback & Surveys
+ * Plugin Name:       Responsino
  * Plugin URI:        https://responsino.de
  * Description:       Collect and analyze user feedback directly in WordPress with a visual form builder, flexible display options, smart triggers, and targeting.
  * Version:           1.0.5

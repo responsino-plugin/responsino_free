@@ -2,20 +2,21 @@
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsino – User Feedback & Surveys 1.0.5\n"
+"Project-Id-Version: Responsino 1.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/responsino\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-19T12:06:26+02:00\n"
+"POT-Creation-Date: 2026-10-21T15:45:21+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: responsino.php:5
-msgid "Responsino – User Feedback & Surveys"
+#: includes/Page/Page.php:26
+msgid "Responsino"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -177,10 +178,10 @@ msgstr ""
 #: includes/Helper/ConfigHelper.php:272
 #: includes/Helper/ConfigHelper.php:306
 #: templates/frontend/responsino-form-footer.php:39
-#: assets/js/dist/responsino-form-builder.js:4356
-#: assets/js/dist/responsino-form-builder.js:4373
-#: assets/js/dist/responsino-form-frontend.js:2375
-#: assets/js/dist/responsino-form-frontend.js:2448
+#: assets/js/dist/responsino-form-builder.js:4357
+#: assets/js/dist/responsino-form-builder.js:4374
+#: assets/js/dist/responsino-form-frontend.js:2376
+#: assets/js/dist/responsino-form-frontend.js:2449
 msgid "admin.frontend.default_footer_text"
 msgstr ""
 
@@ -263,11 +264,11 @@ msgstr ""
 
 #: includes/Helper/ConfigHelper.php:109
 #: templates/admin/form-builder/fields.php:84
-#: assets/js/dist/responsino-form-builder.js:1512
-#: assets/js/dist/responsino-form-builder.js:1551
-#: assets/js/dist/responsino-form-builder.js:4794
-#: assets/js/dist/responsino-form-frontend.js:1595
-#: assets/js/dist/responsino-form-frontend.js:1634
+#: assets/js/dist/responsino-form-builder.js:1513
+#: assets/js/dist/responsino-form-builder.js:1552
+#: assets/js/dist/responsino-form-builder.js:4795
+#: assets/js/dist/responsino-form-frontend.js:1596
+#: assets/js/dist/responsino-form-frontend.js:1635
 msgid "fields.name.name"
 msgstr ""
 
@@ -297,9 +298,9 @@ msgid "admin.config.default_email"
 msgstr ""
 
 #: includes/Helper/ConfigHelper.php:322
-#: assets/js/dist/responsino-form-frontend.js:2867
-#: assets/js/dist/responsino-form-frontend.js:3002
-#: assets/js/dist/responsino-form-frontend.js:3018
+#: assets/js/dist/responsino-form-frontend.js:2868
+#: assets/js/dist/responsino-form-frontend.js:3003
+#: assets/js/dist/responsino-form-frontend.js:3019
 msgid "confirmation.message.default"
 msgstr ""
 
@@ -841,434 +842,6 @@ msgstr ""
 
 #: includes/Page/About.php:126
 msgid "admin.page.about.debug.hint"
-msgstr ""
-
-#: includes/Page/Page.php:26
-msgid "FLWP"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:21
-msgid "admin.horizontal_navigation.brand"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:26
-msgid "admin.horizontal_navigation.dashboard"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:31
-msgid "admin.horizontal_navigation.all_forms"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:36
-msgid "admin.horizontal_navigation.add_form"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:41
-msgid "admin.horizontal_navigation.feedback_list"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:46
-msgid "admin.horizontal_navigation.export"
-msgstr ""
-
-#: templates/admin/responsino-admin-page.php:51
-msgid "admin.horizontal_navigation.about"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:13
-msgid "admin.page.dashboard.welcome"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:14
-msgid "admin.page.dashboard.overview"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:19
-msgid "admin.page.dashboard.summary"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:22
-msgid "admin.page.dashboard.total"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:26
-msgid "admin.page.dashboard.today"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:34
-msgid "admin.page.dashboard.distribution_by_type"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:38
-msgid "admin.page.dashboard.type.shortcode"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:42
-msgid "admin.page.dashboard.type.pre_content"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:46
-msgid "admin.page.dashboard.type.post_content"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:50
-msgid "admin.page.dashboard.type.overlay"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:54
-msgid "admin.page.dashboard.type.slide_in"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:58
-msgid "admin.page.dashboard.type.feedback_button"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:66
-msgid "admin.page.dashboard.recent_activities"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:73
-msgid "admin.page.dashboard.no_activities"
-msgstr ""
-
-#: templates/admin/responsino-dashboard.php:98
-msgid "admin.page.dashboard.feedback_trend"
-msgstr ""
-
-#: templates/admin/responsino-export.php:8
-msgid "admin.page.export.pro_notice.headline"
-msgstr ""
-
-#: templates/admin/responsino-export.php:10
-msgid "admin.page.export.pro_notice.intro"
-msgstr ""
-
-#: templates/admin/responsino-export.php:12
-msgid "admin.page.export.pro_notice.advantage.1"
-msgstr ""
-
-#: templates/admin/responsino-export.php:13
-msgid "admin.page.export.pro_notice.advantage.2"
-msgstr ""
-
-#: templates/admin/responsino-export.php:14
-msgid "admin.page.export.pro_notice.advantage.3"
-msgstr ""
-
-#: templates/admin/responsino-export.php:15
-msgid "admin.page.export.pro_notice.advantage.4"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:10
-#: templates/admin/responsino-form-builder.php:76
-msgid "admin.page.builder.status.paused"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:15
-#: templates/admin/responsino-form-builder.php:81
-msgid "admin.page.builder.status.live"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:19
-#: templates/admin/responsino-form-builder.php:86
-msgid "admin.page.builder.status.admin_only"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:42
-msgid "admin.page.builder.form_title.default"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:42
-msgid "admin.page.builder.form_title.edit_title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:45
-msgid "admin.page.builder.form_id"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:46
-msgid "admin.page.builder.last_saved"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:47
-msgid "admin.page.builder.last_published"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:56
-msgid "admin.page.builder.undo"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:59
-msgid "admin.page.builder.redo"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:66
-msgid "admin.page.builder.change_status"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:94
-msgid "admin.page.builder.load_templates"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:95
-msgid "admin.page.builder.templates"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:97
-msgid "admin.page.builder.json_export_import"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:98
-msgid "admin.page.builder.json_label"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:104
-msgid "admin.page.builder.save_draft"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:105
-msgid "admin.page.builder.save"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:107
-msgid "admin.page.builder.publish"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:108
-msgid "admin.page.builder.publish_btn"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:114
-msgid "admin.page.builder.split_view_title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:115
-msgid "admin.page.builder.split_view"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:117
-msgid "admin.page.builder.preview_modal_title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:118
-msgid "admin.page.builder.preview"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:123
-msgid "admin.page.builder.close_editor"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:129
-msgid "admin.page.builder.nav_steps"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:131
-msgid "admin.page.builder.nav.fields"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:134
-msgid "admin.page.builder.nav.general"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:137
-msgid "admin.page.builder.nav.styles"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:140
-msgid "admin.page.builder.nav.display"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:143
-msgid "admin.page.builder.nav.targeting"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:146
-msgid "admin.page.builder.nav.confirmation"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:149
-msgid "admin.page.builder.nav.notification"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:152
-msgid "admin.page.builder.nav.tracking"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:183
-msgid "admin.page.builder.json_modal.title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:184
-#: templates/admin/responsino-form-builder.php:203
-msgid "admin.page.builder.close"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:188
-msgid "admin.page.builder.json_modal.description"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:192
-msgid "admin.page.builder.json_modal.label"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:193
-msgid "admin.page.builder.json_modal.placeholder"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:198
-msgid "admin.page.builder.json_modal.import_btn"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:201
-msgid "admin.page.builder.json_modal.copy_btn"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:221
-msgid "admin.page.builder.modal_tmpl_title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:226
-msgid "admin.page.builder.modal_tmpl_desc"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:234
-msgid "admin.page.builder.modal_tmpl_cancel"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:245
-msgid "admin.page.builder.pro.title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:254
-msgid "admin.page.builder.pro.subtitle"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:256
-msgid "admin.page.builder.pro.description"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:261
-msgid "admin.page.builder.pro.benefits_title"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:265
-msgid "admin.page.builder.pro.benefit.1"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:269
-msgid "admin.page.builder.pro.benefit.2"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:273
-msgid "admin.page.builder.pro.benefit.3"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:279
-msgid "admin.page.builder.pro.cancel_btn"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:281
-msgid "admin.page.builder.pro.upgrade_btn"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:317
-msgid "admin.builder.overlay_template.back"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:329
-msgid "admin.builder.overlay_template.feedback"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:336
-msgid "admin.builder.overlay_template.close"
-msgstr ""
-
-#: templates/admin/responsino-form-builder.php:348
-msgid "admin.builder.overlay_template.footer_text"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:9
-msgid "admin.page.feedback_list.title"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:29
-msgid "admin.page.feedback_list.modal.id_title"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:30
-msgid "admin.page.feedback_list.modal.created_at"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:33
-msgid "admin.page.feedback_list.modal.close"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:45
-msgid "admin.page.feedback_list.modal.status.title"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:49
-msgid "admin.page.feedback_list.modal.status.unread"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:52
-msgid "admin.page.feedback_list.modal.status.read"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:55
-msgid "admin.page.feedback_list.modal.status.archived"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:64
-msgid "admin.page.feedback_list.modal.customer_form_values"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:72
-msgid "admin.page.feedback_list.modal.source_url"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:76
-msgid "admin.page.feedback_list.modal.copy_to_clipboard"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:79
-msgid "admin.page.feedback_list.modal.open_in_new_window"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:92
-msgid "admin.page.feedback_list.modal.tracking.title"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:101
-msgid "admin.page.feedback_list.modal.tracking.user_agent"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:110
-msgid "admin.page.feedback_list.modal.json_data"
-msgstr ""
-
-#: templates/admin/responsino-form-feedback-list.php:121
-msgid "admin.page.feedback_list.modal.close_button"
-msgstr ""
-
-#: templates/admin/responsino-form-list.php:9
-msgid "admin.page.form_list.title"
-msgstr ""
-
-#: templates/admin/responsino-form-list.php:10
-msgid "admin.page.form_list.add_new"
-msgstr ""
-
-#: templates/admin/responsino-form-list.php:15
-msgid "admin.page.form_list.notice.duplicate_success"
-msgstr ""
-
-#: templates/admin/responsino-form-list.php:21
-msgid "admin.page.form_list.notice.delete_success"
-msgstr ""
-
-#: templates/admin/responsino-form-list.php:27
-msgid "admin.page.form_list.notice.form_not_found"
 msgstr ""
 
 #: templates/admin/form-builder/confirmation.php:7
@@ -2168,30 +1741,30 @@ msgid "admin.builder.fields.placeholder.label"
 msgstr ""
 
 #: templates/admin/form-builder/fields.php:288
-#: assets/js/dist/responsino-form-builder.js:1515
-#: assets/js/dist/responsino-form-builder.js:1520
-#: assets/js/dist/responsino-form-builder.js:1549
-#: assets/js/dist/responsino-form-frontend.js:1598
-#: assets/js/dist/responsino-form-frontend.js:1603
-#: assets/js/dist/responsino-form-frontend.js:1632
+#: assets/js/dist/responsino-form-builder.js:1516
+#: assets/js/dist/responsino-form-builder.js:1521
+#: assets/js/dist/responsino-form-builder.js:1550
+#: assets/js/dist/responsino-form-frontend.js:1599
+#: assets/js/dist/responsino-form-frontend.js:1604
+#: assets/js/dist/responsino-form-frontend.js:1633
 msgid "fields.name.first_name"
 msgstr ""
 
 #: templates/admin/form-builder/fields.php:289
-#: assets/js/dist/responsino-form-builder.js:1521
-#: assets/js/dist/responsino-form-builder.js:1555
-#: assets/js/dist/responsino-form-frontend.js:1604
-#: assets/js/dist/responsino-form-frontend.js:1638
+#: assets/js/dist/responsino-form-builder.js:1522
+#: assets/js/dist/responsino-form-builder.js:1556
+#: assets/js/dist/responsino-form-frontend.js:1605
+#: assets/js/dist/responsino-form-frontend.js:1639
 msgid "fields.name.middle_name"
 msgstr ""
 
 #: templates/admin/form-builder/fields.php:290
-#: assets/js/dist/responsino-form-builder.js:1516
-#: assets/js/dist/responsino-form-builder.js:1522
-#: assets/js/dist/responsino-form-builder.js:1558
-#: assets/js/dist/responsino-form-frontend.js:1599
-#: assets/js/dist/responsino-form-frontend.js:1605
-#: assets/js/dist/responsino-form-frontend.js:1641
+#: assets/js/dist/responsino-form-builder.js:1517
+#: assets/js/dist/responsino-form-builder.js:1523
+#: assets/js/dist/responsino-form-builder.js:1559
+#: assets/js/dist/responsino-form-frontend.js:1600
+#: assets/js/dist/responsino-form-frontend.js:1606
+#: assets/js/dist/responsino-form-frontend.js:1642
 msgid "fields.name.last_name"
 msgstr ""
 
@@ -2272,18 +1845,18 @@ msgid "fields.email.confirmation_activation"
 msgstr ""
 
 #: templates/admin/form-builder/fields.php:430
-#: assets/js/dist/responsino-form-builder.js:892
-#: assets/js/dist/responsino-form-builder.js:1582
-#: assets/js/dist/responsino-form-frontend.js:975
-#: assets/js/dist/responsino-form-frontend.js:1665
+#: assets/js/dist/responsino-form-builder.js:893
+#: assets/js/dist/responsino-form-builder.js:1583
+#: assets/js/dist/responsino-form-frontend.js:976
+#: assets/js/dist/responsino-form-frontend.js:1666
 msgid "fields.email.placeholder"
 msgstr ""
 
 #: templates/admin/form-builder/fields.php:431
-#: assets/js/dist/responsino-form-builder.js:893
-#: assets/js/dist/responsino-form-builder.js:1584
-#: assets/js/dist/responsino-form-frontend.js:976
-#: assets/js/dist/responsino-form-frontend.js:1667
+#: assets/js/dist/responsino-form-builder.js:894
+#: assets/js/dist/responsino-form-builder.js:1585
+#: assets/js/dist/responsino-form-frontend.js:977
+#: assets/js/dist/responsino-form-frontend.js:1668
 msgid "fields.email.confirmation_placeholder"
 msgstr ""
 
@@ -2575,38 +2148,6 @@ msgstr ""
 msgid "admin.builder.tracking.color_scheme.label"
 msgstr ""
 
-#: templates/admin/partial/responsino-pro-notice-modal.php:6
-msgid "admin.builder.pro.headline"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:7
-msgid "admin.builder.pro.intro"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:9
-msgid "admin.builder.pro.advantage.1"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:10
-msgid "admin.builder.pro.advantage.2"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:11
-msgid "admin.builder.pro.advantage.3"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:21
-msgid "admin.builder.pro.title"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:36
-msgid "admin.builder.pro.advantages_title"
-msgstr ""
-
-#: templates/admin/partial/responsino-pro-notice-modal.php:49
-msgid "admin.builder.pro.cta_text"
-msgstr ""
-
 #: templates/admin/partial/mockup/export.php:19
 msgid "Content feedback"
 msgstr ""
@@ -2805,6 +2346,462 @@ msgstr ""
 msgid "%1$d of %2$d"
 msgstr ""
 
+#: templates/admin/partial/responsino-pro-notice-modal.php:6
+msgid "admin.builder.pro.headline"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:7
+msgid "admin.builder.pro.intro"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:9
+msgid "admin.builder.pro.advantage.1"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:10
+msgid "admin.builder.pro.advantage.2"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:11
+msgid "admin.builder.pro.advantage.3"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:21
+msgid "admin.builder.pro.title"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:36
+msgid "admin.builder.pro.advantages_title"
+msgstr ""
+
+#: templates/admin/partial/responsino-pro-notice-modal.php:49
+msgid "admin.builder.pro.cta_text"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:21
+msgid "admin.horizontal_navigation.brand"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:26
+msgid "admin.horizontal_navigation.dashboard"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:31
+msgid "admin.horizontal_navigation.all_forms"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:36
+msgid "admin.horizontal_navigation.add_form"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:41
+msgid "admin.horizontal_navigation.feedback_list"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:46
+msgid "admin.horizontal_navigation.export"
+msgstr ""
+
+#: templates/admin/responsino-admin-page.php:51
+msgid "admin.horizontal_navigation.about"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:13
+msgid "admin.page.dashboard.welcome"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:14
+msgid "admin.page.dashboard.overview"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:19
+msgid "admin.page.dashboard.summary"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:22
+msgid "admin.page.dashboard.total"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:26
+msgid "admin.page.dashboard.today"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:34
+msgid "admin.page.dashboard.distribution_by_type"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:38
+msgid "admin.page.dashboard.type.shortcode"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:42
+msgid "admin.page.dashboard.type.pre_content"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:46
+msgid "admin.page.dashboard.type.post_content"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:50
+msgid "admin.page.dashboard.type.overlay"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:54
+msgid "admin.page.dashboard.type.slide_in"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:58
+msgid "admin.page.dashboard.type.feedback_button"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:66
+msgid "admin.page.dashboard.recent_activities"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:73
+msgid "admin.page.dashboard.no_activities"
+msgstr ""
+
+#: templates/admin/responsino-dashboard.php:98
+msgid "admin.page.dashboard.feedback_trend"
+msgstr ""
+
+#: templates/admin/responsino-export.php:8
+msgid "admin.page.export.pro_notice.headline"
+msgstr ""
+
+#: templates/admin/responsino-export.php:10
+msgid "admin.page.export.pro_notice.intro"
+msgstr ""
+
+#: templates/admin/responsino-export.php:12
+msgid "admin.page.export.pro_notice.advantage.1"
+msgstr ""
+
+#: templates/admin/responsino-export.php:13
+msgid "admin.page.export.pro_notice.advantage.2"
+msgstr ""
+
+#: templates/admin/responsino-export.php:14
+msgid "admin.page.export.pro_notice.advantage.3"
+msgstr ""
+
+#: templates/admin/responsino-export.php:15
+msgid "admin.page.export.pro_notice.advantage.4"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:10
+#: templates/admin/responsino-form-builder.php:76
+msgid "admin.page.builder.status.paused"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:15
+#: templates/admin/responsino-form-builder.php:81
+msgid "admin.page.builder.status.live"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:19
+#: templates/admin/responsino-form-builder.php:86
+msgid "admin.page.builder.status.admin_only"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:42
+msgid "admin.page.builder.form_title.default"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:42
+msgid "admin.page.builder.form_title.edit_title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:45
+msgid "admin.page.builder.form_id"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:46
+msgid "admin.page.builder.last_saved"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:47
+msgid "admin.page.builder.last_published"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:56
+msgid "admin.page.builder.undo"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:59
+msgid "admin.page.builder.redo"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:66
+msgid "admin.page.builder.change_status"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:94
+msgid "admin.page.builder.load_templates"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:95
+msgid "admin.page.builder.templates"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:97
+msgid "admin.page.builder.json_export_import"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:98
+msgid "admin.page.builder.json_label"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:104
+msgid "admin.page.builder.save_draft"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:105
+msgid "admin.page.builder.save"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:107
+msgid "admin.page.builder.publish"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:108
+msgid "admin.page.builder.publish_btn"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:114
+msgid "admin.page.builder.split_view_title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:115
+msgid "admin.page.builder.split_view"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:117
+msgid "admin.page.builder.preview_modal_title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:118
+msgid "admin.page.builder.preview"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:123
+msgid "admin.page.builder.close_editor"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:129
+msgid "admin.page.builder.nav_steps"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:131
+msgid "admin.page.builder.nav.fields"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:134
+msgid "admin.page.builder.nav.general"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:137
+msgid "admin.page.builder.nav.styles"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:140
+msgid "admin.page.builder.nav.display"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:143
+msgid "admin.page.builder.nav.targeting"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:146
+msgid "admin.page.builder.nav.confirmation"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:149
+msgid "admin.page.builder.nav.notification"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:152
+msgid "admin.page.builder.nav.tracking"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:183
+msgid "admin.page.builder.json_modal.title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:184
+#: templates/admin/responsino-form-builder.php:203
+msgid "admin.page.builder.close"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:188
+msgid "admin.page.builder.json_modal.description"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:192
+msgid "admin.page.builder.json_modal.label"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:193
+msgid "admin.page.builder.json_modal.placeholder"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:198
+msgid "admin.page.builder.json_modal.import_btn"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:201
+msgid "admin.page.builder.json_modal.copy_btn"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:221
+msgid "admin.page.builder.modal_tmpl_title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:226
+msgid "admin.page.builder.modal_tmpl_desc"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:234
+msgid "admin.page.builder.modal_tmpl_cancel"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:245
+msgid "admin.page.builder.pro.title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:254
+msgid "admin.page.builder.pro.subtitle"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:256
+msgid "admin.page.builder.pro.description"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:261
+msgid "admin.page.builder.pro.benefits_title"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:265
+msgid "admin.page.builder.pro.benefit.1"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:269
+msgid "admin.page.builder.pro.benefit.2"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:273
+msgid "admin.page.builder.pro.benefit.3"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:279
+msgid "admin.page.builder.pro.cancel_btn"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:281
+msgid "admin.page.builder.pro.upgrade_btn"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:317
+msgid "admin.builder.overlay_template.back"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:329
+msgid "admin.builder.overlay_template.feedback"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:336
+msgid "admin.builder.overlay_template.close"
+msgstr ""
+
+#: templates/admin/responsino-form-builder.php:348
+msgid "admin.builder.overlay_template.footer_text"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:9
+msgid "admin.page.feedback_list.title"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:29
+msgid "admin.page.feedback_list.modal.id_title"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:30
+msgid "admin.page.feedback_list.modal.created_at"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:33
+msgid "admin.page.feedback_list.modal.close"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:45
+msgid "admin.page.feedback_list.modal.status.title"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:49
+msgid "admin.page.feedback_list.modal.status.unread"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:52
+msgid "admin.page.feedback_list.modal.status.read"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:55
+msgid "admin.page.feedback_list.modal.status.archived"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:64
+msgid "admin.page.feedback_list.modal.customer_form_values"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:72
+msgid "admin.page.feedback_list.modal.source_url"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:76
+msgid "admin.page.feedback_list.modal.copy_to_clipboard"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:79
+msgid "admin.page.feedback_list.modal.open_in_new_window"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:92
+msgid "admin.page.feedback_list.modal.tracking.title"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:101
+msgid "admin.page.feedback_list.modal.tracking.user_agent"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:110
+msgid "admin.page.feedback_list.modal.json_data"
+msgstr ""
+
+#: templates/admin/responsino-form-feedback-list.php:121
+msgid "admin.page.feedback_list.modal.close_button"
+msgstr ""
+
+#: templates/admin/responsino-form-list.php:9
+msgid "admin.page.form_list.title"
+msgstr ""
+
+#: templates/admin/responsino-form-list.php:10
+msgid "admin.page.form_list.add_new"
+msgstr ""
+
+#: templates/admin/responsino-form-list.php:15
+msgid "admin.page.form_list.notice.duplicate_success"
+msgstr ""
+
+#: templates/admin/responsino-form-list.php:21
+msgid "admin.page.form_list.notice.delete_success"
+msgstr ""
+
+#: templates/admin/responsino-form-list.php:27
+msgid "admin.page.form_list.notice.form_not_found"
+msgstr ""
+
 #: assets/js/dist/responsino-admin.js:85
 msgid "admin.feedback.load_error"
 msgstr ""
@@ -2823,9 +2820,9 @@ msgid "admin.feedback.delete_network_error"
 msgstr ""
 
 #: assets/js/dist/responsino-admin.js:214
-#: assets/js/dist/responsino-form-builder.js:922
-#: assets/js/dist/responsino-form-builder.js:4297
-#: assets/js/dist/responsino-form-frontend.js:1005
+#: assets/js/dist/responsino-form-builder.js:923
+#: assets/js/dist/responsino-form-builder.js:4298
+#: assets/js/dist/responsino-form-frontend.js:1006
 msgid "fields.unnamed"
 msgstr ""
 
@@ -2849,643 +2846,643 @@ msgstr ""
 msgid "admin.feedback.status_update_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:476
-#: assets/js/dist/responsino-form-frontend.js:480
+#: assets/js/dist/responsino-form-builder.js:475
+#: assets/js/dist/responsino-form-frontend.js:479
 msgid "admin.builder.default_step2.headline"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:477
-#: assets/js/dist/responsino-form-frontend.js:481
+#: assets/js/dist/responsino-form-builder.js:476
+#: assets/js/dist/responsino-form-frontend.js:480
 msgid "admin.builder.default_step2.textarea_label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:477
-#: assets/js/dist/responsino-form-frontend.js:481
+#: assets/js/dist/responsino-form-builder.js:476
+#: assets/js/dist/responsino-form-frontend.js:480
 msgid "admin.builder.default_step2.textarea_placeholder"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:478
-#: assets/js/dist/responsino-form-frontend.js:482
+#: assets/js/dist/responsino-form-builder.js:477
+#: assets/js/dist/responsino-form-frontend.js:481
 msgid "admin.builder.default_step2.button_label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:689
-#: assets/js/dist/responsino-form-builder.js:772
-#: assets/js/dist/responsino-form-frontend.js:693
-#: assets/js/dist/responsino-form-frontend.js:776
+#: assets/js/dist/responsino-form-builder.js:688
+#: assets/js/dist/responsino-form-builder.js:771
+#: assets/js/dist/responsino-form-frontend.js:692
+#: assets/js/dist/responsino-form-frontend.js:775
 msgid "admin.builder.unlink_values"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:700
-#: assets/js/dist/responsino-form-builder.js:775
-#: assets/js/dist/responsino-form-frontend.js:704
-#: assets/js/dist/responsino-form-frontend.js:779
+#: assets/js/dist/responsino-form-builder.js:699
+#: assets/js/dist/responsino-form-builder.js:774
+#: assets/js/dist/responsino-form-frontend.js:703
+#: assets/js/dist/responsino-form-frontend.js:778
 msgid "admin.builder.link_values"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:841
-#: assets/js/dist/responsino-form-frontend.js:924
+#: assets/js/dist/responsino-form-builder.js:840
+#: assets/js/dist/responsino-form-frontend.js:923
 msgid "admin.builder.default_feedback_placeholder"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:852
-#: assets/js/dist/responsino-form-builder.js:856
-#: assets/js/dist/responsino-form-builder.js:865
-#: assets/js/dist/responsino-form-builder.js:869
-#: assets/js/dist/responsino-form-builder.js:875
-#: assets/js/dist/responsino-form-builder.js:879
-#: assets/js/dist/responsino-form-builder.js:1633
-#: assets/js/dist/responsino-form-builder.js:1637
-#: assets/js/dist/responsino-form-builder.js:1640
-#: assets/js/dist/responsino-form-builder.js:1644
-#: assets/js/dist/responsino-form-builder.js:1647
-#: assets/js/dist/responsino-form-builder.js:1651
-#: assets/js/dist/responsino-form-frontend.js:935
-#: assets/js/dist/responsino-form-frontend.js:939
-#: assets/js/dist/responsino-form-frontend.js:948
-#: assets/js/dist/responsino-form-frontend.js:952
-#: assets/js/dist/responsino-form-frontend.js:958
-#: assets/js/dist/responsino-form-frontend.js:962
-#: assets/js/dist/responsino-form-frontend.js:1716
-#: assets/js/dist/responsino-form-frontend.js:1720
-#: assets/js/dist/responsino-form-frontend.js:1723
-#: assets/js/dist/responsino-form-frontend.js:1727
-#: assets/js/dist/responsino-form-frontend.js:1730
-#: assets/js/dist/responsino-form-frontend.js:1734
+#: assets/js/dist/responsino-form-builder.js:851
+#: assets/js/dist/responsino-form-builder.js:855
+#: assets/js/dist/responsino-form-builder.js:864
+#: assets/js/dist/responsino-form-builder.js:868
+#: assets/js/dist/responsino-form-builder.js:874
+#: assets/js/dist/responsino-form-builder.js:878
+#: assets/js/dist/responsino-form-builder.js:1634
+#: assets/js/dist/responsino-form-builder.js:1638
+#: assets/js/dist/responsino-form-builder.js:1641
+#: assets/js/dist/responsino-form-builder.js:1645
+#: assets/js/dist/responsino-form-builder.js:1648
+#: assets/js/dist/responsino-form-builder.js:1652
+#: assets/js/dist/responsino-form-frontend.js:934
+#: assets/js/dist/responsino-form-frontend.js:938
+#: assets/js/dist/responsino-form-frontend.js:947
+#: assets/js/dist/responsino-form-frontend.js:951
+#: assets/js/dist/responsino-form-frontend.js:957
+#: assets/js/dist/responsino-form-frontend.js:961
+#: assets/js/dist/responsino-form-frontend.js:1717
+#: assets/js/dist/responsino-form-frontend.js:1721
+#: assets/js/dist/responsino-form-frontend.js:1724
+#: assets/js/dist/responsino-form-frontend.js:1728
+#: assets/js/dist/responsino-form-frontend.js:1731
+#: assets/js/dist/responsino-form-frontend.js:1735
 msgid "fields.choices_list.general"
+msgstr ""
+
+#: assets/js/dist/responsino-form-builder.js:852
+#: assets/js/dist/responsino-form-builder.js:865
+#: assets/js/dist/responsino-form-builder.js:875
+#: assets/js/dist/responsino-form-builder.js:1635
+#: assets/js/dist/responsino-form-builder.js:1642
+#: assets/js/dist/responsino-form-builder.js:1649
+#: assets/js/dist/responsino-form-frontend.js:935
+#: assets/js/dist/responsino-form-frontend.js:948
+#: assets/js/dist/responsino-form-frontend.js:958
+#: assets/js/dist/responsino-form-frontend.js:1718
+#: assets/js/dist/responsino-form-frontend.js:1725
+#: assets/js/dist/responsino-form-frontend.js:1732
+msgid "fields.choices_list.pre_purchase"
 msgstr ""
 
 #: assets/js/dist/responsino-form-builder.js:853
 #: assets/js/dist/responsino-form-builder.js:866
 #: assets/js/dist/responsino-form-builder.js:876
-#: assets/js/dist/responsino-form-builder.js:1634
-#: assets/js/dist/responsino-form-builder.js:1641
-#: assets/js/dist/responsino-form-builder.js:1648
+#: assets/js/dist/responsino-form-builder.js:1636
+#: assets/js/dist/responsino-form-builder.js:1643
+#: assets/js/dist/responsino-form-builder.js:1650
 #: assets/js/dist/responsino-form-frontend.js:936
 #: assets/js/dist/responsino-form-frontend.js:949
 #: assets/js/dist/responsino-form-frontend.js:959
-#: assets/js/dist/responsino-form-frontend.js:1717
-#: assets/js/dist/responsino-form-frontend.js:1724
-#: assets/js/dist/responsino-form-frontend.js:1731
-msgid "fields.choices_list.pre_purchase"
-msgstr ""
-
-#: assets/js/dist/responsino-form-builder.js:854
-#: assets/js/dist/responsino-form-builder.js:867
-#: assets/js/dist/responsino-form-builder.js:877
-#: assets/js/dist/responsino-form-builder.js:1635
-#: assets/js/dist/responsino-form-builder.js:1642
-#: assets/js/dist/responsino-form-builder.js:1649
-#: assets/js/dist/responsino-form-frontend.js:937
-#: assets/js/dist/responsino-form-frontend.js:950
-#: assets/js/dist/responsino-form-frontend.js:960
-#: assets/js/dist/responsino-form-frontend.js:1718
-#: assets/js/dist/responsino-form-frontend.js:1725
-#: assets/js/dist/responsino-form-frontend.js:1732
+#: assets/js/dist/responsino-form-frontend.js:1719
+#: assets/js/dist/responsino-form-frontend.js:1726
+#: assets/js/dist/responsino-form-frontend.js:1733
 msgid "fields.choices_list.technical_support"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1025
-#: assets/js/dist/responsino-form-frontend.js:1108
+#: assets/js/dist/responsino-form-builder.js:1026
+#: assets/js/dist/responsino-form-frontend.js:1109
 msgid "admin.builder.submit_action"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1025
-#: assets/js/dist/responsino-form-frontend.js:1108
+#: assets/js/dist/responsino-form-builder.js:1026
+#: assets/js/dist/responsino-form-frontend.js:1109
 msgid "admin.builder.back_action"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1034
-#: assets/js/dist/responsino-form-builder.js:1121
-#: assets/js/dist/responsino-form-frontend.js:1117
-#: assets/js/dist/responsino-form-frontend.js:1204
+#: assets/js/dist/responsino-form-builder.js:1035
+#: assets/js/dist/responsino-form-builder.js:1122
+#: assets/js/dist/responsino-form-frontend.js:1118
+#: assets/js/dist/responsino-form-frontend.js:1205
 msgid "admin.builder.step2_connected"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1236
-#: assets/js/dist/responsino-form-builder.js:1255
-#: assets/js/dist/responsino-form-frontend.js:1319
-#: assets/js/dist/responsino-form-frontend.js:1338
+#: assets/js/dist/responsino-form-builder.js:1237
+#: assets/js/dist/responsino-form-builder.js:1256
+#: assets/js/dist/responsino-form-frontend.js:1320
+#: assets/js/dist/responsino-form-frontend.js:1339
 msgid "fields.choices_list.placeholder"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1673
-#: assets/js/dist/responsino-form-frontend.js:1756
+#: assets/js/dist/responsino-form-builder.js:1674
+#: assets/js/dist/responsino-form-frontend.js:1757
 msgid "fields.choices_list.drag_to_sort"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1677
-#: assets/js/dist/responsino-form-frontend.js:1760
+#: assets/js/dist/responsino-form-builder.js:1678
+#: assets/js/dist/responsino-form-frontend.js:1761
 msgid "fields.choices_list.set_as_default"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1811
-#: assets/js/dist/responsino-form-frontend.js:1894
+#: assets/js/dist/responsino-form-builder.js:1812
+#: assets/js/dist/responsino-form-frontend.js:1895
 msgid "fields.choices_list.add_option"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1833
-#: assets/js/dist/responsino-form-frontend.js:1916
+#: assets/js/dist/responsino-form-builder.js:1834
+#: assets/js/dist/responsino-form-frontend.js:1917
 msgid "fields.choices_list.remove_option"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1837
-#: assets/js/dist/responsino-form-frontend.js:1920
+#: assets/js/dist/responsino-form-builder.js:1838
+#: assets/js/dist/responsino-form-frontend.js:1921
 msgid "fields.choices_list.at_least_one_option"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1921
+#: assets/js/dist/responsino-form-builder.js:1922
 msgid "admin.builder.reset_preview"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1966
+#: assets/js/dist/responsino-form-builder.js:1967
 msgid "admin.builder.use_template"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1975
+#: assets/js/dist/responsino-form-builder.js:1976
 msgid "admin.confirm.load_template"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:1987
+#: assets/js/dist/responsino-form-builder.js:1988
 msgid "admin.toast.template_loaded"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2028
+#: assets/js/dist/responsino-form-builder.js:2029
 msgid "admin.conditions.page_type.label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2033
-#: assets/js/dist/responsino-form-builder.js:2048
+#: assets/js/dist/responsino-form-builder.js:2034
+#: assets/js/dist/responsino-form-builder.js:2049
 msgid "admin.conditions.operators.in"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2037
+#: assets/js/dist/responsino-form-builder.js:2038
 msgid "admin.conditions.options.pages"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2038
+#: assets/js/dist/responsino-form-builder.js:2039
 msgid "admin.conditions.options.posts"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2043
+#: assets/js/dist/responsino-form-builder.js:2044
 msgid "admin.conditions.device.label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2052
+#: assets/js/dist/responsino-form-builder.js:2053
 msgid "admin.conditions.options.desktop"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2053
+#: assets/js/dist/responsino-form-builder.js:2054
 msgid "admin.conditions.options.mobile"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2147
+#: assets/js/dist/responsino-form-builder.js:2148
 msgid "admin.conditions.title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2155
+#: assets/js/dist/responsino-form-builder.js:2156
 msgid "admin.conditions.show_on_frontpage"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2156
+#: assets/js/dist/responsino-form-builder.js:2157
 msgid "admin.conditions.show_on_frontpage_desc"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2176
+#: assets/js/dist/responsino-form-builder.js:2177
 msgid "admin.conditions.and_group"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2182
+#: assets/js/dist/responsino-form-builder.js:2183
 msgid "admin.conditions.connector"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2186
+#: assets/js/dist/responsino-form-builder.js:2187
 msgid "admin.conditions.or_group"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2192
+#: assets/js/dist/responsino-form-builder.js:2193
 msgid "admin.conditions.hint.title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2194
+#: assets/js/dist/responsino-form-builder.js:2195
 msgid "admin.conditions.hint.text"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2207
+#: assets/js/dist/responsino-form-builder.js:2208
 msgid "admin.conditions.type.and"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2207
+#: assets/js/dist/responsino-form-builder.js:2208
 msgid "admin.conditions.type.or"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2223
-#: assets/js/dist/responsino-form-builder.js:2228
+#: assets/js/dist/responsino-form-builder.js:2224
+#: assets/js/dist/responsino-form-builder.js:2229
 msgid "admin.conditions.empty_state"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2244
+#: assets/js/dist/responsino-form-builder.js:2245
 msgid "admin.conditions.add_button"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2255
+#: assets/js/dist/responsino-form-builder.js:2256
 msgid "admin.conditions.add_button_disabled_title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2399
+#: assets/js/dist/responsino-form-builder.js:2400
 msgid "admin.conditions.delete_condition"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2415
+#: assets/js/dist/responsino-form-builder.js:2416
 msgid "admin.warning.submit_button"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2423
+#: assets/js/dist/responsino-form-builder.js:2424
 msgid "admin.warning.step2_empty"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2431
+#: assets/js/dist/responsino-form-builder.js:2432
 msgid "admin.warning.step2_missing_submit"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2438
+#: assets/js/dist/responsino-form-builder.js:2439
 msgid "admin.warning.empty_form"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2505
-#: assets/js/dist/responsino-form-builder.js:2517
+#: assets/js/dist/responsino-form-builder.js:2506
+#: assets/js/dist/responsino-form-builder.js:2518
 msgid "validation.error.active_warnings"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2674
-#: assets/js/dist/responsino-form-builder.js:2685
+#: assets/js/dist/responsino-form-builder.js:2675
+#: assets/js/dist/responsino-form-builder.js:2686
 msgid "admin.preview.title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2689
+#: assets/js/dist/responsino-form-builder.js:2690
 msgid "admin.preview.address_placeholder"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2693
+#: assets/js/dist/responsino-form-builder.js:2694
 msgid "admin.preview.desktop_view"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2696
+#: assets/js/dist/responsino-form-builder.js:2697
 msgid "admin.preview.mobile_view"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2701
+#: assets/js/dist/responsino-form-builder.js:2702
 msgid "admin.preview.refresh_preview"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2705
+#: assets/js/dist/responsino-form-builder.js:2706
 msgid "admin.preview.close_preview"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2725
+#: assets/js/dist/responsino-form-builder.js:2726
 msgid "admin.preview.active_mode_label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2727
+#: assets/js/dist/responsino-form-builder.js:2728
 msgid "admin.preview.simulate_trigger"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2736
+#: assets/js/dist/responsino-form-builder.js:2737
 msgid "admin.preview.modes.in_content_shortcode"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2736
+#: assets/js/dist/responsino-form-builder.js:2737
 msgid "admin.preview.modes.in_content_inline"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2737
+#: assets/js/dist/responsino-form-builder.js:2738
 msgid "admin.preview.modes.in_content"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2740
+#: assets/js/dist/responsino-form-builder.js:2741
 msgid "admin.preview.modes.feedback_button"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2742
+#: assets/js/dist/responsino-form-builder.js:2743
 msgid "admin.preview.modes.slide_in"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2744
+#: assets/js/dist/responsino-form-builder.js:2745
 msgid "admin.preview.modes.overlay_modal"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2752
+#: assets/js/dist/responsino-form-builder.js:2753
 msgid "admin.preview.mock.logo"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2755
+#: assets/js/dist/responsino-form-builder.js:2756
 msgid "admin.preview.mock.headline"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2756
+#: assets/js/dist/responsino-form-builder.js:2757
 msgid "admin.preview.mock.desc1"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2758
+#: assets/js/dist/responsino-form-builder.js:2759
 msgid "admin.preview.mock.desc2"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2759
+#: assets/js/dist/responsino-form-builder.js:2760
 msgid "admin.preview.mock.desc3"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2760
+#: assets/js/dist/responsino-form-builder.js:2761
 msgid "admin.preview.mock.desc4"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:2874
+#: assets/js/dist/responsino-form-builder.js:2875
 msgid "admin.preview.default_footer_text"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3116
+#: assets/js/dist/responsino-form-builder.js:3117
 msgid "admin.display.group_title_in_content"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3118
+#: assets/js/dist/responsino-form-builder.js:3119
 msgid "admin.display.group_title_default"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3133
+#: assets/js/dist/responsino-form-builder.js:3134
 msgid "admin.display.tab_btn_in_content"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3135
+#: assets/js/dist/responsino-form-builder.js:3136
 msgid "admin.display.tab_btn_default"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3156
+#: assets/js/dist/responsino-form-builder.js:3157
 msgid "admin.display.step_label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3913
+#: assets/js/dist/responsino-form-builder.js:3914
 msgid "fields.button.submit.default_text"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3917
+#: assets/js/dist/responsino-form-builder.js:3918
 msgid "fields.button.back.default_text"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3921
+#: assets/js/dist/responsino-form-builder.js:3922
 msgid "fields.button.next.default_text"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:3982
+#: assets/js/dist/responsino-form-builder.js:3983
 msgid "admin.toast.step2_unlocked"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4078
+#: assets/js/dist/responsino-form-builder.js:4079
 msgid "admin.toast.undo"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4113
+#: assets/js/dist/responsino-form-builder.js:4114
 msgid "admin.toast.redo"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4258
+#: assets/js/dist/responsino-form-builder.js:4259
 msgid "admin.toast.form_published"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4258
+#: assets/js/dist/responsino-form-builder.js:4259
 msgid "admin.toast.draft_saved"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4261
+#: assets/js/dist/responsino-form-builder.js:4262
 msgid "admin.toast.save_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4261
+#: assets/js/dist/responsino-form-builder.js:4262
 msgid "admin.toast.unknown_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4266
+#: assets/js/dist/responsino-form-builder.js:4267
 msgid "admin.toast.network_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4558
-#: assets/js/dist/responsino-form-builder.js:4573
-#: assets/js/dist/responsino-form-builder.js:4578
+#: assets/js/dist/responsino-form-builder.js:4559
+#: assets/js/dist/responsino-form-builder.js:4574
+#: assets/js/dist/responsino-form-builder.js:4579
 msgid "admin.builder.element_count_plural"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4573
-#: assets/js/dist/responsino-form-builder.js:4578
+#: assets/js/dist/responsino-form-builder.js:4574
+#: assets/js/dist/responsino-form-builder.js:4579
 msgid "admin.builder.element_count_singular"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4579
+#: assets/js/dist/responsino-form-builder.js:4580
 msgid "admin.builder.active_for"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4581
+#: assets/js/dist/responsino-form-builder.js:4582
 msgid "admin.builder.switch_recipient"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4641
-#: assets/js/dist/responsino-form-builder.js:5096
+#: assets/js/dist/responsino-form-builder.js:4642
+#: assets/js/dist/responsino-form-builder.js:5097
 msgid "admin.builder.move_to_step2"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4641
-#: assets/js/dist/responsino-form-builder.js:5096
+#: assets/js/dist/responsino-form-builder.js:4642
+#: assets/js/dist/responsino-form-builder.js:5097
 msgid "admin.builder.move_to_step1"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4649
-#: assets/js/dist/responsino-form-builder.js:5088
+#: assets/js/dist/responsino-form-builder.js:4650
+#: assets/js/dist/responsino-form-builder.js:5089
 msgid "admin.builder.duplicate_element"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4657
-#: assets/js/dist/responsino-form-builder.js:5107
+#: assets/js/dist/responsino-form-builder.js:4658
+#: assets/js/dist/responsino-form-builder.js:5108
 msgid "admin.builder.delete_element"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4919
+#: assets/js/dist/responsino-form-builder.js:4920
 msgid "admin.builder.customize_colors"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4936
+#: assets/js/dist/responsino-form-builder.js:4937
 msgid "admin.builder.accent_color"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4936
+#: assets/js/dist/responsino-form-builder.js:4937
 msgid "admin.builder.background_color"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4947
+#: assets/js/dist/responsino-form-builder.js:4948
 msgid "admin.builder.colors"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:4947
+#: assets/js/dist/responsino-form-builder.js:4948
 msgid "admin.builder.standard_state"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5008
+#: assets/js/dist/responsino-form-builder.js:5009
 msgid "admin.preview.widget_title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5036
+#: assets/js/dist/responsino-form-builder.js:5037
 msgid "admin.preview.form_preview_title"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5080
+#: assets/js/dist/responsino-form-builder.js:5081
 msgid "admin.builder.edit_element"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5133
+#: assets/js/dist/responsino-form-builder.js:5134
 msgid "admin.toast.step2_auto_activated"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5137
+#: assets/js/dist/responsino-form-builder.js:5138
 msgid "admin.toast.step2_requirement_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5152
+#: assets/js/dist/responsino-form-builder.js:5153
 msgid "admin.toast.moved_to_step2"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5191
+#: assets/js/dist/responsino-form-builder.js:5192
 msgid "admin.toast.moved_to_step1"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5205
+#: assets/js/dist/responsino-form-builder.js:5206
 msgid "admin.builder.back_to_overview"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5230
+#: assets/js/dist/responsino-form-builder.js:5231
 msgid "admin.toast.deleted"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5245
+#: assets/js/dist/responsino-form-builder.js:5246
 msgid "admin.toast.duplicated"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5263
+#: assets/js/dist/responsino-form-builder.js:5264
 msgid "admin.toast.added"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5346
+#: assets/js/dist/responsino-form-builder.js:5347
 msgid "admin.toast.dropped"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5356
+#: assets/js/dist/responsino-form-builder.js:5357
 msgid "admin.toast.move_step_not_allowed"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5430
+#: assets/js/dist/responsino-form-builder.js:5431
 msgid "admin.toast.view_loaded"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5822
+#: assets/js/dist/responsino-form-builder.js:5823
 msgid "admin.toast.config_copied"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5830
+#: assets/js/dist/responsino-form-builder.js:5831
 msgid "admin.toast.invalid_json"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5843
+#: assets/js/dist/responsino-form-builder.js:5844
 msgid "admin.toast.config_loaded"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5847
+#: assets/js/dist/responsino-form-builder.js:5848
 msgid "admin.toast.import_error"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5874
+#: assets/js/dist/responsino-form-builder.js:5875
 msgid "admin.builder.display_type_label"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5891
+#: assets/js/dist/responsino-form-builder.js:5892
 msgid "admin.builder.targeting_tabs.in_content"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5892
+#: assets/js/dist/responsino-form-builder.js:5893
 msgid "admin.builder.targeting_tabs.shortcode"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:5896
+#: assets/js/dist/responsino-form-builder.js:5897
 msgid "admin.builder.targeting_tabs.overlay"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6025
-#: assets/js/dist/responsino-form-builder.js:6121
+#: assets/js/dist/responsino-form-builder.js:6026
+#: assets/js/dist/responsino-form-builder.js:6122
 msgid "admin.toast.status_paused"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6028
-#: assets/js/dist/responsino-form-builder.js:6122
+#: assets/js/dist/responsino-form-builder.js:6029
+#: assets/js/dist/responsino-form-builder.js:6123
 msgid "admin.toast.status_live"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6031
-#: assets/js/dist/responsino-form-builder.js:6123
+#: assets/js/dist/responsino-form-builder.js:6032
+#: assets/js/dist/responsino-form-builder.js:6124
 msgid "admin.toast.status_admin_only"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6124
+#: assets/js/dist/responsino-form-builder.js:6125
 msgid "admin.toast.status_changed"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6151
+#: assets/js/dist/responsino-form-builder.js:6152
 msgid "admin.builder.leave_editor_confirm"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6165
+#: assets/js/dist/responsino-form-builder.js:6166
 msgid "admin.toast.split_preview_reset"
 msgstr ""
 
-#: assets/js/dist/responsino-form-builder.js:6178
-#: assets/js/dist/responsino-form-builder.js:6187
+#: assets/js/dist/responsino-form-builder.js:6179
+#: assets/js/dist/responsino-form-builder.js:6188
 msgid "admin.toast.activate_step2_first"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2459
+#: assets/js/dist/responsino-form-frontend.js:2460
 msgid "widget.feedback_button.hide_button"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2524
+#: assets/js/dist/responsino-form-frontend.js:2525
 msgid "widget.status_completed"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2526
+#: assets/js/dist/responsino-form-frontend.js:2527
 msgid "widget.step_indicator_full"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2807
+#: assets/js/dist/responsino-form-frontend.js:2808
 msgid "validation.error.required"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2857
-#: assets/js/dist/responsino-form-frontend.js:2922
+#: assets/js/dist/responsino-form-frontend.js:2858
+#: assets/js/dist/responsino-form-frontend.js:2923
 msgid "widget.step_indicator"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2884
+#: assets/js/dist/responsino-form-frontend.js:2885
 msgid "widget.status_confirmed"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2911
+#: assets/js/dist/responsino-form-frontend.js:2912
 msgid "admin.builder.simulation_redirect_msg"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2922
+#: assets/js/dist/responsino-form-frontend.js:2923
 msgid "widget.step_single"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:2953
+#: assets/js/dist/responsino-form-frontend.js:2954
 msgid "widget.no_elements"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:3020
+#: assets/js/dist/responsino-form-frontend.js:3021
 msgid "confirmation.message.redirecting"
 msgstr ""
 
-#: assets/js/dist/responsino-form-frontend.js:3023
+#: assets/js/dist/responsino-form-frontend.js:3024
 msgid "confirmation.message.target"
 msgstr ""

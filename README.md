@@ -61,16 +61,16 @@ Install JavaScript dependencies:
 npm install
 ```
 
-Generate or update translation files:
-
-```bash
-npm run translate
-```
-
 Build the frontend and admin assets in watch mode:
 
 ```bash
 npm run build
+```
+
+Generate or update translation files:
+
+```bash
+npm run translate
 ```
 
 After completing the setup, activate **Responsino** in the WordPress admin area.

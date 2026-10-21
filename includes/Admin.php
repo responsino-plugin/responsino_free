@@ -106,7 +106,7 @@ class Admin {
     }
 
     public function enqueue_assets($hook) {
-		if (strpos($hook, 'page-responsino') === false) {
+		if (strpos($hook, 'page_responsino') === false) {
 			return;
 		}
 
