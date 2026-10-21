@@ -1,4 +1,4 @@
-=== Responsino – User Feedback & Surveys ===
+=== Responsino ===
 Contributors: responsino
 Tags: feedback, user feedback, customer feedback, surveys, user experience
 Requires at least: 6.7
@@ -12,7 +12,7 @@ Collect and analyze user feedback directly in WordPress with a visual form build
 
 == Description ==
 
-Responsino (Feedback Loop for WordPress) is a lightweight and flexible feedback plugin for collecting user feedback directly on your WordPress website.
+Responsino is a lightweight and flexible feedback plugin for collecting user feedback directly on your WordPress website.
 
 Create feedback forms with a visual form builder and display them exactly where and when they are relevant. Embed forms directly in your content, open them as overlays or slide-ins, or use a floating feedback button.
 
