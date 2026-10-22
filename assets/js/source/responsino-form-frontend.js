@@ -1,6 +1,6 @@
 import { utils, logger } from '../components/responsino-form-utils.js';
 import { config } from '../components/responsino-form-config.js';
-import { ResponsinoFormValidator } from '../components/responsino-form-frontend-form-validation.js';
+import { RESPONSINOFormValidator } from '../components/responsino-form-frontend-form-validation.js';
 import { __ } from '../components/responsino-i18n.js';
 import { fields } from '../components/responsino-form-fields.js';
 
@@ -129,7 +129,7 @@ class ResponsinoOverlayController {
 
     init() {
         if (this.isFrequencyCapped()) {
-            console.log(`Responsino Overlay: Form ${this.formId} is frequency capped. Skipping trigger registration.`);
+            console.log(`RESPONSINO Overlay: Form ${this.formId} is frequency capped. Skipping trigger registration.`);
             this.hideTrigger();
             return;
         }
@@ -196,7 +196,7 @@ class ResponsinoOverlayController {
     createFeedbackButton() {
         const targetContainer = (this.config && this.config.targetContainer) || document.body;
         if (targetContainer.querySelector('.responsino-feedback-button-widget-button')) {
-            console.log("Responsino Overlay: feedback-button already exists in this container.");
+            console.log("RESPONSINO Overlay: feedback-button already exists in this container.");
             return;
         }
 
@@ -1333,7 +1333,7 @@ const engine = {
 
                     // Validate targeting
                     const targeting = (stateObj && stateObj.targeting && stateObj.targeting[displaySubType]) || {};
-                    const isTargetingValid = ResponsinoFormValidator.validateTargeting(targeting, config.CONTEXT);
+                    const isTargetingValid = RESPONSINOFormValidator.validateTargeting(targeting, config.CONTEXT);
 
                     // Only render inline if the displayType is in-content / shortcode
                     if ((displaySubType === "in-content" || type === "shortcode") && isTargetingValid) {
@@ -1366,7 +1366,7 @@ const engine = {
                     renderAll();
                 })
                 .catch(err => {
-                    console.error("Responsino Error: fetching placeholders data failed", err);
+                    console.error("RESPONSINO Error: fetching placeholders data failed", err);
                     renderAll(); // Trotzdem rendern, was wir haben
                 });
         }
@@ -1413,7 +1413,7 @@ const engine = {
                         }
                     })
                     .catch(err => {
-                        console.error("Responsino Error: sending feedback", err);
+                        console.error("RESPONSINO Error: sending feedback", err);
                     });
 
                 setTimeout(() => {
@@ -1439,7 +1439,7 @@ const engine = {
 };
 
 // Public Interface exposure (Bridge pattern ensuring backward compatibility)
-window.ResponsinoFrontend = {
+window.RESPONSINOFrontend = {
     render: engine.render,
     initAutoRender: engine.initAutoRender
 };
@@ -1459,7 +1459,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         logger.log('[Frontend] Rendering overlay:', { overlayId, overlayName, overlayType, overlayConfig });
 
-        if (ResponsinoFormValidator.validateTargeting(targeting, config.CONTEXT)) {
+        if (RESPONSINOFormValidator.validateTargeting(targeting, config.CONTEXT)) {
             const controller = new ResponsinoOverlayController(overlayConfig);
             controller.init();
         }

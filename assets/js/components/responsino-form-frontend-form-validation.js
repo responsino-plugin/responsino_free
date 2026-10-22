@@ -7,7 +7,7 @@ import { utils, logger } from './responsino-form-utils.js';
  * Mirrors the logic from IndexBuilder.php
  */
 
-export const ResponsinoFormValidator = {
+export const RESPONSINOFormValidator = {
     /**
      * Evaluates a single targeting rule.
      */
@@ -76,7 +76,7 @@ export const ResponsinoFormValidator = {
             logger.log(`[FormValidator] Evaluating ${andRules.length} AND rule(s)...`);
             for (let i = 0; i < andRules.length; i++) {
                 const rule = andRules[i];
-                const match = ResponsinoFormValidator.evaluateRule(rule, context);
+                const match = RESPONSINOFormValidator.evaluateRule(rule, context);
                 if (!match) {
                     logger.log(`[FormValidator] Targeting failed: AND rule #${i + 1} did not match`, rule);
                     return false;
@@ -87,7 +87,7 @@ export const ResponsinoFormValidator = {
         // 3. Evaluate orRules (at least one must be true, if any exist)
         if (orRules && orRules.length > 0) {
             logger.log(`[FormValidator] Evaluating ${orRules.length} OR rule(s)...`);
-            const anyOrMatch = orRules.some(rule => ResponsinoFormValidator.evaluateRule(rule, context));
+            const anyOrMatch = orRules.some(rule => RESPONSINOFormValidator.evaluateRule(rule, context));
             if (!anyOrMatch) {
                 logger.log('[FormValidator] Targeting failed: none of the OR rules matched', orRules);
                 return false;

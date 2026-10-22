@@ -677,7 +677,7 @@ class FormDataSanitizer
 					'bool'
 				),
 			],
-			'confirmation' => ['type' => 'enum:message|url', 'message' => 'rich', 'extUrl' => 'url'],
+			'confirmation' => ['type' => 'enum:message|url', 'message' => 'rich', 'textColor' => 'color', 'extUrl' => 'url'],
 			'notification' => [
 				'enabled'     => 'bool',
 				'recipient'   => 'email',

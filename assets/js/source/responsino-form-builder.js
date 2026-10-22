@@ -10,7 +10,7 @@ import { PreviewEngine } from '../components/responsino-form-builder-preview-eng
 
 const responsinoFormBuilder = window.responsinoFormBuilder;
 
-const ResponsinoFormBuilder = (function() {
+const RESPONSINOFormBuilder = (function() {
 
     // 1. DOM REFERENCES
     let elSplitPreviewColumn,
@@ -2819,10 +2819,10 @@ const ResponsinoFormBuilder = (function() {
     };
 })();
 
-window.ResponsinoFormBuilder = ResponsinoFormBuilder;
+window.RESPONSINOFormBuilder = RESPONSINOFormBuilder;
 
 if (document.readyState === 'complete') {
-    ResponsinoFormBuilder.init();
+    RESPONSINOFormBuilder.init();
 } else {
-    window.addEventListener('load', ResponsinoFormBuilder.init);
+    window.addEventListener('load', RESPONSINOFormBuilder.init);
 }

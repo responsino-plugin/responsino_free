@@ -299,8 +299,8 @@ const RENDERERS = {
             }
 
             incontentSlot.classList.add("responsino-feedback-plugin");
-            if (window.ResponsinoFrontend && typeof window.ResponsinoFrontend.render === "function") {
-                window.ResponsinoFrontend.render(incontentSlot, state, { isPreview: true });
+            if (window.RESPONSINOFrontend && typeof window.RESPONSINOFrontend.render === "function") {
+                window.RESPONSINOFrontend.render(incontentSlot, state, { isPreview: true });
                 if (typeof incontentSlot.responsinoGoToStep === "function") {
                     incontentSlot.responsinoGoToStep(1);
                 }

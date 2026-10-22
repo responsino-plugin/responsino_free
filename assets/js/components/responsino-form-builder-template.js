@@ -46,7 +46,7 @@ export const FormBuilderTemplates = {
 
             // Function to render/re-render this preview form
             const renderPreview = () => {
-                if (window.ResponsinoFrontend) {
+                if (window.RESPONSINOFrontend) {
                     body.responsinoCurrentStep = 1;
                     body.responsinoStep2TriggerId = null;
                     body.responsinoAnswers = {};
@@ -62,7 +62,7 @@ export const FormBuilderTemplates = {
                         steps: tmpl.steps,
                     };
 
-                    window.ResponsinoFrontend.render(body, tempState, {
+                    window.RESPONSINOFrontend.render(body, tempState, {
                         isPreview: true,
                         isSplit: false,
                         onConfirm: () => {
@@ -102,7 +102,7 @@ export const FormBuilderTemplates = {
                 e.preventDefault();
                 e.stopPropagation();
 
-                const formBuilder = window.ResponsinoFormBuilder;
+                const formBuilder = window.RESPONSINOFormBuilder;
                 if (!formBuilder) return;
 
                 if (confirm(__("admin.confirm.load_template"))) {

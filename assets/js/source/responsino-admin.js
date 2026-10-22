@@ -398,11 +398,6 @@ const controller = {
                                     if (r.querySelector('.column-id') && r.querySelector('.column-id').textContent.includes(`#${feedback.id}`)) {
                                         const statusCol = r.querySelector('.column-status');
                                         if (statusCol) {
-                                            console.log(btnStatus.charAt(0).toUpperCase());
-                                            console.log(btnStatus);
-
-                                            console.log(__('admin.form_list.filter.status.read'));
-
                                             let statusLabel = '';
                                             switch (btnStatus) {
                                                 case 'read':
@@ -451,7 +446,7 @@ const controller = {
         backdrop.classList.remove('hidden');
 
         const renderContainer = document.getElementById('responsino-admin-feedback-form-render');
-        if (renderContainer && window.ResponsinoFrontend) {
+        if (renderContainer && window.RESPONSINOFrontend) {
             const stateObj = {
                 settings: {
                     styles: {
@@ -461,7 +456,7 @@ const controller = {
                 steps: steps
             };
 
-            window.ResponsinoFrontend.render(renderContainer, stateObj, {
+            window.RESPONSINOFrontend.render(renderContainer, stateObj, {
                 isReadOnly: true,
                 answers: userValues
             });
